@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  },
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["./src/*"]
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./types/**/*"],
+  "exclude": ["node_modules", "public", ".cache"]
+}
