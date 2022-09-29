@@ -1,6 +1,6 @@
 import { Button, CopyButton, Tooltip } from '@mantine/core'
 import { useRecoilValue } from 'recoil'
-import { colorValuesSelector } from '../../store/selectors/AppSelector'
+import { colorValuesSelector } from '../../store/selectors/appSelector'
 
 const PreviewHeader = () => {
   const colorValues = useRecoilValue(colorValuesSelector)

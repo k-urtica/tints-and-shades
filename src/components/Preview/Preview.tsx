@@ -8,7 +8,7 @@ import {
 import { ColorCard } from '../ColorCard/ColorCard'
 import classNames from 'classnames'
 import { PreviewHeader } from '../PreviewHeader/PreviewHeader'
-import { colorValuesSelector } from '../../store/selectors/AppSelector'
+import { colorValuesSelector } from '../../store/selectors/appSelector'
 
 const Preview = () => {
   const bgColor = useRecoilValue(previewBgState)
