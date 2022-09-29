@@ -15,6 +15,9 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx --max-warnings=0 --ignore-path .gitignore",
+    "lint-fix": "yarn prettier-fix && eslint . --fix --ext --ext .ts,.js,.tsx,.jsx --max-warnings=0 --ignore-path .gitignore",
+    "prettier-check": "prettier --check ./src/**/*.{js,jsx,ts,tsx,json}",
+    "prettier-fix": "prettier --write ./src/**/*.{js,jsx,ts,tsx,json}",
     "prepare": "husky install"
   },
   "dependencies": {
