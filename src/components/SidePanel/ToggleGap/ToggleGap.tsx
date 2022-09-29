@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil'
-import { cardGapState } from '../../../store/atoms/appAtoms'
+import { cardGapState } from '../../../store/atoms/appAtom'
 import { ToggleSwitch } from '../../Parts/ToggleSwitch'
 
 const ToggleGap = () => {

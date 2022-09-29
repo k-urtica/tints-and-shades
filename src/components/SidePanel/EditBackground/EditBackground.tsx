@@ -1,6 +1,6 @@
 import { ColorInput } from '@mantine/core'
 import { useRecoilState } from 'recoil'
-import { previewBgState } from '../../../store/atoms/appAtoms'
+import { previewBgState } from '../../../store/atoms/appAtom'
 
 const EditBackground = () => {
   const [bgColor, setBgColor] = useRecoilState(previewBgState)

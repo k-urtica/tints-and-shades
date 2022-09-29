@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil'
-import { weightState } from '../../../store/atoms/appAtoms'
+import { weightState } from '../../../store/atoms/appAtom'
 import { NumberInput, Slider } from '@mantine/core'
 
 const EditWeight = () => {

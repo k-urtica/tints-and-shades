@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil'
-import { cardOnelineState } from '../../../store/atoms/appAtoms'
+import { cardOnelineState } from '../../../store/atoms/appAtom'
 import { ToggleSwitch } from '../../Parts/ToggleSwitch'
 
 const ToggleOneline = () => {

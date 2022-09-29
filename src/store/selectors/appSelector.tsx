@@ -1,6 +1,6 @@
 import { selector } from 'recoil'
 import Values from 'values.js'
-import { colorState, weightState } from '../atoms/appAtoms'
+import { colorState, weightState } from '../atoms/appAtom'
 
 export const colorValuesSelector = selector({
   key: 'colorValues',

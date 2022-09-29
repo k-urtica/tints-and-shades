@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil'
-import { indicatorState } from '../../../store/atoms/appAtoms'
+import { indicatorState } from '../../../store/atoms/appAtom'
 import { ToggleSwitch } from '../../Parts/ToggleSwitch'
 
 const ToggleIndicator = () => {

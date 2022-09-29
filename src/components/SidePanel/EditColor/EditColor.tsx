@@ -1,6 +1,6 @@
 import { ActionIcon, ColorInput } from '@mantine/core'
 import { useRecoilState } from 'recoil'
-import { colorState } from '../../../store/atoms/appAtoms'
+import { colorState } from '../../../store/atoms/appAtom'
 import { FiRefreshCw } from 'react-icons/fi'
 
 const randomColor = () =>

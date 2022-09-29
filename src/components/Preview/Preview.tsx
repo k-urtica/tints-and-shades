@@ -4,7 +4,7 @@ import {
   cardOnelineState,
   indicatorState,
   previewBgState,
-} from '../../store/atoms/appAtoms'
+} from '../../store/atoms/appAtom'
 import { ColorCard } from '../ColorCard/ColorCard'
 import classNames from 'classnames'
 import { PreviewHeader } from '../PreviewHeader/PreviewHeader'
