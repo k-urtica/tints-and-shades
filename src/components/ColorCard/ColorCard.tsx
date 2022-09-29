@@ -20,13 +20,14 @@ const ColorCard = ({ hex, weight, textColor, isIndicator }: Props) => {
         </div>
         <div className="mt-2 flex items-center justify-between">
           <div style={{ color: textColor }}>{hex}</div>
-          <div className="opacity-0 group-hover:opacity-100">
+          <div className="opacity-50 group-hover:opacity-100 md:opacity-0">
             <CopyButton value={hex} timeout={2000}>
               {({ copied, copy }) => (
                 <Tooltip
                   label={copied ? 'Copied!' : 'Copy'}
                   withArrow
                   position="top"
+                  events={{ hover: true, focus: true, touch: false }}
                 >
                   <ActionIcon variant="light" size="lg" onClick={copy}>
                     <MdContentCopy color={textColor} />
