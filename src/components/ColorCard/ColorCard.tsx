@@ -29,7 +29,12 @@ const ColorCard = ({ hex, weight, textColor, isIndicator }: Props) => {
                   position="top"
                   events={{ hover: true, focus: true, touch: false }}
                 >
-                  <ActionIcon variant="light" size="lg" onClick={copy}>
+                  <ActionIcon
+                    variant="light"
+                    size="lg"
+                    onClick={copy}
+                    aria-label="copy color code"
+                  >
                     <MdContentCopy color={textColor} />
                   </ActionIcon>
                 </Tooltip>

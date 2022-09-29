@@ -22,10 +22,14 @@ const EditColor = () => {
         value={color}
         onChange={onChangeColor}
         rightSection={
-          <ActionIcon onClick={() => onChangeColor(randomColor())}>
+          <ActionIcon
+            onClick={() => onChangeColor(randomColor())}
+            aria-label="random color"
+          >
             <FiRefreshCw size={18} />
           </ActionIcon>
         }
+        aria-label="input color"
       />
     </div>
   )

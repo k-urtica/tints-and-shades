@@ -17,6 +17,7 @@ const EditBackground = () => {
         swatches={['#1a1b1e', '#fafafa']}
         value={bgColor}
         onChange={onChangeColor}
+        aria-label="edit background color"
       />
     </div>
   )

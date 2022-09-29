@@ -32,6 +32,7 @@ const EditWeight = () => {
         value={range}
         onChange={(v) => onChangeInput(v)}
         className="ml-auto w-24"
+        aria-label="edit weight"
       />
 
       <Slider
@@ -43,6 +44,7 @@ const EditWeight = () => {
         value={range}
         onChange={(e) => setRange(Number(e.toFixed(1)))}
         className="mt-1"
+        thumbLabel="edit weight slider"
       />
     </div>
   )
