@@ -7,7 +7,7 @@ const config: GatsbyConfig = {
     title: `Tints and Shades Generator`,
     description: `This tool generates tints and shades from input colors.`,
     image: `/ogp.png`,
-    siteUrl: `https://tintsandshades.netlify.app`,
+    siteUrl: `https://tintsshades.netlify.app`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
