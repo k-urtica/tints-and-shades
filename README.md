@@ -1,54 +1,35 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f258b95-f486-4c51-adde-d2c41aac0ae6/deploy-status)](https://app.netlify.com/sites/tintsshades/deploys)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🚀 Quick start
+<h1 align="center">🎨Tints and Shades Generator💚</h1>
 
-1.  **Create a Gatsby site.**
+![](https://user-images.githubusercontent.com/46732829/193033207-4883a0c2-3a28-4e58-a7f9-96fe243aba47.png)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+![](https://user-images.githubusercontent.com/46732829/193037566-66e694ce-899c-4900-a036-986df2c263d8.png)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+Generate tint and shade colors easily and intuitively.
 
-2.  **Start developing.**
+## ⭐️ Features
 
-    Navigate into your new site’s directory and start it up.
+- 💪 Simple, but powerful generator!
+- ⚡ Fast and no stress!
+- 🎚 Color can be generated with weighting in 0.1% increments
+- 🎨 Color codes can be entered from the color palette in addition to color codes
+- 😍 Some useful display options
+- 📋 Generated colors can be copied one by one or all at once
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## 🔗 URL
 
-3.  **Open the code and start customizing!**
+[https://tintsshades.netlify.app/](https://tintsshades.netlify.app/)
 
-    Your site is now running at http://localhost:8000!
+## 📄 License
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.<br />
+Copyright © 2022 K.
 
-4.  **Learn more**
+## 👀 Author
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+👤 **K**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+- Twitter: [@k_urtica](https://twitter.com/k_urtica)
+- Github: [@k-urtica](https://github.com/k-urtica)
