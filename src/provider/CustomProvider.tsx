@@ -19,18 +19,6 @@ const CustomProvider = ({ element }: any) => {
             '#065f46',
             '#064e3b',
           ],
-          success: [
-            '#deffed',
-            '#b5f8d3',
-            '#8af3b7',
-            '#5ded9b',
-            '#31e780',
-            '#18ce66',
-            '#0ca04f',
-            '#037238',
-            '#004620',
-            '#001905',
-          ],
         },
 
         primaryColor: 'emerald',
