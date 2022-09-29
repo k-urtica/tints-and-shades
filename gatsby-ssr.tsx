@@ -2,6 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { createStylesServer, ServerStyles } from '@mantine/ssr'
 import CustomProvider from './src/provider/CustomProvider'
+import { GatsbySSR } from 'gatsby'
 
 const stylesServer = createStylesServer()
 export const replaceRenderer = ({
@@ -21,3 +22,9 @@ export const replaceRenderer = ({
 }
 
 export const wrapRootElement = CustomProvider
+
+export const onRenderBody: GatsbySSR['onRenderBody'] = ({
+  setHtmlAttributes,
+}) => {
+  setHtmlAttributes({ lang: `en`, prefix: `og: https://ogp.me/ns#` })
+}
