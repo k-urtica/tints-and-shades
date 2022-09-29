@@ -20,6 +20,15 @@ const config: GatsbyConfig = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-ZZ7F7NPLKH'],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
 }
 

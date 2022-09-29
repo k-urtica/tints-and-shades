@@ -28,6 +28,7 @@
     "@mantine/ssr": "^5.4.1",
     "classnames": "^2.3.2",
     "gatsby": "^4.23.0",
+    "gatsby-plugin-google-gtag": "^4.24.0",
     "gatsby-plugin-mantine": "^5.0.0",
     "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-sitemap": "^5.24.0",
