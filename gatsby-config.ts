@@ -16,7 +16,11 @@ const config: GatsbyConfig = {
     typesOutputPath: `types/__generated__/gatsby-types.d.ts`,
   },
 
-  plugins: [`gatsby-plugin-postcss`, `gatsby-plugin-sitemap`],
+  plugins: [
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+  ],
 }
 
 export default config
