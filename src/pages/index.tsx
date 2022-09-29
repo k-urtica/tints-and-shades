@@ -10,7 +10,8 @@ const IndexPage = () => {
           <SidePanel />
         </div>
 
-        <div className="max-h-[50vh] flex-1 overflow-auto border-t border-dashed border-zinc-600 pb-10 md:max-h-full md:border-0">
+        <div className="max-h-[50vh] flex-1 overflow-auto pb-10 md:max-h-full">
+          <div className="border-t border-dashed border-zinc-600 md:hidden" />
           <Preview />
         </div>
       </div>
