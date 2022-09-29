@@ -40,7 +40,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "gatsby-plugin-postcss": "^5.23.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
