@@ -1,45 +1,19 @@
-import { Link, HeadFC } from 'gatsby'
+import { Button } from '@mantine/core'
+import { Link } from 'gatsby'
 import { Seo } from '../components/Seo/Seo'
-
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-}
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+    <main className="grid h-screen place-content-center">
+      <h1 className="text-center text-3xl font-bold">Page not found</h1>
+      <p className="mt-10">
         Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === 'development' ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
       </p>
+      <div className="mt-6 text-center">
+        <Link to="/">
+          <Button component="a">Back to home</Button>
+        </Link>
+      </div>
     </main>
   )
 }
