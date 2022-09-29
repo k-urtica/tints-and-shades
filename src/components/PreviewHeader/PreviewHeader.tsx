@@ -6,7 +6,7 @@ const PreviewHeader = () => {
   const colorValues = useRecoilValue(colorValuesSelector)
 
   const copyText = () => {
-    return colorValues!.map((e) => e.hexString()).toString()
+    return colorValues?.map((e) => e.hexString()).toString() || ''
   }
 
   return (
