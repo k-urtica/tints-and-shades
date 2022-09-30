@@ -1,5 +1,6 @@
 import { EditBackground } from '../EditBackground/EditBackground'
 import { ToggleGap } from '../ToggleGap/ToggleGap'
+import { ToggleHash } from '../ToggleHash/ToggleHash'
 import { ToggleIndicator } from '../ToggleIndicator/ToggleIndicator'
 import { ToggleOneline } from '../ToggleOneline/ToggleOneline'
 
@@ -11,6 +12,7 @@ const PreviewSettings = () => {
         <ToggleGap />
         <ToggleOneline />
         <ToggleIndicator />
+        <ToggleHash />
         <EditBackground />
       </div>
     </div>

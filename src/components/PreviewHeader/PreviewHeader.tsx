@@ -1,12 +1,18 @@
 import { Button, CopyButton, Tooltip } from '@mantine/core'
 import { useRecoilValue } from 'recoil'
+import { hashSymbolState } from '../../store/atoms/appAtom'
 import { colorValuesSelector } from '../../store/selectors/appSelector'
 
 const PreviewHeader = () => {
   const colorValues = useRecoilValue(colorValuesSelector)
+  const isHash = useRecoilValue(hashSymbolState)
 
   const copyText = () => {
-    return colorValues?.map((e) => e.hexString()).toString() || ''
+    return (
+      colorValues
+        ?.map((e) => (isHash ? e.hexString() : e.hexString().slice(1)))
+        .toString() || ''
+    )
   }
 
   return (

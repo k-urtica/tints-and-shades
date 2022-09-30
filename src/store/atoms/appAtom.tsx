@@ -29,3 +29,8 @@ export const previewBgState = atom<string>({
   key: 'previewBg',
   default: '#1a1b1e',
 })
+
+export const hashSymbolState = atom<boolean>({
+  key: 'hashSymbol',
+  default: true,
+})

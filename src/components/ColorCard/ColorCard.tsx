@@ -1,5 +1,7 @@
 import { ActionIcon, CopyButton, Indicator, Tooltip } from '@mantine/core'
 import { MdContentCopy } from 'react-icons/md'
+import { useRecoilValue } from 'recoil'
+import { hashSymbolState } from '../../store/atoms/appAtom'
 
 type Props = {
   hex: string
@@ -9,6 +11,12 @@ type Props = {
 }
 
 const ColorCard = ({ hex, weight, textColor, isIndicator }: Props) => {
+  const isHash = useRecoilValue(hashSymbolState)
+
+  const copyText = () => {
+    return isHash ? hex : hex.slice(1)
+  }
+
   return (
     <div
       className="group relative min-w-[180px] p-4"
@@ -21,7 +29,7 @@ const ColorCard = ({ hex, weight, textColor, isIndicator }: Props) => {
         <div className="mt-2 flex items-center justify-between">
           <div style={{ color: textColor }}>{hex}</div>
           <div className="opacity-50 group-hover:opacity-100 md:opacity-0">
-            <CopyButton value={hex} timeout={2000}>
+            <CopyButton value={copyText()} timeout={2000}>
               {({ copied, copy }) => (
                 <Tooltip
                   label={copied ? 'Copied!' : 'Copy'}
