@@ -25,7 +25,7 @@ const id = useId();
       <label v-if="label" :for="id" class="text-sm">{{ label }}</label>
     </div>
     <slot v-if="caption" name="caption">
-      <p class="mt-1 text-sm text-neutral/80">{{ caption }}</p>
+      <p class="mt-1 text-xs text-neutral/80">{{ caption }}</p>
     </slot>
   </div>
 </template>
