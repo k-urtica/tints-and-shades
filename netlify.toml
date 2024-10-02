@@ -1,0 +1,5 @@
+[build.environment]
+  TZ="Asia/Tokyo"
+[build]
+  command = "pnpm generate"
+  publish = "dist"

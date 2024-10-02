@@ -1,0 +1,45 @@
+:root {
+  --background: 255 255 255;
+  --surface: 250 250 251;
+  --panel: 243 243 246;
+
+  --foreground: 47 47 50;
+  --neutral: 63 63 70;
+
+  --border-surface: 232 232 234;
+  --border-muted: 218 218 220;
+
+  --header-height: 56px;
+  --drawer-width: 290px;
+
+  --font-family: Inter, 'Noto Sans JP', '-apple-system', BlinkMacSystemFont, Helvetica,
+    Arial, メイリオ, Meiryo, sans-serif;
+}
+
+.dark {
+  --background: 18 18 18;
+  --surface: 31 31 32;
+  --panel: 38 38 40;
+
+  --foreground: 244 244 244;
+  --neutral: 212 212 216;
+
+  --border-surface: 41 41 43;
+  --border-muted: 60 60 62;
+}
+
+body {
+  font-family: var(--font-family);
+  color: rgb(var(--foreground));
+  scroll-behavior: smooth;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
