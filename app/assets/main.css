@@ -12,8 +12,8 @@
   --header-height: 56px;
   --drawer-width: 290px;
 
-  --font-family: Inter, 'Noto Sans JP', '-apple-system', BlinkMacSystemFont, Helvetica,
-    Arial, メイリオ, Meiryo, sans-serif;
+  --font-family: Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ,
+    Meiryo, sans-serif;
 }
 
 .dark {
@@ -38,8 +38,4 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
