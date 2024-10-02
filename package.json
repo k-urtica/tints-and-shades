@@ -12,7 +12,8 @@
     "prettier-check": "prettier --check",
     "prettier-fix": "prettier --write",
     "analyze": "nuxt analyze",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prepare": "husky"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
@@ -33,6 +34,8 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "typescript": "^5.6.2"
