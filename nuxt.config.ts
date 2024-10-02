@@ -65,6 +65,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@nuxt/eslint',
+    '@nuxt/scripts',
   ],
 
   ui: {
@@ -83,6 +84,16 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: false,
+    },
+  },
+
+  $production: {
+    scripts: {
+      registry: {
+        googleAnalytics: {
+          id: 'G-ZZ7F7NPLKH',
+        },
+      },
     },
   },
 
