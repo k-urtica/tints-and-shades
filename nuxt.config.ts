@@ -66,7 +66,12 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@nuxt/eslint',
     '@nuxt/scripts',
+    '@nuxtjs/sitemap',
   ],
+
+  site: {
+    url: 'https://tintsshades.netlify.app',
+  },
 
   ui: {
     global: false,
@@ -85,6 +90,12 @@ export default defineNuxtConfig({
     config: {
       stylistic: false,
     },
+  },
+
+  sitemap: {
+    autoLastmod: false,
+    discoverImages: false,
+    sitemaps: false,
   },
 
   $production: {
