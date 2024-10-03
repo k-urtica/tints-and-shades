@@ -2,7 +2,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      mono: 'ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", メイリオ, monospace',
+      mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", メイリオ, monospace',
     },
     extend: {
       borderColor: {

@@ -22,7 +22,7 @@ defineEmits<{
       name="i-ph-circle-wavy-warning-duotone"
       class="absolute right-2 top-1 size-5 animate-pulse"
     />
-    <div class="text-xs">{{ `${weight}%` }}</div>
-    <div class="mt-1 text-base font-semibold">{{ hexColor }}</div>
+    <div class="text-xs tabular-nums">{{ `${weight}%` }}</div>
+    <div class="mt-1 font-mono text-base font-semibold">{{ hexColor }}</div>
   </a>
 </template>
