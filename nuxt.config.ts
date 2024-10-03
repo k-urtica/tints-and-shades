@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxtjs/sitemap',
+    'nuxt-og-image',
   ],
 
   site: {

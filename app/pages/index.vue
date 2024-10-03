@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOgImageComponent('Default', {
+  title: 'Tints and Shades Generator',
+});
+
 useHead({
   titleTemplate: '%s',
 });
