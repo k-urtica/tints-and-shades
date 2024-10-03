@@ -26,14 +26,15 @@ const isOpen = ref(false);
       :overlay="false"
       :ui="{
         wrapper: 'bottom-20 px-4',
-        height: 'h-52',
-        base: 'rounded-xl overflow-hidden',
+        height: 'h-80',
+        base: 'rounded-xl overflow-hidden border',
       }"
     >
       <div class="flex flex-col gap-8 overflow-scroll bg-panel px-6 py-8">
         <ColorWeight v-model="weight" />
-
         <AppearanceSettings />
+
+        <PanelFooter class="border-t border-muted pt-2" />
       </div>
     </USlideover>
   </div>

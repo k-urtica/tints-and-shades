@@ -10,15 +10,11 @@ const { color, weight } = storeToRefs(useAppStore());
       </h1>
       <div class="mt-12 flex flex-col gap-8 pb-10">
         <ColorInput v-model="color" label="Hex Color" />
-
         <ColorWeight v-model="weight" />
-
         <AppearanceSettings />
       </div>
 
-      <div class="mt-auto">
-        <ThemeSwitcher />
-      </div>
+      <PanelFooter class="mt-auto border-t border-muted pt-2" />
     </div>
   </div>
 </template>
