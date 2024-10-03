@@ -30,7 +30,13 @@ const setRandomColor = () => {
       :ui="{ icon: { leading: { pointer: '' }, trailing: { pointer: '' } } }"
     >
       <template #leading>
-        <UButton color="gray" variant="ghost" :padded="false" @click="el?.click()">
+        <UButton
+          color="gray"
+          variant="ghost"
+          :padded="false"
+          aria-label="Pick color"
+          @click="el?.click()"
+        >
           <span class="size-5 rounded-full ring-1" :style="{ background: color }" />
         </UButton>
 
@@ -46,7 +52,8 @@ const setRandomColor = () => {
           color="gray"
           variant="ghost"
           :padded="false"
-          icon="i-ph-arrow-clockwise-bold"
+          icon="i-ph-arrows-clockwise-bold"
+          aria-label="Random color"
           @click="setRandomColor"
         />
       </template>

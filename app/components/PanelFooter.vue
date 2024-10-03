@@ -22,6 +22,7 @@ const isOpenModal = ref(false);
             size="lg"
             icon="i-ph-x-bold"
             class="absolute right-2 top-1"
+            aria-label="Close modal"
             @click="isOpenModal = false"
           />
           <h2 class="pb-3 text-lg font-bold">About</h2>
