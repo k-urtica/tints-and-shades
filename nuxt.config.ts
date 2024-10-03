@@ -63,7 +63,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt',
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxtjs/sitemap',
