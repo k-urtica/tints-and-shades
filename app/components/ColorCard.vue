@@ -23,6 +23,8 @@ defineEmits<{
       class="absolute right-2 top-1 size-5 animate-pulse"
     />
     <div class="text-xs tabular-nums">{{ `${weight}%` }}</div>
-    <div class="mt-1 font-mono text-base font-semibold">{{ hexColor }}</div>
+    <div class="mt-1 font-mono text-base font-semibold">
+      {{ hexColor.toLocaleUpperCase() }}
+    </div>
   </a>
 </template>
