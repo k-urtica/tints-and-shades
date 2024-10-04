@@ -75,6 +75,9 @@ export default defineNuxtConfig({
 
   icon: {
     provider: 'iconify',
+    clientBundle: {
+      icons: ['ph:moon-stars-duotone', 'ph:sun-duotone'],
+    },
     serverBundle: false,
   },
 

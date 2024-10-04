@@ -26,5 +26,8 @@ const icon = computed(() =>
     >
       Toggle theme
     </UButton>
+    <template #fallback>
+      <USkeleton class="h-8" />
+    </template>
   </ClientOnly>
 </template>
