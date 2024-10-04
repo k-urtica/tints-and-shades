@@ -1,7 +1,12 @@
 {
-  "semi": false,
+  "semi": true,
   "singleQuote": true,
   "trailingComma": "es5",
-  "printWidth": 80,
-  "endOfLine": "lf"
+  "printWidth": 90,
+  "endOfLine": "lf",
+  "singleAttributePerLine": false,
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

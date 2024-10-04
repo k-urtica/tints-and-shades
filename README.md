@@ -5,7 +5,7 @@
 
 ![](https://user-images.githubusercontent.com/46732829/193033207-4883a0c2-3a28-4e58-a7f9-96fe243aba47.png)
 
-![](https://user-images.githubusercontent.com/46732829/193037566-66e694ce-899c-4900-a036-986df2c263d8.png)
+![](https://github.com/user-attachments/assets/b4fc755d-a469-4ded-a0d8-4a6c48ef58b2)
 
 Generate tint and shade colors easily and intuitively.
 
@@ -16,7 +16,7 @@ Generate tint and shade colors easily and intuitively.
 - 🎚 Color can be generated with weighting in 0.1% increments
 - 🎨 Color codes can be entered from the color palette in addition to color codes
 - 😍 Some useful display options
-- 📋 Generated colors can be copied one by one or all at once
+- 📋 Copy colors easily with one click!
 
 ## 🔗 URL
 
@@ -25,7 +25,7 @@ Generate tint and shade colors easily and intuitively.
 ## 📄 License
 
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.<br />
-Copyright © 2022 K.
+Copyright © 2024 K.
 
 ## 👀 Author
 
