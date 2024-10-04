@@ -29,9 +29,10 @@ const weightSteps = computed(() => [
         v-for="{ label, value } in weightSteps"
         :key="value"
         :label
-        variant="soft"
+        color="gray"
+        variant="solid"
         :leading-icon="value === currentStep ? 'i-ph-check-circle-duotone' : undefined"
-        size="xs"
+        size="2xs"
         @click="currentStep = value"
       />
     </div>
