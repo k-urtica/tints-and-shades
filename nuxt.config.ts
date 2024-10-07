@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxtjs/sitemap',
     'nuxt-og-image',
+    '@nuxtjs/google-fonts',
   ],
 
   site: {
@@ -83,6 +84,14 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     viewer: false,
+  },
+
+  googleFonts: {
+    families: {
+      Inter: '400..900',
+    },
+    download: true,
+    display: 'swap',
   },
 
   eslint: {
