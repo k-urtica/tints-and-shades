@@ -32,6 +32,7 @@
     "@iconify/json": "^2.2.256",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/scripts": "^0.9.4",
+    "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/sitemap": "^6.1.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint": "^9.11.1",
