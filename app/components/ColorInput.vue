@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { random } from '@ctrl/tinycolor';
 
-const color = defineModel<string>();
+const color = defineModel<string>({
+  set: (v) => (v.length === 6 && !v.startsWith('#') ? `#${v}` : v),
+});
 
 defineProps<{
   label?: string;
