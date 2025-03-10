@@ -57,15 +57,18 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^6.1.1
         version: 6.1.1(h3@1.12.0)(magicast@0.3.5)(rollup@4.24.0)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))(vue@3.5.10(typescript@5.6.2))(webpack-sources@3.2.3)
-      '@trivago/prettier-plugin-sort-imports':
-        specifier: ^4.3.0
-        version: 4.3.0(@vue/compiler-sfc@3.5.10)(prettier@3.3.3)
       eslint:
         specifier: ^9.11.1
         version: 9.11.1(jiti@2.1.1)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.11.1(jiti@2.1.1))
+      eslint-plugin-import-x:
+        specifier: ^4.6.1
+        version: 4.6.1(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2)
+      eslint-plugin-unused-imports:
+        specifier: ^4.1.4
+        version: 4.1.4(@typescript-eslint/eslint-plugin@8.8.0(@typescript-eslint/parser@8.8.0(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2))(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2))(eslint@9.11.1(jiti@2.1.1))
       husky:
         specifier: ^9.1.6
         version: 9.1.6
@@ -1405,6 +1408,9 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
 
+  '@types/doctrine@0.0.9':
+    resolution: {integrity: sha512-eOIHzCUSH7SMfonMG1LsC2f8vxBFtho6NGBznK41R84YzPuvSBzrhEps33IsQiOW9+VL6NQ9DbjQJznk/S4uRA==}
+
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -2611,8 +2617,8 @@ packages:
   eslint-import-resolver-node@0.3.9:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
 
-  eslint-plugin-import-x@4.3.1:
-    resolution: {integrity: sha512-5TriWkXulDl486XnYYRgsL+VQoS/7mhN/2ci02iLCuL7gdhbiWxnsuL/NTcaKY9fpMgsMFjWZBtIGW7pb+RX0g==}
+  eslint-plugin-import-x@4.6.1:
+    resolution: {integrity: sha512-wluSUifMIb7UfwWXqx7Yx0lE/SGCcGXECLx/9bCmbY2nneLwvAZ4vkd1IXDjPKFvdcdUgr1BaRnaRpx3k2+Pfw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -2634,6 +2640,15 @@ packages:
     engines: {node: '>=18.18'}
     peerDependencies:
       eslint: '>=8.56.0'
+
+  eslint-plugin-unused-imports@4.1.4:
+    resolution: {integrity: sha512-YptD6IzQjDardkl0POxnnRBhU1OEePMV0nd6siHaRBbd+lyh6NAhFEobiznKU7kTsSsDeSD62Pe7kAM1b7dAZQ==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^8.0.0-0 || ^7.0.0 || ^6.0.0 || ^5.0.0
+      eslint: ^9.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
 
   eslint-plugin-vue@9.28.0:
     resolution: {integrity: sha512-ShrihdjIhOTxs+MfWun6oJWuk+g/LAhN+CiuOl/jjkG3l0F2AuK5NMTaWqyvBgkFtpYmyks6P4603mLmhNJW8g==}
@@ -5393,6 +5408,7 @@ snapshots:
       '@babel/types': 7.17.0
       jsesc: 2.5.2
       source-map: 0.5.7
+    optional: true
 
   '@babel/generator@7.25.7':
     dependencies:
@@ -5429,15 +5445,18 @@ snapshots:
   '@babel/helper-environment-visitor@7.24.7':
     dependencies:
       '@babel/types': 7.25.7
+    optional: true
 
   '@babel/helper-function-name@7.24.7':
     dependencies:
       '@babel/template': 7.25.7
       '@babel/types': 7.25.7
+    optional: true
 
   '@babel/helper-hoist-variables@7.24.7':
     dependencies:
       '@babel/types': 7.25.7
+    optional: true
 
   '@babel/helper-member-expression-to-functions@7.25.7':
     dependencies:
@@ -5495,6 +5514,7 @@ snapshots:
   '@babel/helper-split-export-declaration@7.24.7':
     dependencies:
       '@babel/types': 7.25.7
+    optional: true
 
   '@babel/helper-string-parser@7.25.7': {}
 
@@ -5585,6 +5605,7 @@ snapshots:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/traverse@7.25.7':
     dependencies:
@@ -5602,6 +5623,7 @@ snapshots:
     dependencies:
       '@babel/helper-validator-identifier': 7.25.7
       to-fast-properties: 2.0.0
+    optional: true
 
   '@babel/types@7.25.7':
     dependencies:
@@ -6212,7 +6234,7 @@ snapshots:
       eslint: 9.11.1(jiti@2.1.1)
       eslint-config-flat-gitignore: 0.3.0(eslint@9.11.1(jiti@2.1.1))
       eslint-flat-config-utils: 0.4.0
-      eslint-plugin-import-x: 4.3.1(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2)
+      eslint-plugin-import-x: 4.6.1(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2)
       eslint-plugin-jsdoc: 50.3.1(eslint@9.11.1(jiti@2.1.1))
       eslint-plugin-regexp: 2.6.0(eslint@9.11.1(jiti@2.1.1))
       eslint-plugin-unicorn: 55.0.0(eslint@9.11.1(jiti@2.1.1))
@@ -6946,8 +6968,11 @@ snapshots:
       '@vue/compiler-sfc': 3.5.10
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@trysound/sax@0.2.0': {}
+
+  '@types/doctrine@0.0.9': {}
 
   '@types/estree@1.0.6': {}
 
@@ -8395,11 +8420,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.3.1(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2):
+  eslint-plugin-import-x@4.6.1(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2):
     dependencies:
+      '@types/doctrine': 0.0.9
+      '@typescript-eslint/scope-manager': 8.8.0
       '@typescript-eslint/utils': 8.8.0(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2)
       debug: 4.3.7
       doctrine: 3.0.0
+      enhanced-resolve: 5.17.1
       eslint: 9.11.1(jiti@2.1.1)
       eslint-import-resolver-node: 0.3.9
       get-tsconfig: 4.8.1
@@ -8459,6 +8487,12 @@ snapshots:
       regjsparser: 0.10.0
       semver: 7.6.3
       strip-indent: 3.0.0
+
+  eslint-plugin-unused-imports@4.1.4(@typescript-eslint/eslint-plugin@8.8.0(@typescript-eslint/parser@8.8.0(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2))(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2))(eslint@9.11.1(jiti@2.1.1)):
+    dependencies:
+      eslint: 9.11.1(jiti@2.1.1)
+    optionalDependencies:
+      '@typescript-eslint/eslint-plugin': 8.8.0(@typescript-eslint/parser@8.8.0(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2))(eslint@9.11.1(jiti@2.1.1))(typescript@5.6.2)
 
   eslint-plugin-vue@9.28.0(eslint@9.11.1(jiti@2.1.1)):
     dependencies:
@@ -9146,7 +9180,8 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  javascript-natural-sort@0.7.1: {}
+  javascript-natural-sort@0.7.1:
+    optional: true
 
   jest-worker@27.5.1:
     dependencies:
@@ -9172,7 +9207,8 @@ snapshots:
 
   jsesc@0.5.0: {}
 
-  jsesc@2.5.2: {}
+  jsesc@2.5.2:
+    optional: true
 
   jsesc@3.0.2: {}
 
@@ -10652,7 +10688,8 @@ snapshots:
       buffer-from: 1.1.2
       source-map: 0.6.1
 
-  source-map@0.5.7: {}
+  source-map@0.5.7:
+    optional: true
 
   source-map@0.6.1: {}
 
