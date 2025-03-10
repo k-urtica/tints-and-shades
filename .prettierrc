@@ -5,8 +5,5 @@
   "printWidth": 90,
   "endOfLine": "lf",
   "singleAttributePerLine": false,
-  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
-  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "plugins": ["prettier-plugin-tailwindcss"],
 }

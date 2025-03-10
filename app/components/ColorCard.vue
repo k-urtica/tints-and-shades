@@ -6,7 +6,7 @@ defineProps<{
 }>();
 
 defineEmits<{
-  (e: 'click', color: string): void;
+  click: [color: string];
 }>();
 </script>
 
