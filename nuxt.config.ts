@@ -1,8 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxt/ui',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/scripts',
+    '@nuxtjs/sitemap',
+    'nuxt-og-image',
+    '@nuxtjs/google-fonts',
+  ],
 
-  devtools: { enabled: true },
+  $production: {
+    scripts: {
+      registry: {
+        googleAnalytics: {
+          id: 'G-ZZ7F7NPLKH',
+        },
+      },
+    },
+  },
 
   components: [
     {
@@ -10,6 +27,11 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+
+  devtools: {
+    // https://github.com/nuxt/devtools/issues/761
+    enabled: false,
+  },
 
   app: {
     head: {
@@ -55,17 +77,6 @@ export default defineNuxtConfig({
 
   css: ['@/assets/main.css'],
 
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxt/ui',
-    '@pinia/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@nuxtjs/sitemap',
-    'nuxt-og-image',
-    '@nuxtjs/google-fonts',
-  ],
-
   site: {
     url: 'https://tintsshades.netlify.app',
   },
@@ -74,16 +85,18 @@ export default defineNuxtConfig({
     global: false,
   },
 
-  icon: {
-    provider: 'iconify',
-    clientBundle: {
-      icons: ['ph:moon-stars-duotone', 'ph:sun-duotone'],
-    },
-    serverBundle: false,
+  future: {
+    compatibilityVersion: 4,
   },
+  compatibilityDate: '2024-04-03',
 
-  tailwindcss: {
-    viewer: false,
+  eslint: {
+    config: {
+      stylistic: false,
+      nuxt: {
+        sortConfigKeys: true,
+      },
+    },
   },
 
   googleFonts: {
@@ -94,10 +107,12 @@ export default defineNuxtConfig({
     display: 'swap',
   },
 
-  eslint: {
-    config: {
-      stylistic: false,
+  icon: {
+    provider: 'iconify',
+    clientBundle: {
+      icons: ['ph:moon-stars-duotone', 'ph:sun-duotone'],
     },
+    serverBundle: false,
   },
 
   sitemap: {
@@ -106,17 +121,7 @@ export default defineNuxtConfig({
     sitemaps: false,
   },
 
-  $production: {
-    scripts: {
-      registry: {
-        googleAnalytics: {
-          id: 'G-ZZ7F7NPLKH',
-        },
-      },
-    },
-  },
-
-  future: {
-    compatibilityVersion: 4,
+  tailwindcss: {
+    viewer: false,
   },
 });
