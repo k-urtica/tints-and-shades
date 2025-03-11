@@ -1,31 +1,15 @@
 <script setup lang="ts">
-import type { ToggleSize } from '#ui/types';
-
 const modelValue = defineModel<boolean>();
 
-withDefaults(
-  defineProps<{
-    label?: string;
-    disabled?: boolean;
-    size?: ToggleSize;
-    caption?: string;
-  }>(),
-  {
-    size: 'lg',
-  }
-);
-
-const id = useId();
+defineProps<{
+  label?: string;
+  disabled?: boolean;
+  help?: string;
+}>();
 </script>
 
 <template>
-  <div>
-    <div class="inline-flex items-center gap-3">
-      <UToggle :id v-model="modelValue" :size :disabled />
-      <label v-if="label" :for="id" class="text-sm">{{ label }}</label>
-    </div>
-    <slot v-if="caption" name="caption">
-      <p class="mt-1 text-xs text-neutral/80">{{ caption }}</p>
-    </slot>
-  </div>
+  <UFormField :help>
+    <USwitch v-model="modelValue" size="lg" :disabled :label />
+  </UFormField>
 </template>

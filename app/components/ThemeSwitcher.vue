@@ -19,7 +19,8 @@ const icon = computed(() =>
   <ClientOnly>
     <UButton
       :leading-icon="icon"
-      color="gray"
+      color="neutral"
+      variant="subtle"
       aria-label="Toggle theme"
       block
       @click="isDark = !isDark"

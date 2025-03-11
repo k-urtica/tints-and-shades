@@ -13,7 +13,7 @@ const { appearance } = storeToRefs(useAppStore());
     <Switch
       v-model="appearance.indicator"
       label="Indicator"
-      caption="💡 Mark the entered color."
+      help="💡 Mark the entered color."
     />
 
     <Switch v-model="appearance.copyWithHash" label="Copy with Hash" />

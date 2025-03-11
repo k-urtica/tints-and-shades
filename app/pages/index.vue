@@ -12,8 +12,8 @@ useHead({
   <div class="flex min-h-dvh flex-row gap-6">
     <SidePanel class="hidden md:block" />
 
-    <Generator class="flex-1 border bg-surface md:mt-3 md:rounded-tl-xl" />
+    <Generator class="flex-1 border md:mt-3 md:rounded-tl-xl" />
 
-    <MobilePanel class="md:hidden" />
+    <MobileDrawer class="md:hidden" />
   </div>
 </template>

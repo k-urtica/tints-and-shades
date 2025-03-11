@@ -1,8 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  modules: [
+    '@nuxtjs/sitemap',
+    '@vueuse/nuxt',
+    '@nuxt/ui',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/scripts',
+    'nuxt-og-image',
+    '@nuxtjs/google-fonts',
+  ],
 
-  devtools: { enabled: true },
+  $production: {
+    scripts: {
+      registry: {
+        googleAnalytics: {
+          id: 'G-ZZ7F7NPLKH',
+        },
+      },
+    },
+  },
 
   components: [
     {
@@ -10,6 +27,11 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+
+  devtools: {
+    // https://github.com/nuxt/devtools/issues/761
+    enabled: false,
+  },
 
   app: {
     head: {
@@ -55,35 +77,28 @@ export default defineNuxtConfig({
 
   css: ['@/assets/main.css'],
 
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxt/ui',
-    '@pinia/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@nuxtjs/sitemap',
-    'nuxt-og-image',
-    '@nuxtjs/google-fonts',
-  ],
-
   site: {
     url: 'https://tintsshades.netlify.app',
   },
 
   ui: {
-    global: false,
+    colorMode: true,
+    fonts: false,
   },
 
-  icon: {
-    provider: 'iconify',
-    clientBundle: {
-      icons: ['ph:moon-stars-duotone', 'ph:sun-duotone'],
+  future: {
+    compatibilityVersion: 4,
+  },
+
+  compatibilityDate: '2024-11-01',
+
+  eslint: {
+    config: {
+      stylistic: false,
+      nuxt: {
+        sortConfigKeys: true,
+      },
     },
-    serverBundle: false,
-  },
-
-  tailwindcss: {
-    viewer: false,
   },
 
   googleFonts: {
@@ -94,29 +109,17 @@ export default defineNuxtConfig({
     display: 'swap',
   },
 
-  eslint: {
-    config: {
-      stylistic: false,
+  icon: {
+    provider: 'iconify',
+    clientBundle: {
+      icons: ['ph:moon-stars-duotone', 'ph:sun-duotone'],
     },
+    serverBundle: false,
   },
 
   sitemap: {
     autoLastmod: false,
     discoverImages: false,
     sitemaps: false,
-  },
-
-  $production: {
-    scripts: {
-      registry: {
-        googleAnalytics: {
-          id: 'G-ZZ7F7NPLKH',
-        },
-      },
-    },
-  },
-
-  future: {
-    compatibilityVersion: 4,
   },
 });
