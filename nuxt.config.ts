@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/sitemap',
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxt/scripts',
-    '@nuxtjs/sitemap',
     'nuxt-og-image',
     '@nuxtjs/google-fonts',
   ],
@@ -82,13 +82,15 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    global: false,
+    colorMode: true,
+    fonts: false,
   },
 
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-04-03',
+
+  compatibilityDate: '2024-11-01',
 
   eslint: {
     config: {
@@ -119,9 +121,5 @@ export default defineNuxtConfig({
     autoLastmod: false,
     discoverImages: false,
     sitemaps: false,
-  },
-
-  tailwindcss: {
-    viewer: false,
   },
 });

@@ -1,10 +1,10 @@
-import type { Notification } from '#ui/types';
+import type { ToastProps } from '#ui/types';
 
 type ShowParams = {
-  type?: 'success' | 'warning' | 'error';
-} & Partial<Notification>;
+  toastType?: 'success' | 'warning' | 'error';
+} & ToastProps;
 
-const toastType = {
+const TOAST_TYPE = {
   success: {
     color: 'success',
     icon: 'i-ph-check-circle-duotone',
@@ -17,16 +17,18 @@ const toastType = {
     color: 'error',
     icon: 'i-ph-warning-circle-duotone',
   },
-} as const;
+} as const satisfies Record<
+  string,
+  { color: ToastProps['color']; icon: ToastProps['icon'] }
+>;
 
 export function useAppToast() {
   const toast = useToast();
 
   const show = (params: ShowParams) => {
-    const { type, timeout = 4000 } = params;
-    const _toastType = type ? toastType[type] : undefined;
+    const { toastType, duration = 4000 } = params;
 
-    toast.add({ ...params, ..._toastType, timeout });
+    toast.add({ ...params, duration, ...(toastType ? TOAST_TYPE[toastType] : {}) });
   };
 
   return {

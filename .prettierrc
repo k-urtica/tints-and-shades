@@ -6,4 +6,5 @@
   "endOfLine": "lf",
   "singleAttributePerLine": false,
   "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./app/assets/main.css"
 }

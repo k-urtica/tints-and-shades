@@ -1,36 +1,43 @@
+@import 'tailwindcss' theme(static);
+@import '@nuxt/ui';
+
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--ui-border, currentColor);
+  }
+}
+
+@theme {
+  --color-surface: var(--surface);
+
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', メイリオ, monospace;
+}
+
 :root {
-  --background: 255 255 255;
-  --surface: 249 249 250;
-  --panel: 243 243 246;
+  --surface: rgb(252 252 253);
 
-  --foreground: 47 47 50;
-  --neutral: 63 63 70;
-
-  --border-surface: 232 232 234;
-  --border-muted: 218 218 220;
-
-  --header-height: 56px;
-  --drawer-width: 290px;
-
-  --font-family: Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ,
-    Meiryo, sans-serif;
+  --font-family:
+    Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ, Meiryo,
+    sans-serif;
 }
 
 .dark {
-  --background: 18 18 18;
-  --surface: 31 31 32;
-  --panel: 38 38 40;
-
-  --foreground: 244 244 244;
-  --neutral: 212 212 216;
-
-  --border-surface: 41 41 43;
-  --border-muted: 60 60 62;
+  --surface: rgb(29 29 30);
 }
 
 body {
   font-family: var(--font-family);
-  color: rgb(var(--foreground));
   scroll-behavior: smooth;
   word-break: normal;
   overflow-wrap: anywhere;
