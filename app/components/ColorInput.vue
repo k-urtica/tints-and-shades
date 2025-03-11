@@ -25,21 +25,20 @@ const setRandomColor = () => {
     <UInput
       :id
       v-model="color"
-      size="lg"
+      size="xl"
       class="relative"
       placeholder="#fafafa"
       maxlength="7"
-      :ui="{ icon: { leading: { pointer: '' }, trailing: { pointer: '' } } }"
     >
       <template #leading>
         <UButton
-          color="gray"
+          color="neutral"
           variant="ghost"
-          :padded="false"
+          square
           aria-label="Pick color"
           @click="el?.click()"
         >
-          <span class="size-5 rounded-full ring-1" :style="{ background: color }" />
+          <span class="size-4 rounded-full ring-1" :style="{ background: color }" />
         </UButton>
 
         <input
@@ -51,9 +50,9 @@ const setRandomColor = () => {
       </template>
       <template #trailing>
         <UButton
-          color="gray"
+          color="neutral"
           variant="ghost"
-          :padded="false"
+          square
           icon="i-ph-arrows-clockwise-bold"
           aria-label="Random color"
           @click="setRandomColor"

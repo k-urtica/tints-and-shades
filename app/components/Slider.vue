@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import type { RangeSize } from '#ui/types';
-
 const model = defineModel<number>();
 
 const props = withDefaults(
   defineProps<{
     label?: string;
-    size?: RangeSize;
     min?: number;
     max?: number;
     step?: number;
@@ -47,11 +44,11 @@ const onInput = (e: Event) => {
         :min
         :max
         :step
-        class="w-[72px]"
+        class="w-16"
         @input="onInput"
       />
     </div>
 
-    <URange :id v-model="model" :min :max :step />
+    <USlider :id v-model="model" :min :max :step />
   </div>
 </template>

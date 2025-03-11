@@ -2,6 +2,21 @@
 @config "../../tailwind.config.cjs";
 @import '@nuxt/ui';
 
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--ui-border, currentColor);
+  }
+}
+
 :root {
   --background: 255 255 255;
   --surface: 249 249 250;

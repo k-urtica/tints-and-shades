@@ -14,6 +14,6 @@ useHead({
 
     <Generator class="flex-1 border bg-surface md:mt-3 md:rounded-tl-xl" />
 
-    <MobilePanel class="md:hidden" />
+    <MobileDrawer class="md:hidden" />
   </div>
 </template>

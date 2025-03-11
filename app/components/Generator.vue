@@ -17,7 +17,7 @@ const doCopy = async (hexColor: string) => {
   const _hexColor = appearance.value.copyWithHash ? hexColor : hexColor.slice(1);
   await copy(_hexColor);
   if (copied.value) {
-    show({ title: `Copied! ${_hexColor}`, type: 'success' });
+    show({ title: `Copied! ${_hexColor}`, toastType: 'success' });
   }
 };
 </script>
@@ -46,7 +46,7 @@ const doCopy = async (hexColor: string) => {
           v-for="(c, idx) in colors"
           :key="idx"
           :text="`Copy: ${c.hexString()}`"
-          :popper="{ placement: 'top-end', offsetDistance: -20 }"
+          :content="{ side: 'top', align: 'end', sideOffset: -30 }"
         >
           <ColorCard
             :hex-color="c.hexString()"
