@@ -1,3 +1,7 @@
+@import 'tailwindcss' theme(static);
+@config "../../tailwind.config.cjs";
+@import '@nuxt/ui';
+
 :root {
   --background: 255 255 255;
   --surface: 249 249 250;
@@ -12,8 +16,9 @@
   --header-height: 56px;
   --drawer-width: 290px;
 
-  --font-family: Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ,
-    Meiryo, sans-serif;
+  --font-family:
+    Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ, Meiryo,
+    sans-serif;
 }
 
 .dark {

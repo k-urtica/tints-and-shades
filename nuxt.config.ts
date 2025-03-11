@@ -82,7 +82,8 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    global: false,
+    colorMode: true,
+    fonts: false,
   },
 
   future: {
@@ -119,9 +120,5 @@ export default defineNuxtConfig({
     autoLastmod: false,
     discoverImages: false,
     sitemaps: false,
-  },
-
-  tailwindcss: {
-    viewer: false,
   },
 });
