@@ -19,9 +19,7 @@ const setRandomColor = () => {
 
 <template>
   <div>
-    <label v-if="label" :for="id" class="mb-1 inline-flex text-sm text-neutral">{{
-      label
-    }}</label>
+    <label v-if="label" :for="id" class="mb-1 inline-flex text-sm">{{ label }}</label>
     <UInput
       :id
       v-model="color"

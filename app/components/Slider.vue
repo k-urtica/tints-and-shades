@@ -34,9 +34,7 @@ const onInput = (e: Event) => {
 <template>
   <div>
     <div class="mb-1 flex items-center justify-end">
-      <label :for="id" class="me-auto inline-flex text-sm text-neutral">{{
-        label
-      }}</label>
+      <label :for="id" class="me-auto inline-flex text-sm">{{ label }}</label>
       <UInput
         :model-value="model"
         type="number"

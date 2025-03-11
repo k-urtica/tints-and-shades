@@ -54,8 +54,8 @@ const doCopy = async (hexColor: string) => {
             :indicator="appearance.indicator && c.weight === 0"
             class="w-full"
             :class="[
-              { 'ring-1 ring-muted/50': appearance.border },
-              c.getBrightness() >= 40 ? 'text-zinc-950' : 'text-zinc-50',
+              { 'ring-1 ring-(--ui-border)': appearance.border },
+              c.getBrightness() >= 45 ? 'text-zinc-950' : 'text-zinc-50',
               { 'rounded-lg': appearance.isPadded },
             ]"
             @click="doCopy"
