@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "4.1.0",
-    "@nuxt/ui": "3.0.0-beta.2",
+    "@nuxt/ui": "3.0.2",
     "@pinia/nuxt": "0.11.0",
     "@vueuse/core": "13.1.0",
     "@vueuse/nuxt": "13.1.0",
