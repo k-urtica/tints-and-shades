@@ -53,7 +53,7 @@ export default defineNuxtConfig({
         {
           key: 'og:url',
           property: 'og:url',
-          content: 'https://tintsshades.netlify.app',
+          content: 'https://tintsshades.web-toolbox.dev',
         },
         { key: 'og:type', property: 'og:type', content: 'website' },
         // Twitter
@@ -78,7 +78,7 @@ export default defineNuxtConfig({
   css: ['@/assets/main.css'],
 
   site: {
-    url: 'https://tintsshades.netlify.app',
+    url: 'https://tintsshades.web-toolbox.dev',
   },
 
   ui: {
