@@ -17,6 +17,13 @@ export default defineNuxtConfig({
         googleAnalytics: {
           id: 'G-T1QZY0VRVC',
         },
+        googleAdsense: {
+          client: 'ca-pub-6155745382628091',
+          autoAds: true,
+          scriptInput: {
+            defer: true,
+          },
+        },
       },
     },
   },
