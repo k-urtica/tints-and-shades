@@ -3,9 +3,3 @@
 [build]
   command = "pnpm generate"
   publish = "dist"
-
-[[redirects]]
-  from = "https://tintsshades.netlify.app/"
-  to = "https://tintsshades.web-toolbox.dev/"
-  status = 301
-  force = true
