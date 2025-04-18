@@ -34,6 +34,7 @@
     "@nuxt/scripts": "0.11.6",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/sitemap": "7.2.10",
+    "clsx": "^2.1.1",
     "eslint": "9.24.0",
     "eslint-config-prettier": "10.1.2",
     "eslint-plugin-import-x": "4.10.5",
@@ -42,6 +43,7 @@
     "lint-staged": "15.5.1",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11",
+    "tailwind-merge": "^3.2.0",
     "typescript": "5.8.3"
   },
   "pnpm": {
