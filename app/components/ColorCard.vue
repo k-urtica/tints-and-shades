@@ -19,9 +19,11 @@ defineEmits<{
   >
     <UIcon
       v-if="indicator"
-      name="i-ph-circle-wavy-warning-duotone"
-      class="absolute right-2 top-1 size-5 animate-pulse"
+      name="i-lucide-badge-alert"
+      aria-label="Base color indicator"
+      class="absolute top-1 right-2 size-5 animate-pulse"
     />
+
     <div class="text-xs tabular-nums">{{ `${weight}%` }}</div>
     <div class="mt-1 font-mono text-base font-semibold">
       {{ hexColor.toLocaleUpperCase() }}

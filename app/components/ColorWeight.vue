@@ -24,14 +24,14 @@ const weightSteps = computed(() => [
     <Slider v-model="weight" label="Weight" :min="1" :max="50" :step="currentStep" />
 
     <div class="mt-4 flex items-center gap-2">
-      <div class="text-sm text-neutral">weight step</div>
+      <div class="text-neutral text-sm">weight step</div>
       <UButton
         v-for="{ label, value } in weightSteps"
         :key="value"
         :label
         color="neutral"
         variant="soft"
-        :leading-icon="value === currentStep ? 'i-ph-check-circle-duotone' : undefined"
+        :leading-icon="value === currentStep ? 'i-lucide-check' : undefined"
         size="xs"
         @click="currentStep = value"
       />

@@ -8,15 +8,10 @@ const isOpenModal = ref(false);
       <UModal
         v-model="isOpenModal"
         title="About"
-        close-icon="i-ph-x-bold"
+        close-icon="i-lucide-x"
         :overlay="false"
       >
-        <UButton
-          variant="outline"
-          color="neutral"
-          size="sm"
-          leading-icon="i-ph-question"
-          @click="isOpenModal = true"
+        <UButton variant="outline" color="neutral" size="sm" @click="isOpenModal = true"
           >About</UButton
         >
         <template #body>
@@ -52,7 +47,7 @@ const isOpenModal = ref(false);
         to="https://github.com/k-urtica/tints-and-shades"
         target="_blank"
         variant="outline"
-        leading-icon="i-ph-github-logo"
+        leading-icon="i-lucide-github"
         color="neutral"
         size="sm"
         >This Project is OSS</UButton

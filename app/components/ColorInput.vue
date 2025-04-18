@@ -51,7 +51,7 @@ const setRandomColor = () => {
           color="neutral"
           variant="ghost"
           square
-          icon="i-ph-arrows-clockwise-bold"
+          icon="i-lucide-refresh-cw"
           aria-label="Random color"
           @click="setRandomColor"
         />

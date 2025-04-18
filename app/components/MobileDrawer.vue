@@ -11,7 +11,7 @@ const isOpen = ref(false);
       <ColorInput v-model="color" class="w-full" />
 
       <UButton
-        icon="i-ph-gear-duotone"
+        icon="i-lucide-settings-2"
         variant="ghost"
         color="neutral"
         aria-label="Open settings"

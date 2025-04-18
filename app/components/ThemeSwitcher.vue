@@ -10,9 +10,7 @@ const isDark = computed({
   },
 });
 
-const icon = computed(() =>
-  isDark.value ? 'i-ph-moon-stars-duotone' : 'i-ph-sun-duotone'
-);
+const icon = computed(() => (isDark.value ? 'i-lucide-moon' : 'i-lucide-sun'));
 </script>
 
 <template>
@@ -20,7 +18,7 @@ const icon = computed(() =>
     <UButton
       :leading-icon="icon"
       color="neutral"
-      variant="subtle"
+      variant="outline"
       aria-label="Toggle theme"
       block
       @click="isDark = !isDark"
