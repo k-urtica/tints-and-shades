@@ -8,11 +8,11 @@ const { appearance } = storeToRefs(useAppStore());
 
     <Switch v-model="appearance.isPadded" label="Card Padding" />
 
-    <Switch v-model="appearance.isOneLine" label="Card OneLine" />
+    <Switch v-model="appearance.isOneLine" label="Single Column" />
 
     <Switch
       v-model="appearance.indicator"
-      label="Indicator"
+      label="Show Indicator"
       help="💡 Mark the entered color."
     />
 
