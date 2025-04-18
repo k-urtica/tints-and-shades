@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     scripts: {
       registry: {
         googleAnalytics: {
-          id: 'G-ZZ7F7NPLKH',
+          id: 'G-T1QZY0VRVC',
         },
       },
     },
@@ -29,8 +29,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    // https://github.com/nuxt/devtools/issues/761
-    enabled: false,
+    enabled: true,
   },
 
   app: {
@@ -47,7 +46,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Generate tints and shades from any color code interactively. A simple tool to create stunning color variations with ease.',
+            'Create professional-quality color palettes with ease. Generate beautiful tints and shades from any color code to elevate your design projects. Free, simple, and ready to use.',
         },
         // OGP
         {
