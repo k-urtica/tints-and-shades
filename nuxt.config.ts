@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     scripts: {
       registry: {
         googleAnalytics: {
-          id: 'G-T1QZY0VRVC',
+          id: 'G-FS97XXKP7P',
         },
         googleAdsense: {
           client: 'ca-pub-6155745382628091',
