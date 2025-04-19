@@ -43,7 +43,7 @@ const WEIGHT_STEPS = [
             :key="value"
             :label="label"
             color="neutral"
-            :variant="currentStep === value ? 'solid' : 'subtle'"
+            :variant="currentStep === value ? 'solid' : 'outline'"
             :aria-label="`Set step size to ${label}`"
             :aria-pressed="currentStep === value"
             class="px-4"

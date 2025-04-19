@@ -18,8 +18,7 @@ const setRandomColor = () => {
 </script>
 
 <template>
-  <div>
-    <label v-if="label" :for="id" class="mb-1 inline-flex text-sm">{{ label }}</label>
+  <UFormField :label>
     <UInput
       :id
       v-model="color"
@@ -62,5 +61,5 @@ const setRandomColor = () => {
         </UTooltip>
       </template>
     </UInput>
-  </div>
+  </UFormField>
 </template>
