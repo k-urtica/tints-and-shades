@@ -54,6 +54,21 @@
             >.
           </p>
         </div>
+
+        <div>
+          <h3 class="mb-2 text-lg font-bold">Related Tools</h3>
+          <p class="text-sm">
+            Check out
+            <ULink
+              to="https://web-toolbox.dev/"
+              target="_blank"
+              class="font-medium text-primary underline"
+            >
+              Web ToolBox
+            </ULink>
+            for more useful web development tools!😊
+          </p>
+        </div>
       </div>
     </template>
   </UModal>
