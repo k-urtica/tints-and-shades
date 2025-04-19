@@ -9,24 +9,19 @@ const isDark = computed({
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
   },
 });
-
-const icon = computed(() => (isDark.value ? 'i-lucide-moon' : 'i-lucide-sun'));
 </script>
 
 <template>
   <ClientOnly>
-    <UButton
-      :leading-icon="icon"
-      color="neutral"
-      variant="outline"
-      aria-label="Toggle theme"
-      block
-      @click="isDark = !isDark"
-    >
-      Toggle theme
-    </UButton>
+    <USwitch
+      v-model="isDark"
+      label="Toggle theme"
+      checked-icon="i-lucide-moon"
+      unchecked-icon="i-lucide-sun"
+      class="flex-row-reverse gap-2"
+    />
     <template #fallback>
-      <USkeleton class="h-8" />
+      <USkeleton class="ml-auto h-5 w-40" />
     </template>
   </ClientOnly>
 </template>
