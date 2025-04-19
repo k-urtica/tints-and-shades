@@ -17,6 +17,8 @@
 }
 
 @theme {
+  --color-primary: var(--ui-primary);
+
   --color-surface: var(--surface);
 
   --font-mono:
@@ -25,7 +27,9 @@
 }
 
 :root {
-  --surface: rgb(252 252 253);
+  --surface: rgb(250 250 251);
+
+  --ui-radius: var(--radius-md);
 
   --font-family:
     Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ, Meiryo,
