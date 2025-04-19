@@ -6,7 +6,7 @@ type Appearance = {
   border: boolean;
 };
 
-export const useAppStore = defineStore('tints-and-shades-app', () => {
+export const useAppStore = defineStore('app', () => {
   const color = ref('#41339c');
 
   const weight = ref(6);

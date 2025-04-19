@@ -10,7 +10,7 @@ defineProps<{
 }>();
 
 const id = useId();
-const el = ref<HTMLInputElement>();
+const inputEl = useTemplateRef('inputEl');
 
 const setRandomColor = () => {
   color.value = random().toHexString();
@@ -33,7 +33,7 @@ const setRandomColor = () => {
           variant="ghost"
           square
           aria-label="Pick color"
-          @click="el?.click()"
+          @click="inputEl?.click()"
         >
           <span
             class="size-4 rounded-full ring-1 ring-current/60"
@@ -42,7 +42,7 @@ const setRandomColor = () => {
         </UButton>
 
         <input
-          ref="el"
+          ref="inputEl"
           v-model="color"
           type="color"
           class="absolute -bottom-0 left-0 w-1 opacity-0"

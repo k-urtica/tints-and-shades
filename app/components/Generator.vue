@@ -84,18 +84,18 @@ const doCopy = async (hexColor: string) => {
         ]"
       >
         <UTooltip
-          v-for="(colorItem, idx) in filteredColorItems"
+          v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
           :key="idx"
           :text="`Copy: ${colorItem.color}`"
           arrow
           :content="{ side: 'top', align: 'center', sideOffset: -8 }"
         >
           <ColorCard
-            :color-item="colorItem"
+            :color-item
             :class="
               cn(
                 { 'ring-1 ring-(--ui-border)': appearance.border },
-                colorItem.isBright ? 'text-zinc-950' : 'text-zinc-50',
+                isBright ? 'text-zinc-950' : 'text-zinc-50',
                 { 'rounded-lg': appearance.isPadded }
               )
             "
