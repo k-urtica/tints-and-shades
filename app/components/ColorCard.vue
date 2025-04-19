@@ -1,32 +1,41 @@
 <script setup lang="ts">
-defineProps<{
-  hexColor: string;
+export type ColorItem = {
+  hex: string;
   weight: string;
   indicator?: boolean;
+};
+
+defineProps<{
+  colorItem: ColorItem;
 }>();
 
 defineEmits<{
-  click: [color: string];
+  click: [hex: string];
 }>();
 </script>
 
 <template>
   <a
     href="#"
-    class="relative block px-4 py-5 text-sm"
-    :style="{ background: hexColor }"
-    @click.prevent="$emit('click', hexColor)"
+    :aria-label="`Color ${colorItem.hex}`"
+    class="group relative block p-4 text-sm transition-colors"
+    :style="{ background: colorItem.hex }"
+    @click.prevent="$emit('click', colorItem.hex)"
   >
     <UIcon
-      v-if="indicator"
-      name="i-lucide-badge-alert"
-      aria-label="Base color indicator"
-      class="absolute top-1 right-2 size-5 animate-pulse"
+      name="i-lucide-copy"
+      class="absolute top-2 right-2 size-4 opacity-30 transition-opacity group-hover:opacity-80"
     />
 
-    <div class="text-xs tabular-nums">{{ `${weight}%` }}</div>
-    <div class="mt-1 font-mono text-base font-semibold">
-      {{ hexColor.toLocaleUpperCase() }}
+    <div class="font-mono font-semibold tabular-nums">{{ colorItem.weight }}</div>
+    <div class="mt-1 flex items-center gap-2">
+      <span class="font-mono text-lg font-semibold uppercase">{{ colorItem.hex }}</span>
+      <UIcon
+        v-if="colorItem.indicator"
+        name="i-lucide-badge-alert"
+        aria-label="Base color indicator"
+        class="size-5 animate-pulse"
+      />
     </div>
   </a>
 </template>
