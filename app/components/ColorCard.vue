@@ -1,6 +1,6 @@
 <script setup lang="ts">
 export type ColorItem = {
-  hex: string;
+  color: string;
   weight: string;
   indicator?: boolean;
 };
@@ -17,10 +17,10 @@ defineEmits<{
 <template>
   <a
     href="#"
-    :aria-label="`Color ${colorItem.hex}`"
+    :aria-label="`Color ${colorItem.color}`"
     class="group relative block p-4 text-sm transition-colors"
-    :style="{ background: colorItem.hex }"
-    @click.prevent="$emit('click', colorItem.hex)"
+    :style="{ background: colorItem.color }"
+    @click.prevent="$emit('click', colorItem.color)"
   >
     <UIcon
       name="i-lucide-copy"
@@ -29,7 +29,7 @@ defineEmits<{
 
     <div class="font-mono font-semibold tabular-nums">{{ colorItem.weight }}</div>
     <div class="mt-1 flex items-center gap-2">
-      <span class="font-mono text-lg font-semibold uppercase">{{ colorItem.hex }}</span>
+      <span class="font-mono text-lg font-semibold uppercase">{{ colorItem.color }}</span>
       <UIcon
         v-if="colorItem.indicator"
         name="i-lucide-badge-alert"

@@ -1,33 +1,46 @@
 <script setup lang="ts">
-import Values from 'values.js';
-import type { ColorItem } from '@/components/ColorCard.vue';
+import type { ColorType, GeneratedColor } from '@/composables/useColor';
+
+export type ExtendedColorItem = GeneratedColor & {
+  isBright: boolean;
+};
 
 const { color, weight, appearance } = storeToRefs(useAppStore());
 const { copy, copied } = useClipboard({ legacy: true });
 const { show } = useAppToast();
+const { generateColors, isBrightColor, formatHexColor } = useColor();
 
-const colors = computed(() => {
-  try {
-    return new Values(color.value).all(weight.value);
-  } catch {
-    return [];
-  }
-});
+const activeTab = ref<'all' | 'tints' | 'shades'>('all');
 
-const colorItems = computed<(ColorItem & { isBright: boolean })[]>(() => {
-  return colors.value.map((c) => ({
-    hex: c.hexString(),
-    weight: `${c.type === 'base' ? '' : c.type === 'tint' ? '+' : '-'}${c.weight.toFixed()}%`,
-    indicator: appearance.value.indicator && c.weight === 0,
-    isBright: c.getBrightness() >= 45,
-  }));
+const colors = computed<GeneratedColor[]>(() =>
+  generateColors(color.value, weight.value)
+);
+
+const colorItems = computed<ExtendedColorItem[]>(() =>
+  colors.value.map((c) => ({
+    color: c.color,
+    weight: c.weight,
+    indicator: appearance.value.indicator && c.type === 'base',
+    isBright: isBrightColor(c.color),
+    type: c.type,
+  }))
+);
+
+const filteredColorItems = computed<ExtendedColorItem[]>(() => {
+  if (activeTab.value === 'all') return colorItems.value;
+
+  const isActiveType = (type: ColorType) =>
+    type === 'base' || type === (activeTab.value === 'tints' ? 'tint' : 'shade');
+
+  return colorItems.value.filter((item) => isActiveType(item.type));
 });
 
 const doCopy = async (hexColor: string) => {
-  const _hexColor = appearance.value.copyWithHash ? hexColor : hexColor.slice(1);
-  await copy(_hexColor);
+  const formattedColor = formatHexColor(hexColor, appearance.value.copyWithHash);
+  await copy(formattedColor);
+
   if (copied.value) {
-    show({ title: `Copied! ${_hexColor}`, toastType: 'success' });
+    show({ title: `Copied! ${formattedColor}`, toastType: 'success' });
   }
 };
 </script>
@@ -42,9 +55,23 @@ const doCopy = async (hexColor: string) => {
     />
 
     <template v-else>
-      <div class="flex items-center gap-2">
+      <div class="flex flex-wrap items-center gap-2">
         <h3 class="font-bold">Preview</h3>
         <UBadge variant="subtle">Click to Copy</UBadge>
+
+        <div class="ml-auto w-52">
+          <UTabs
+            v-model="activeTab"
+            :items="[
+              { label: 'All', value: 'all' },
+              { label: 'Tints', value: 'tints' },
+              { label: 'Shades', value: 'shades' },
+            ]"
+            color="neutral"
+            :content="false"
+            size="xs"
+          />
+        </div>
       </div>
 
       <div
@@ -57,14 +84,14 @@ const doCopy = async (hexColor: string) => {
         ]"
       >
         <UTooltip
-          v-for="(colorItem, idx) in colorItems"
+          v-for="(colorItem, idx) in filteredColorItems"
           :key="idx"
-          :text="`Copy: ${colorItem.hex}`"
+          :text="`Copy: ${colorItem.color}`"
           arrow
           :content="{ side: 'top', align: 'center', sideOffset: -8 }"
         >
           <ColorCard
-            :color-item
+            :color-item="colorItem"
             :class="
               cn(
                 { 'ring-1 ring-(--ui-border)': appearance.border },
@@ -72,7 +99,7 @@ const doCopy = async (hexColor: string) => {
                 { 'rounded-lg': appearance.isPadded }
               )
             "
-            @click="doCopy"
+            @click="() => doCopy(colorItem.color)"
           />
         </UTooltip>
       </div>
