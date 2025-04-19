@@ -117,6 +117,9 @@ export default defineNuxtConfig({
 
   icon: {
     provider: 'iconify',
+    clientBundle: {
+      scan: true,
+    },
     serverBundle: false,
   },
 
