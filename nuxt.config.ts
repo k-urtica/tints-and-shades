@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@pinia/nuxt',
