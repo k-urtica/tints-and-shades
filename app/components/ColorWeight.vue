@@ -3,7 +3,7 @@ const weight = defineModel<number>({ default: 5 });
 
 const currentStep = ref(1);
 
-const weightSteps = computed(() => [
+const WEIGHT_STEPS = [
   {
     label: '1.0',
     value: 1,
@@ -16,25 +16,41 @@ const weightSteps = computed(() => [
     label: '0.1',
     value: 0.1,
   },
-]);
+];
 </script>
 
 <template>
   <div>
-    <Slider v-model="weight" label="Weight" :min="1" :max="50" :step="currentStep" />
+    <UFormField
+      label="Weight"
+      :hint="weight.toString()"
+      :ui="{ help: 'flex items-center justify-between text-xs' }"
+    >
+      <USlider v-model="weight" :min="1" :max="50" :step="currentStep" />
 
-    <div class="mt-4 flex items-center gap-2">
-      <div class="text-neutral text-sm">weight step</div>
-      <UButton
-        v-for="{ label, value } in weightSteps"
-        :key="value"
-        :label
-        color="neutral"
-        variant="soft"
-        :leading-icon="value === currentStep ? 'i-lucide-check' : undefined"
-        size="xs"
-        @click="currentStep = value"
-      />
+      <template #help>
+        <span>Lighter</span>
+        <span>Stronger</span>
+      </template>
+    </UFormField>
+
+    <div class="mt-3 flex gap-2">
+      <fieldset class="contents">
+        <legend class="text-neutral text-sm">Step size</legend>
+        <UButtonGroup size="xs">
+          <UButton
+            v-for="{ label, value } in WEIGHT_STEPS"
+            :key="value"
+            :label="label"
+            color="neutral"
+            :variant="currentStep === value ? 'solid' : 'subtle'"
+            :aria-label="`Set step size to ${label}`"
+            :aria-pressed="currentStep === value"
+            class="px-4"
+            @click="currentStep = value"
+          />
+        </UButtonGroup>
+      </fieldset>
     </div>
   </div>
 </template>
