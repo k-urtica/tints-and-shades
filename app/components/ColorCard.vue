@@ -27,7 +27,7 @@ defineEmits<{
       class="absolute top-2 right-2 size-4 opacity-30 transition-opacity group-hover:opacity-80"
     />
 
-    <div class="font-mono font-semibold tabular-nums">{{ colorItem.weight }}</div>
+    <div class="font-mono font-medium tabular-nums">{{ colorItem.weight }}</div>
     <div class="mt-1 flex items-center gap-2">
       <span class="font-mono text-lg font-semibold uppercase">{{ colorItem.color }}</span>
       <UIcon

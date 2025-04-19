@@ -24,9 +24,9 @@ export function useColor() {
 
       // tints
       for (let i = steps; i > 0; i--) {
-        const percentage = i * weightStep;
+        const percentage = (i * weightStep).toFixed(1);
         result.push({
-          color: tinyColor.tint(percentage).toHexString(),
+          color: tinyColor.tint(Number(percentage)).toHexString(),
           weight: `+${percentage}%`,
           type: 'tint',
         });
@@ -41,9 +41,9 @@ export function useColor() {
 
       // shades
       for (let i = 1; i <= steps; i++) {
-        const percentage = i * weightStep;
+        const percentage = (i * weightStep).toFixed(1);
         result.push({
-          color: tinyColor.shade(percentage).toHexString(),
+          color: tinyColor.shade(Number(percentage)).toHexString(),
           weight: `-${percentage}%`,
           type: 'shade',
         });
