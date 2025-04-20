@@ -2,17 +2,19 @@
 import type { TabsItem } from '#ui/types';
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
 
-type TabValue = 'all' | 'tints' | 'shades';
+type TabValue = 'all' | 'tints' | 'shades' | 'tailwind';
 
 const { color, weight, appearance } = storeToRefs(useAppStore());
 const { copy, copied } = useClipboard({ legacy: true });
 const { show } = useAppToast();
 const { generateColors, formatHexColor } = useColor();
+const { generateTailwindColors } = useTwColor();
 
 const tabItems = [
   { label: 'All', value: 'all' },
   { label: 'Tints', value: 'tints' },
   { label: 'Shades', value: 'shades' },
+  { label: '✨Tailwind', value: 'tailwind' },
 ] as const satisfies TabsItem[];
 
 const activeTab = ref<TabValue>(tabItems[0].value);
@@ -21,13 +23,22 @@ const colors = computed<GeneratedColor[]>(() =>
   generateColors(color.value, weight.value)
 );
 
+const tailwindColors = computed<GeneratedColor[]>(() =>
+  generateTailwindColors(color.value, weight.value)
+);
+
 const filteredColorItems = computed<GeneratedColor[]>(() => {
+  if (activeTab.value === 'tailwind') return tailwindColors.value;
   if (activeTab.value === 'all') return colors.value;
 
   const isActiveType = (type: ColorType) =>
     type === 'base' || type === (activeTab.value === 'tints' ? 'tint' : 'shade');
 
   return colors.value.filter(({ type }) => isActiveType(type));
+});
+
+watch(activeTab, (v) => {
+  appearance.value.isOneLine = v === 'tailwind';
 });
 
 const doCopy = async (hexColor: string) => {
@@ -43,7 +54,7 @@ const doCopy = async (hexColor: string) => {
 <template>
   <div class="p-5">
     <UAlert
-      v-if="!colors.length"
+      v-if="!filteredColorItems.length"
       variant="subtle"
       color="warning"
       title="Could not preview. Check configuration."
@@ -54,7 +65,7 @@ const doCopy = async (hexColor: string) => {
         <h3 class="font-bold">Preview</h3>
         <UBadge variant="subtle">Click to Copy</UBadge>
 
-        <div class="ml-auto w-52">
+        <div class="ml-auto w-96 max-w-full">
           <UTabs
             v-model="activeTab"
             :items="tabItems"
