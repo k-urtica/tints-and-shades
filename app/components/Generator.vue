@@ -74,28 +74,18 @@ const doCopy = async (hexColor: string) => {
             : 'sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5',
         ]"
       >
-        <UTooltip
+        <ColorCard
           v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
           :key="idx"
-          :text="`Copy: ${colorItem.color}`"
-          arrow
-          :content="{ side: 'top', align: 'center', sideOffset: -8 }"
-        >
-          <ColorCard
-            :color-item="{
-              ...colorItem,
-              indicator: appearance.indicator && colorItem.type === 'base',
-            }"
-            :class="
-              cn(
-                { 'ring-1 ring-(--ui-border)': appearance.border },
-                isBright ? 'text-zinc-950' : 'text-zinc-50',
-                { 'rounded-lg': appearance.isPadded }
-              )
-            "
-            @click="() => doCopy(colorItem.color)"
-          />
-        </UTooltip>
+          :color-item="{
+            ...colorItem,
+            indicator: appearance.indicator && colorItem.type === 'base',
+          }"
+          :is-bright
+          :has-border="appearance.border"
+          :class="{ 'rounded-lg': appearance.isPadded }"
+          @click="doCopy"
+        />
       </div>
     </template>
   </div>
