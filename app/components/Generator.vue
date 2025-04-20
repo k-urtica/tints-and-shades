@@ -1,38 +1,33 @@
 <script setup lang="ts">
+import type { TabsItem } from '#ui/types';
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
 
-export type ExtendedColorItem = GeneratedColor & {
-  isBright: boolean;
-};
+type TabValue = 'all' | 'tints' | 'shades';
 
 const { color, weight, appearance } = storeToRefs(useAppStore());
 const { copy, copied } = useClipboard({ legacy: true });
 const { show } = useAppToast();
-const { generateColors, isBrightColor, formatHexColor } = useColor();
+const { generateColors, formatHexColor } = useColor();
 
-const activeTab = ref<'all' | 'tints' | 'shades'>('all');
+const tabItems = [
+  { label: 'All', value: 'all' },
+  { label: 'Tints', value: 'tints' },
+  { label: 'Shades', value: 'shades' },
+] as const satisfies TabsItem[];
+
+const activeTab = ref<TabValue>(tabItems[0].value);
 
 const colors = computed<GeneratedColor[]>(() =>
   generateColors(color.value, weight.value)
 );
 
-const colorItems = computed<ExtendedColorItem[]>(() =>
-  colors.value.map((c) => ({
-    color: c.color,
-    weight: c.weight,
-    indicator: appearance.value.indicator && c.type === 'base',
-    isBright: isBrightColor(c.color),
-    type: c.type,
-  }))
-);
-
-const filteredColorItems = computed<ExtendedColorItem[]>(() => {
-  if (activeTab.value === 'all') return colorItems.value;
+const filteredColorItems = computed<GeneratedColor[]>(() => {
+  if (activeTab.value === 'all') return colors.value;
 
   const isActiveType = (type: ColorType) =>
     type === 'base' || type === (activeTab.value === 'tints' ? 'tint' : 'shade');
 
-  return colorItems.value.filter((item) => isActiveType(item.type));
+  return colors.value.filter(({ type }) => isActiveType(type));
 });
 
 const doCopy = async (hexColor: string) => {
@@ -62,11 +57,7 @@ const doCopy = async (hexColor: string) => {
         <div class="ml-auto w-52">
           <UTabs
             v-model="activeTab"
-            :items="[
-              { label: 'All', value: 'all' },
-              { label: 'Tints', value: 'tints' },
-              { label: 'Shades', value: 'shades' },
-            ]"
+            :items="tabItems"
             color="neutral"
             :content="false"
             size="xs"
@@ -91,7 +82,10 @@ const doCopy = async (hexColor: string) => {
           :content="{ side: 'top', align: 'center', sideOffset: -8 }"
         >
           <ColorCard
-            :color-item
+            :color-item="{
+              ...colorItem,
+              indicator: appearance.indicator && colorItem.type === 'base',
+            }"
             :class="
               cn(
                 { 'ring-1 ring-(--ui-border)': appearance.border },

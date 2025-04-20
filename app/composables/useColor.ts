@@ -6,6 +6,7 @@ export type GeneratedColor = {
   color: string;
   weight: string;
   type: ColorType;
+  isBright: boolean;
 };
 
 export function useColor() {
@@ -24,11 +25,14 @@ export function useColor() {
 
       // tints
       for (let i = steps; i > 0; i--) {
-        const percentage = (i * weightStep).toFixed(1);
+        const percentage = Number((i * weightStep).toFixed(1));
+        const tintColor = tinyColor.clone().tint(percentage);
+
         result.push({
-          color: tinyColor.tint(Number(percentage)).toHexString(),
+          color: tintColor.toHexString(),
           weight: `+${percentage}%`,
           type: 'tint',
+          isBright: tintColor.isLight(),
         });
       }
 
@@ -37,15 +41,19 @@ export function useColor() {
         color: tinyColor.toHexString(),
         weight: '0%',
         type: 'base',
+        isBright: tinyColor.isLight(),
       });
 
       // shades
       for (let i = 1; i <= steps; i++) {
-        const percentage = (i * weightStep).toFixed(1);
+        const percentage = Number((i * weightStep).toFixed(1));
+        const shadeColor = tinyColor.clone().shade(percentage);
+
         result.push({
-          color: tinyColor.shade(Number(percentage)).toHexString(),
+          color: shadeColor.toHexString(),
           weight: `-${percentage}%`,
           type: 'shade',
+          isBright: shadeColor.isLight(),
         });
       }
 
@@ -54,13 +62,6 @@ export function useColor() {
       console.error('Error generating colors:', error);
       return [];
     }
-  };
-
-  const isBrightColor = (hexColor: string) => {
-    const tinyColor = createTinyColor(hexColor);
-    if (!tinyColor) return true;
-
-    return tinyColor.isLight();
   };
 
   const formatHexColor = (hexColor: string, includeHash = true): string =>
@@ -74,7 +75,6 @@ export function useColor() {
 
   return {
     generateColors,
-    isBrightColor,
     formatHexColor,
   };
 }
