@@ -32,8 +32,8 @@
   --ui-radius: var(--radius-md);
 
   --font-family:
-    Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, メイリオ, Meiryo,
-    sans-serif;
+    'Exo 2', Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, 'Noto Sans JP',
+    Meiryo, sans-serif;
 }
 
 .dark {

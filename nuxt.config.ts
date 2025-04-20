@@ -54,7 +54,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Create professional-quality color palettes with ease. Generate beautiful tints and shades from any color code to elevate your design projects. Free, simple, and ready to use.',
+            'Generate perfect tints and shades from any color code in seconds. Ideal for designers and developers building cohesive color palettes. Free tool, no sign-up required.',
         },
         // OGP
         {
@@ -110,7 +110,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Inter: '400..900',
+      'Exo 2': '400..900',
     },
     download: true,
     display: 'swap',
@@ -122,6 +122,12 @@ export default defineNuxtConfig({
       scan: true,
     },
     serverBundle: false,
+  },
+
+  ogImage: {
+    enabled: true,
+    fonts: ['Exo+2:700'],
+    zeroRuntime: true,
   },
 
   sitemap: {
