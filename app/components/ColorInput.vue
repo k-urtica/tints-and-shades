@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { random } from '@ctrl/tinycolor';
-
 const color = defineModel<string>({
   set: (v) => (v.length === 6 && !v.startsWith('#') ? `#${v}` : v),
 });
@@ -9,10 +7,12 @@ defineProps<{
   label?: string;
 }>();
 
+const { getRandomColor } = useColor();
+
 const inputEl = useTemplateRef('inputEl');
 
 const setRandomColor = () => {
-  color.value = random().toHexString();
+  color.value = getRandomColor();
 };
 </script>
 

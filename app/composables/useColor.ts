@@ -1,4 +1,4 @@
-import { TinyColor } from '@ctrl/tinycolor';
+import { random, TinyColor } from '@ctrl/tinycolor';
 
 export type ColorType = 'tint' | 'base' | 'shade';
 
@@ -73,8 +73,13 @@ export function useColor() {
         ? hexColor.slice(1)
         : hexColor;
 
+  const getRandomColor = () => {
+    return random().toHexString();
+  };
+
   return {
     generateColors,
     formatHexColor,
+    getRandomColor,
   };
 }
