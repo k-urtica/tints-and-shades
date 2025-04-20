@@ -9,7 +9,6 @@ defineProps<{
   label?: string;
 }>();
 
-const id = useId();
 const inputEl = useTemplateRef('inputEl');
 
 const setRandomColor = () => {
@@ -20,10 +19,9 @@ const setRandomColor = () => {
 <template>
   <UFormField :label>
     <UInput
-      :id
       v-model="color"
       size="xl"
-      class="relative"
+      class="relative w-full"
       placeholder="#fafafa"
       maxlength="7"
     >
