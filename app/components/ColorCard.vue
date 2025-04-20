@@ -32,7 +32,10 @@ const cardClasses = computed(() =>
       type="button"
       :aria-label="`Copy Color ${colorItem.color}`"
       :class="
-        cn('group relative block p-4 text-left text-sm transition-colors', cardClasses)
+        cn(
+          'group relative block px-4 py-5 text-left text-sm transition-colors',
+          cardClasses
+        )
       "
       :style="{ background: colorItem.color }"
       @click="$emit('click', colorItem.color)"
@@ -43,10 +46,8 @@ const cardClasses = computed(() =>
       />
 
       <div class="font-mono font-medium tabular-nums">{{ colorItem.weight }}</div>
-      <div class="mt-1 flex items-center gap-2">
-        <span class="font-mono text-lg font-semibold uppercase">{{
-          colorItem.color
-        }}</span>
+      <div class="mt-0.5 flex items-center gap-2">
+        <span class="font-semibold uppercase">{{ colorItem.color }}</span>
         <UIcon
           v-if="colorItem.indicator"
           name="i-lucide-badge-alert"
