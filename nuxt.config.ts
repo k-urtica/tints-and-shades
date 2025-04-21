@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxt/scripts',
+    '@nuxt/image',
     'nuxt-og-image',
     '@nuxtjs/google-fonts',
     'motion-v/nuxt',

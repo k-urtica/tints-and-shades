@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "4.1.0",
+    "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "3.0.2",
     "@nuxtjs/robots": "^5.2.10",
     "@pinia/nuxt": "0.11.0",
@@ -51,6 +52,7 @@
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "esbuild",
+      "sharp",
       "vue-demi"
     ]
   },
