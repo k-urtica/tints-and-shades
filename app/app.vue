@@ -10,8 +10,8 @@ useSeoMeta({
 
 <template>
   <UApp :tooltip="{ delayDuration: 100, skipDelayDuration: 150 }">
-    <header class="top-0 flex h-16 items-center justify-center border-b md:hidden">
-      <h1 class="text-xl font-black dark:text-white">Tints and Shades Generator</h1>
+    <header class="top-0 flex h-14 items-center justify-center border-b md:hidden">
+      <SiteTitle />
     </header>
 
     <main class="bg-base-0">
