@@ -3,7 +3,7 @@
 <h1 align="center">🎨 Tints and Shades Generator 💚</h1>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/12d6e5dc-489a-4704-a836-7b764265b418" alt="Tints and Shades Generator"  />
+  <img src="https://github.com/user-attachments/assets/778df118-0df3-4289-aec5-47289db32ef2" alt="Tints and Shades Generator"  />
 </p>
 
 <p align="center">
@@ -27,6 +27,7 @@ Tints and Shades Generator is a tool that allows designers and developers to eas
 
 - 💪 Simple yet powerful color generation
 - ⚡ Fast and intuitive user experience
+- 🎨 TailwindCSS compatible color palette generation
 - 🎚 Adjust color weights with 0.1% precision
 - 🖌 Visual color selection with a color picker
 - 📊 Preview and listing of generated colors
