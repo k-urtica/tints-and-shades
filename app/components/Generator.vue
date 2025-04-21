@@ -52,7 +52,7 @@ const doCopy = async (hexColor: string) => {
 </script>
 
 <template>
-  <div class="bg-(--ui-bg) p-5">
+  <div class="bg-background p-5">
     <UAlert
       v-if="!filteredColorItems.length"
       variant="subtle"

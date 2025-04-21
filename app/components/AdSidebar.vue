@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="sticky top-3 mt-3 max-h-svh w-[260px] overflow-auto rounded-tl-2xl border bg-(--ui-bg)"
+    class="sticky top-3 mt-3 max-h-svh w-[260px] overflow-auto rounded-tl-2xl border bg-background"
   >
     <div class="flex-1 p-3">
       <span class="text-xs text-muted">Sponsored link</span>
