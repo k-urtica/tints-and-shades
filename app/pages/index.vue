@@ -10,7 +10,9 @@ useHead({
   <div class="flex min-h-svh flex-row gap-4">
     <SidePanel class="hidden md:block" />
 
-    <Generator class="flex-1 md:mt-3 md:rounded-t-2xl md:border" />
+    <Motion as-child v-bind="motionTween()">
+      <Generator class="flex-1 md:mt-3 md:rounded-t-2xl md:border" />
+    </Motion>
 
     <AdSidebar class="hidden shrink-0 xl:block" />
 

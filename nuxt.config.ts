@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     'nuxt-og-image',
     '@nuxtjs/google-fonts',
+    'motion-v/nuxt',
   ],
 
   $production: {
