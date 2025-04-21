@@ -65,7 +65,7 @@ const doCopy = async (hexColor: string) => {
         <h3 class="font-bold">Preview</h3>
         <UBadge variant="subtle">Click to Copy</UBadge>
 
-        <div class="ml-auto w-96 max-w-full">
+        <div class="ml-auto w-full md:w-96">
           <UTabs
             v-model="activeTab"
             :items="tabItems"
@@ -94,7 +94,9 @@ const doCopy = async (hexColor: string) => {
           }"
           :is-bright
           :has-border="appearance.border"
+          :show-text="appearance.showText"
           :class="{ 'rounded-lg': appearance.isPadded }"
+          class="w-full"
           @click="doCopy"
         />
       </div>

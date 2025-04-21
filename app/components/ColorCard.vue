@@ -9,6 +9,7 @@ const props = defineProps<{
   colorItem: ColorItem;
   isBright?: boolean;
   hasBorder?: boolean;
+  showText?: boolean;
 }>();
 
 defineEmits<{
@@ -34,6 +35,7 @@ const cardClasses = computed(() =>
       :class="
         cn(
           'group relative block px-4 py-5 text-left text-sm transition-colors',
+          { 'h-16': !showText },
           cardClasses
         )
       "
@@ -45,16 +47,18 @@ const cardClasses = computed(() =>
         class="absolute top-2 right-2 size-4 opacity-30 transition-opacity group-hover:opacity-80"
       />
 
-      <div class="font-mono font-medium tabular-nums">{{ colorItem.weight }}</div>
-      <div class="mt-0.5 flex items-center gap-2">
-        <span class="font-semibold uppercase">{{ colorItem.color }}</span>
-        <UIcon
-          v-if="colorItem.indicator"
-          name="i-lucide-badge-alert"
-          aria-label="Base color indicator"
-          class="size-5 animate-pulse"
-        />
-      </div>
+      <template v-if="showText">
+        <div class="font-mono font-medium tabular-nums">{{ colorItem.weight }}</div>
+        <div class="mt-0.5 flex items-center gap-2">
+          <span class="font-semibold uppercase">{{ colorItem.color }}</span>
+          <UIcon
+            v-if="colorItem.indicator"
+            name="i-lucide-badge-alert"
+            aria-label="Base color indicator"
+            class="size-5 animate-pulse"
+          />
+        </div>
+      </template>
     </button>
   </UTooltip>
 </template>

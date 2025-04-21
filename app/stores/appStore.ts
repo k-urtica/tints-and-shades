@@ -4,6 +4,7 @@ type Appearance = {
   indicator: boolean;
   copyWithHash: boolean;
   border: boolean;
+  showText: boolean;
 };
 
 export const useAppStore = defineStore('app', () => {
@@ -17,6 +18,7 @@ export const useAppStore = defineStore('app', () => {
     indicator: true,
     copyWithHash: true,
     border: true,
+    showText: true,
   });
 
   return {

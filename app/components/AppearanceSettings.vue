@@ -16,6 +16,8 @@ const { appearance } = storeToRefs(useAppStore());
       help="💡 Mark the entered color."
     />
 
+    <Switch v-model="appearance.showText" label="Show Card Text" />
+
     <Switch v-model="appearance.copyWithHash" label="Copy with Hash" />
   </div>
 </template>
