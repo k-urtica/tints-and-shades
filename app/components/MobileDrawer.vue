@@ -6,7 +6,7 @@ const isOpen = ref(false);
 <template>
   <div class="fixed bottom-2 z-10 w-full">
     <div
-      class="mx-auto flex w-10/12 items-center justify-between gap-4 rounded-3xl border bg-surface py-2 pr-4 pl-6"
+      class="mx-auto flex w-10/12 items-center justify-between gap-4 rounded-3xl border bg-(--ui-bg-muted) py-2 pr-4 pl-6"
     >
       <ColorInput v-model="color" class="w-full" />
 

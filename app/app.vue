@@ -14,6 +14,8 @@ useSeoMeta({
       <h1 class="text-xl font-black dark:text-white">Tints and Shades Generator</h1>
     </header>
 
-    <NuxtPage />
+    <main class="bg-base-0">
+      <NuxtPage />
+    </main>
   </UApp>
 </template>

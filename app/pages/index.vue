@@ -7,10 +7,10 @@ useHead({
 </script>
 
 <template>
-  <div class="flex min-h-dvh flex-row">
+  <div class="flex min-h-svh flex-row gap-4">
     <SidePanel class="hidden md:block" />
 
-    <Generator class="flex-1 md:mt-3 md:ml-6 md:rounded-t-xl md:border" />
+    <Generator class="flex-1 md:mt-3 md:rounded-t-2xl md:border" />
 
     <AdSidebar class="hidden shrink-0 xl:block" />
 
