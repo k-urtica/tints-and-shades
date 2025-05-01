@@ -10,8 +10,9 @@
   >
     <template #error>
       <p class="text-sm text-(--ui-text-muted)">
-        🙏 Please consider disabling your ad blocker to support the development of this
-        site.
+        {{
+          `🙏 ${$t('Please consider disabling your ad blocker to support the development of this site.')}`
+        }}
       </p>
     </template>
   </ScriptGoogleAdsense>

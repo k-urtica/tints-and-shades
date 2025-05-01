@@ -14,7 +14,7 @@ const isOpen = ref(false);
         icon="i-lucide-settings-2"
         variant="ghost"
         color="neutral"
-        aria-label="Open settings"
+        :aria-label="$t('Open settings')"
         @click="isOpen = true"
       />
     </div>

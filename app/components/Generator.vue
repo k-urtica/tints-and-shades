@@ -46,7 +46,7 @@ const doCopy = async (hexColor: string) => {
   await copy(formattedColor);
 
   if (copied.value) {
-    show({ title: `Copied! ${formattedColor}`, toastType: 'success' });
+    show({ title: `${$t('Copied!')} ${formattedColor}`, toastType: 'success' });
   }
 };
 </script>
@@ -62,8 +62,8 @@ const doCopy = async (hexColor: string) => {
 
     <template v-else>
       <div class="flex flex-wrap items-center gap-2">
-        <h3 class="font-bold">Preview</h3>
-        <UBadge variant="subtle">Click to Copy</UBadge>
+        <h3 class="font-bold">{{ $t('Preview') }}</h3>
+        <UBadge variant="subtle">{{ $t('Click to Copy') }}</UBadge>
 
         <div class="ml-auto w-full md:w-96">
           <UTabs

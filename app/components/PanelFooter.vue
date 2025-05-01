@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div>
     <div class="flex items-center justify-end gap-2 pb-3">
@@ -17,6 +15,9 @@
       >
     </div>
 
-    <ThemeSwitcher />
+    <div class="flex flex-col justify-end gap-3">
+      <LangSwitcher />
+      <ThemeSwitcher />
+    </div>
   </div>
 </template>

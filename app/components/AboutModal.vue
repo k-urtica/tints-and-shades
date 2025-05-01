@@ -1,7 +1,11 @@
 <template>
   <UModal
-    title="About"
-    description="A tool to create color variations by generating tints and shades from any base color"
+    :title="$t('About This Tool')"
+    :description="
+      $t(
+        'A tool to create color variations by generating tints and shades from any base color'
+      )
+    "
     close-icon="i-lucide-x"
     :ui="{
       content: 'max-w-xl',
@@ -14,22 +18,28 @@
     <template #body>
       <div class="space-y-5">
         <p class="text-sm">
-          Tints and Shades Generator is a tool designed to help you create tint and shade
-          variations from any color. Easily adjust color intensity and customize how your
-          color palette displays to suit your design needs.
+          {{
+            $t(
+              'Tints and Shades Generator is a tool designed to help you create tint and shade variations from any color. Easily adjust color intensity and customize how your color palette displays to suit your design needs.'
+            )
+          }}
         </p>
 
         <div class="text-center">
-          <UBadge color="primary" variant="subtle">💚 Built with Nuxt3 and NuxtUI</UBadge>
+          <UBadge
+            color="primary"
+            variant="subtle"
+            :label="`💚 ${$t('Built with Nuxt3 and NuxtUI')}`"
+          />
         </div>
 
         <div>
           <h3 class="mb-2 text-lg font-bold">Features</h3>
           <ul class="list-inside list-disc space-y-1 text-sm">
-            <li>Generate smooth tints and shades from any color code</li>
-            <li>Precisely adjust color weight to suit your design needs</li>
-            <li>Customize color card appearance and information display</li>
-            <li>Copy color codes in various formats with a single click</li>
+            <li>{{ $t('Generate smooth tints and shades from any color code') }}</li>
+            <li>{{ $t('Precisely adjust color weight to suit your design needs') }}</li>
+            <li>{{ $t('Customize color card appearance and information display') }}</li>
+            <li>{{ $t('Copy color codes in various formats with a single click') }}</li>
           </ul>
         </div>
 

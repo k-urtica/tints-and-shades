@@ -25,7 +25,7 @@ const cardClasses = computed(() =>
 
 <template>
   <UTooltip
-    :text="`Copy: ${colorItem.color}`"
+    :text="`${$t('Copy')}: ${colorItem.color}`"
     arrow
     :content="{ side: 'top', align: 'center', sideOffset: -8 }"
   >

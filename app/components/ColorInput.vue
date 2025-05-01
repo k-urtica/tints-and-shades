@@ -30,7 +30,7 @@ const setRandomColor = () => {
           color="neutral"
           variant="ghost"
           square
-          aria-label="Pick color"
+          :aria-label="$t('Pick color')"
           @click="inputEl?.click()"
         >
           <span
@@ -47,13 +47,13 @@ const setRandomColor = () => {
         />
       </template>
       <template #trailing>
-        <UTooltip text="Random color" arrow :content="{ side: 'top' }">
+        <UTooltip :text="$t('Random color')" arrow :content="{ side: 'top' }">
           <UButton
             color="neutral"
             variant="ghost"
             square
             icon="i-lucide-refresh-cw"
-            aria-label="Random color"
+            :aria-label="$t('Random color')"
             @click="setRandomColor"
           />
         </UTooltip>

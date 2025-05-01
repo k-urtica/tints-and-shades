@@ -4,6 +4,7 @@ const SITE_URL = 'https://tintsshades.web-toolbox.dev';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
@@ -110,6 +111,64 @@ export default defineNuxtConfig({
     },
     download: true,
     display: 'swap',
+  },
+
+  i18n: {
+    baseUrl: SITE_URL,
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+        file: 'en.yaml',
+      },
+      {
+        code: 'ja',
+        language: 'ja-JP',
+        name: '日本語',
+        file: 'ja.yaml',
+      },
+      {
+        code: 'zh_cn',
+        language: 'zh-CN',
+        name: '中文',
+        file: 'zh.yaml',
+      },
+      {
+        code: 'es',
+        language: 'es-ES',
+        name: 'Español',
+        file: 'es.yaml',
+      },
+      {
+        code: 'fr',
+        language: 'fr-FR',
+        name: 'Français',
+        file: 'fr.yaml',
+      },
+      {
+        code: 'de',
+        language: 'de-DE',
+        name: 'Deutsch',
+        file: 'de.yaml',
+      },
+      {
+        code: 'ko',
+        language: 'ko-KR',
+        name: '한국어',
+        file: 'ko.yaml',
+      },
+    ],
+    langDir: 'locales',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    vueI18n: './i18n.config.ts',
+    restructureDir: 'i18n',
+    lazy: true,
+    experimental: {
+      autoImportTranslationFunctions: true,
+    },
   },
 
   icon: {
