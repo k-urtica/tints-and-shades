@@ -7,15 +7,15 @@ useHead({
 </script>
 
 <template>
-  <div class="flex min-h-svh flex-row gap-4">
-    <SidePanel class="hidden md:block" />
+  <div class="flex min-h-svh flex-row gap-3">
+    <SidePanel class="hidden lg:block" />
 
     <Motion as-child v-bind="motionTween()">
-      <Generator class="flex-1 md:mt-3 md:rounded-t-2xl md:border" />
+      <Generator class="flex-1 lg:mt-3 lg:rounded-t-2xl lg:border" />
     </Motion>
 
     <AdSidebar class="hidden shrink-0 xl:block" />
 
-    <MobileDrawer class="md:hidden" />
+    <MobileDrawer class="lg:hidden" />
   </div>
 </template>

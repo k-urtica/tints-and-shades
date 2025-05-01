@@ -43,7 +43,7 @@ useHead({
     :locale="locales[locale]"
     :tooltip="{ delayDuration: 100, skipDelayDuration: 150 }"
   >
-    <header class="top-0 flex h-14 items-center justify-center border-b md:hidden">
+    <header class="top-0 flex h-14 items-center justify-center border-b lg:hidden">
       <SiteTitle />
     </header>
 
