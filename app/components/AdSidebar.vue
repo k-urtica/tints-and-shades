@@ -37,7 +37,7 @@ useMutationObserver(
         <ULink
           to="https://web-toolbox.dev/en"
           target="_blank"
-          class="group block rounded-lg border bg-primary/10 px-3 py-4 transition-colors hover:border-primary"
+          class="group block rounded-lg border bg-primary/5 px-3 py-4 transition-colors hover:border-primary"
         >
           <div class="flex items-center gap-3">
             <span
@@ -47,8 +47,8 @@ useMutationObserver(
             </span>
             <div>
               <div class="text-sm font-semibold transition-colors">Web ToolBox</div>
-              <div class="mt-1 text-xs text-muted">
-                All the web tools you need,in one place
+              <div class="mt-1 text-xs text-balance text-muted">
+                {{ $t('All the web tools you need, in one place') }}
               </div>
             </div>
           </div>

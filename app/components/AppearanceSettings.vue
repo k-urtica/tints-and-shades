@@ -4,20 +4,20 @@ const { appearance } = storeToRefs(useAppStore());
 
 <template>
   <div class="flex flex-col gap-4">
-    <Switch v-model="appearance.border" label="Card Border" />
+    <Switch v-model="appearance.border" :label="$t('Card Border')" />
 
-    <Switch v-model="appearance.isPadded" label="Card Padding" />
+    <Switch v-model="appearance.isPadded" :label="$t('Card Padding')" />
 
-    <Switch v-model="appearance.isOneLine" label="Single Column" />
+    <Switch v-model="appearance.isOneLine" :label="$t('Single Column')" />
 
     <Switch
       v-model="appearance.indicator"
-      label="Show Indicator"
-      help="💡 Mark the entered color."
+      :label="$t('Show Indicator')"
+      :help="`💡 ${$t('Mark the entered color')}`"
     />
 
-    <Switch v-model="appearance.showText" label="Show Card Text" />
+    <Switch v-model="appearance.showText" :label="$t('Show Card Text')" />
 
-    <Switch v-model="appearance.copyWithHash" label="Copy with Hash" />
+    <Switch v-model="appearance.copyWithHash" :label="$t('Copy with Hash')" />
   </div>
 </template>

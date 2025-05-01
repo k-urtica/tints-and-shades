@@ -22,21 +22,21 @@ const WEIGHT_STEPS = [
 <template>
   <div>
     <UFormField
-      label="Weight"
+      :label="$t('Weight')"
       :hint="weight.toString()"
       :ui="{ help: 'flex items-center justify-between text-xs' }"
     >
       <USlider v-model="weight" :min="1" :max="50" :step="currentStep" />
 
       <template #help>
-        <span>Lighter</span>
-        <span>Stronger</span>
+        <span>{{ $t('Lighter') }}</span>
+        <span>{{ $t('Stronger') }}</span>
       </template>
     </UFormField>
 
-    <div class="mt-3 flex gap-2">
+    <div class="mt-3 flex items-center gap-2">
       <fieldset class="contents">
-        <legend class="text-neutral text-sm">Step size</legend>
+        <legend class="text-neutral text-sm">{{ $t('Step size') }}</legend>
         <UButtonGroup size="xs">
           <UButton
             v-for="{ label, value } in WEIGHT_STEPS"

@@ -11,21 +11,22 @@ const { color, weight } = storeToRefs(useAppStore());
         <div class="flex flex-col gap-3">
           <h3 class="flex items-center gap-1.5 font-bold">
             <UIcon name="i-lucide-palette" class="size-4.5" />
-            Color Settings
+            {{ $t('Color Settings') }}
           </h3>
-          <ColorInput v-model="color" label="Hex Color" />
+          <ColorInput v-model="color" :label="$t('Hex Color')" />
           <ColorWeight v-model="weight" />
         </div>
 
         <div class="flex flex-col gap-3 border-t pt-4">
           <h3 class="flex items-center gap-1.5 font-bold">
             <UIcon name="i-lucide-eye" class="size-4.5" />
-            Display Options
+            {{ $t('Display Options') }}
           </h3>
           <AppearanceSettings />
         </div>
       </div>
-      <PanelFooter class="mt-auto border-t px-6 py-4" />
+
+      <PanelFooter class="mt-auto border-t px-5 py-4" />
     </div>
   </div>
 </template>
