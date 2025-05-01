@@ -129,7 +129,7 @@ export default defineNuxtConfig({
         file: 'ja.yaml',
       },
       {
-        code: 'zh',
+        code: 'zh_cn',
         language: 'zh-CN',
         name: '中文',
         file: 'zh.yaml',

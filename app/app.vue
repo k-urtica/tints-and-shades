@@ -17,7 +17,7 @@ const i18nHead = useLocaleHead({
 
 useHead({
   htmlAttrs: {
-    lang: () => locales[locale.value].code,
+    lang: () => i18nHead.value.htmlAttrs!.lang,
     dir: () => locales[locale.value].dir,
   },
   meta: () => [
