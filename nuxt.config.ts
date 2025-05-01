@@ -4,6 +4,7 @@ const SITE_URL = 'https://tintsshades.web-toolbox.dev';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
@@ -110,6 +111,34 @@ export default defineNuxtConfig({
     },
     download: true,
     display: 'swap',
+  },
+
+  i18n: {
+    baseUrl: SITE_URL,
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+        file: 'en.yaml',
+      },
+      {
+        code: 'ja',
+        language: 'ja-JP',
+        name: '日本語',
+        file: 'ja.yaml',
+      },
+    ],
+    langDir: 'locales',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    vueI18n: './i18n.config.ts',
+    restructureDir: 'i18n',
+    lazy: true,
+    experimental: {
+      autoImportTranslationFunctions: true,
+    },
   },
 
   icon: {
