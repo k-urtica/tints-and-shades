@@ -88,20 +88,22 @@ const doCopy = async (hexColor: string) => {
             : 'sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5',
         ]"
       >
-        <ColorCard
-          v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
-          :key="idx"
-          :color-item="{
-            ...colorItem,
-            indicator: appearance.indicator && colorItem.type === 'base',
-          }"
-          :is-bright
-          :has-border="appearance.border"
-          :show-text="appearance.showText"
-          :class="{ 'rounded-lg': appearance.isPadded }"
-          class="w-full"
-          @click="doCopy"
-        />
+        <ClientOnly>
+          <ColorCard
+            v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
+            :key="idx"
+            :color-item="{
+              ...colorItem,
+              indicator: appearance.indicator && colorItem.type === 'base',
+            }"
+            :is-bright
+            :has-border="appearance.border"
+            :show-text="appearance.showText"
+            :class="{ 'rounded-lg': appearance.isPadded }"
+            class="w-full"
+            @click="doCopy"
+          />
+        </ClientOnly>
       </div>
     </template>
   </div>

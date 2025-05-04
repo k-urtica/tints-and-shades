@@ -21,18 +21,24 @@ const WEIGHT_STEPS = [
 
 <template>
   <div>
-    <UFormField
-      :label="$t('Weight')"
-      :hint="weight.toString()"
-      :ui="{ help: 'flex items-center justify-between text-xs' }"
-    >
-      <USlider v-model="weight" :min="1" :max="50" :step="currentStep" />
+    <ClientOnly>
+      <UFormField
+        :label="$t('Weight')"
+        :hint="weight.toString()"
+        :ui="{ help: 'flex items-center justify-between text-xs' }"
+      >
+        <USlider v-model="weight" :min="1" :max="50" :step="currentStep" />
 
-      <template #help>
-        <span>{{ $t('Lighter') }}</span>
-        <span>{{ $t('Stronger') }}</span>
+        <template #help>
+          <span>{{ $t('Lighter') }}</span>
+          <span>{{ $t('Stronger') }}</span>
+        </template>
+      </UFormField>
+
+      <template #fallback>
+        <USkeleton class="h-14 w-full" />
       </template>
-    </UFormField>
+    </ClientOnly>
 
     <div class="mt-3 flex items-center gap-2">
       <fieldset class="contents">
