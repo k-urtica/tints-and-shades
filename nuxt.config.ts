@@ -96,6 +96,12 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-11-01',
 
+  vite: {
+    optimizeDeps: {
+      entries: ['pages/**/*.vue', 'components/**/*.vue'],
+    },
+  },
+
   eslint: {
     config: {
       stylistic: false,
