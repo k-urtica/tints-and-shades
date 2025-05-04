@@ -4,7 +4,9 @@ import type { ColorType, GeneratedColor } from '@/composables/useColor';
 
 type TabValue = 'all' | 'tints' | 'shades' | 'tailwind';
 
-const { color, weight, appearance } = storeToRefs(useAppStore());
+const { color, weight } = useColorQuery();
+const { appearance } = storeToRefs(useAppStore());
+
 const { copy, copied } = useClipboard({ legacy: true });
 const { show } = useAppToast();
 const { generateColors, formatHexColor } = useColor();

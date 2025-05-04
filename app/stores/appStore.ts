@@ -8,10 +8,6 @@ type Appearance = {
 };
 
 export const useAppStore = defineStore('app', () => {
-  const color = ref('#7085f0');
-
-  const weight = ref(5);
-
   const appearance = ref<Appearance>({
     isPadded: true,
     isOneLine: false,
@@ -22,8 +18,6 @@ export const useAppStore = defineStore('app', () => {
   });
 
   return {
-    color,
-    weight,
     appearance,
   };
 });

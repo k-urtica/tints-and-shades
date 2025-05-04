@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { color, weight } = storeToRefs(useAppStore());
+const { color, weight } = useColorQuery();
 const isOpen = ref(false);
 </script>
 
