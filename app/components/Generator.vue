@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { TabsItem } from '#ui/types';
+import type { Appearance } from '@/components/AppearanceSettings.vue';
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
 
 type TabValue = 'all' | 'tints' | 'shades' | 'tailwind';
 
 const { color, weight } = useColorQuery();
-const { appearance } = storeToRefs(useAppStore());
+const appearance = useState<Appearance>('appearance');
 
 const { copy, copied } = useClipboard({ legacy: true });
 const { show } = useAppToast();

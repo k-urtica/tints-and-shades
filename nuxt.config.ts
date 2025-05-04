@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@nuxt/ui',
-    '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/image',

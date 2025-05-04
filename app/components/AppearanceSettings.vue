@@ -1,5 +1,21 @@
 <script setup lang="ts">
-const { appearance } = storeToRefs(useAppStore());
+export type Appearance = {
+  isPadded: boolean;
+  isOneLine: boolean;
+  indicator: boolean;
+  copyWithHash: boolean;
+  border: boolean;
+  showText: boolean;
+};
+
+const appearance = useState<Appearance>('appearance', () => ({
+  isPadded: true,
+  isOneLine: false,
+  indicator: true,
+  copyWithHash: true,
+  border: true,
+  showText: true,
+}));
 </script>
 
 <template>
