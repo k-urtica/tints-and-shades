@@ -4,7 +4,7 @@ const { color, weight } = storeToRefs(useAppStore());
 
 <template>
   <div class="sticky top-3 my-3 ml-3 h-[calc(100dvh-24px)] w-[320px]">
-    <div class="flex h-full flex-col overflow-auto rounded-2xl border bg-background">
+    <div class="flex h-full flex-col overflow-auto rounded-2xl border bg-default">
       <SiteTitle class="border-b p-4 text-center" />
 
       <div class="mt-4 flex flex-1 flex-col gap-6 p-5 pb-10">

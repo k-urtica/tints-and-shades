@@ -9,7 +9,7 @@
     class="mx-auto h-[230px] w-[230px] max-w-full"
   >
     <template #error>
-      <p class="text-sm text-(--ui-text-muted)">
+      <p class="text-sm text-muted">
         {{
           `🙏 ${$t('Please consider disabling your ad blocker to support the development of this site.')}`
         }}

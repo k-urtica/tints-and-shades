@@ -23,7 +23,7 @@ useMutationObserver(
   <aside class="sticky top-0 max-h-svh w-[260px] pt-3">
     <div
       ref="container"
-      class="flex h-full flex-col overflow-auto rounded-tl-2xl border bg-background"
+      class="flex h-full flex-col overflow-auto rounded-tl-2xl border bg-default"
     >
       <div class="py-3">
         <span class="px-3 text-xs text-muted">Sponsored link</span>
