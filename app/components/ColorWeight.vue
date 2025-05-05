@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { RadioGroupItem } from '@nuxt/ui';
+
 const weight = defineModel<number>({ default: 5 });
 
 const currentStep = ref(1);
 
-const WEIGHT_STEPS = [
+const WEIGHT_STEPS: RadioGroupItem[] = [
   {
     label: '1.0',
     value: 1,
@@ -40,23 +42,17 @@ const WEIGHT_STEPS = [
       </template>
     </ClientOnly>
 
-    <div class="mt-3 flex items-center gap-2">
-      <fieldset class="contents">
-        <legend class="text-neutral text-sm">{{ $t('Step size') }}</legend>
-        <UButtonGroup size="xs">
-          <UButton
-            v-for="{ label, value } in WEIGHT_STEPS"
-            :key="value"
-            :label="label"
-            color="neutral"
-            :variant="currentStep === value ? 'solid' : 'outline'"
-            :aria-label="`Set step size to ${label}`"
-            :aria-pressed="currentStep === value"
-            class="px-4"
-            @click="currentStep = value"
-          />
-        </UButtonGroup>
-      </fieldset>
-    </div>
+    <URadioGroup
+      v-model="currentStep"
+      variant="table"
+      orientation="horizontal"
+      indicator="start"
+      size="sm"
+      :legend="$t('Step size')"
+      :items="WEIGHT_STEPS"
+      :ui="{ item: 'py-1' }"
+      class="mt-2"
+      :style="{ '--ui-radius': '0.25rem' }"
+    />
   </div>
 </template>
