@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TabsItem } from '#ui/types';
+import type { TabsItem } from '@nuxt/ui';
 import type { Appearance } from '@/components/AppearanceSettings.vue';
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
 

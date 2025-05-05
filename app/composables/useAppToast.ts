@@ -1,4 +1,4 @@
-import type { ToastProps } from '#ui/types';
+import type { ToastProps } from '@nuxt/ui';
 
 type ShowParams = {
   toastType?: 'success' | 'warning' | 'error';
