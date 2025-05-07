@@ -8,9 +8,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix && pnpm prettier-fix",
-    "prettier-check": "prettier --check",
-    "prettier-fix": "prettier --write",
+    "lint:fix": "eslint . --fix && pnpm prettier:fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
     "analyze": "nuxt analyze",
     "postinstall": "nuxt prepare",
     "prepare": "husky"
