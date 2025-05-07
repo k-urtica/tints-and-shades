@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/image',
     'nuxt-og-image',
-    '@nuxtjs/google-fonts',
     'motion-v/nuxt',
   ],
 
@@ -86,7 +85,7 @@ export default defineNuxtConfig({
 
   ui: {
     colorMode: true,
-    fonts: false,
+    fonts: true,
   },
 
   future: {
@@ -108,14 +107,6 @@ export default defineNuxtConfig({
         sortConfigKeys: true,
       },
     },
-  },
-
-  googleFonts: {
-    families: {
-      'Exo 2': '400..900',
-    },
-    download: true,
-    display: 'swap',
   },
 
   i18n: {
