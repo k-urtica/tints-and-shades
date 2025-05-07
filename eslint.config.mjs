@@ -1,5 +1,5 @@
 import eslintConfigPrettier from 'eslint-config-prettier';
-import importX from 'eslint-plugin-import-x';
+import * as pluginImportX from 'eslint-plugin-import-x';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 // eslint-disable-next-line import-x/no-named-as-default
@@ -25,7 +25,7 @@ export default withNuxt({
     'vue/require-default-prop': 'off',
   },
 })
-  .append(importX.flatConfigs.recommended, {
+  .append(pluginImportX.flatConfigs.recommended, {
     name: 'eslint-plugin-import-x-custom',
     rules: {
       'import-x/newline-after-import': ['error', { count: 1 }],
