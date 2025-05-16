@@ -45,7 +45,7 @@ const setRandomColor = () => {
             v-model="color"
             type="color"
             class="absolute -bottom-0 left-0 w-1 opacity-0"
-          />
+          >
         </template>
         <template #trailing>
           <UTooltip :text="$t('Random color')" arrow :content="{ side: 'top' }">

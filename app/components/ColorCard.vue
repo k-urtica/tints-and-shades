@@ -1,9 +1,9 @@
 <script setup lang="ts">
-export type ColorItem = {
+export interface ColorItem {
   color: string;
   weight: string;
   indicator?: boolean;
-};
+}
 
 const props = defineProps<{
   colorItem: ColorItem;

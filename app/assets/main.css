@@ -19,9 +19,7 @@
 @theme static {
   --color-base-0: var(--bg-base-0);
 
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 :root {
@@ -30,8 +28,7 @@
   --ui-radius: 0.375rem;
 
   --font-family:
-    'Exo 2', Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, 'Noto Sans JP',
-    Meiryo, sans-serif;
+    'Exo 2', Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, 'Noto Sans JP', Meiryo, sans-serif;
 }
 
 .dark {

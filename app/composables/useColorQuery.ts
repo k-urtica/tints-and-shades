@@ -7,19 +7,19 @@ export function useColorQuery() {
   const MIN_WEIGHT = 1;
   const MAX_WEIGHT = 50;
 
-  type ColorQueryParams = {
+  interface ColorQueryParams {
     color?: string;
     weight?: string;
-  };
+  }
 
   const isValidHexColor = (value: unknown): value is string => {
-    return typeof value === 'string' && /^#[0-9A-Fa-f]{6}$/i.test(value);
+    return typeof value === 'string' && /^#[0-9A-F]{6}$/i.test(value);
   };
 
   const isValidWeight = (value: unknown): value is number => {
     return (
       typeof value === 'number' &&
-      !isNaN(value) &&
+      !Number.isNaN(value) &&
       value >= MIN_WEIGHT &&
       value <= MAX_WEIGHT
     );

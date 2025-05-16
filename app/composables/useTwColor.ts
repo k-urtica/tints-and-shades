@@ -1,5 +1,5 @@
-import { TinyColor } from '@ctrl/tinycolor';
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
+import { TinyColor } from '@ctrl/tinycolor';
 
 const TAILWIND_SCALES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
 const BASE_SCALE = 500;

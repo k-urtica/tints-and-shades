@@ -11,9 +11,9 @@
       content: 'max-w-xl',
     }"
   >
-    <UButton variant="outline" color="neutral" leading-icon="i-lucide-info" size="sm"
-      >About</UButton
-    >
+    <UButton variant="outline" color="neutral" leading-icon="i-lucide-info" size="sm">
+      About
+    </UButton>
 
     <template #body>
       <div class="space-y-5">
@@ -60,8 +60,8 @@
               target="_blank"
               class="font-medium text-primary underline"
             >
-              GitHub</ULink
-            >.
+              GitHub
+            </ULink>.
           </p>
         </div>
 

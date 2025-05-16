@@ -2,12 +2,12 @@ import { random, TinyColor } from '@ctrl/tinycolor';
 
 export type ColorType = 'tint' | 'base' | 'shade';
 
-export type GeneratedColor = {
+export interface GeneratedColor {
   color: string;
   weight: string;
   type: ColorType;
   isBright: boolean;
-};
+}
 
 export function useColor() {
   const createTinyColor = (colorCode: string) => {

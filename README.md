@@ -68,7 +68,7 @@ pnpm run dev
 
 ## 📄 License
 
-This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License.  
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License.
 Copyright © 2025 K.
 
 ## 👨‍💻 Developer

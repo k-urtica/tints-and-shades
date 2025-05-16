@@ -1,12 +1,12 @@
 <script setup lang="ts">
-export type Appearance = {
+export interface Appearance {
   isPadded: boolean;
   isOneLine: boolean;
   indicator: boolean;
   copyWithHash: boolean;
   border: boolean;
   showText: boolean;
-};
+}
 
 const appearance = useState<Appearance>('appearance', () => ({
   isPadded: true,

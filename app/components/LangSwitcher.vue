@@ -25,8 +25,9 @@ const items = computed(() =>
         trailing-icon="i-lucide-chevron-down"
         block
         class="w-30"
-        >{{ activeLocale }}</UButton
       >
+        {{ activeLocale }}
+      </UButton>
       <template #item-trailing="{ item }">
         <UIcon v-if="item.label === activeLocale" name="i-lucide-check" />
       </template>
