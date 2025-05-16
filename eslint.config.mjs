@@ -1,60 +1,59 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
-import * as pluginImportX from 'eslint-plugin-import-x';
-import unusedImports from 'eslint-plugin-unused-imports';
+// @ts-check
+import antfu from '@antfu/eslint-config';
+import eslintPluginReadableTailwind from 'eslint-plugin-readable-tailwind';
 
-// eslint-disable-next-line import-x/no-named-as-default
 import withNuxt from './.nuxt/eslint.config.mjs';
 
-export default withNuxt({
-  rules: {
-    'vue/custom-event-name-casing': ['error', 'camelCase'],
-    'vue/define-emits-declaration': ['error', 'type-literal'],
-    'vue/define-macros-order': [
-      'warn',
-      {
-        order: [
-          'defineOptions',
-          'defineModel',
-          'defineProps',
-          'defineEmits',
-          'defineSlots',
-        ],
+export default withNuxt(
+  antfu({
+    formatters: {
+      css: true,
+    },
+    stylistic: {
+      semi: true,
+      overrides: {
+        'style/arrow-parens': ['error', 'always'],
+        'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+        'style/operator-linebreak': ['error', 'after', { overrides: { '?': 'ignore', ':': 'ignore' } }],
+
       },
-    ],
-    'vue/multi-word-component-names': 'off',
-    'vue/require-default-prop': 'off',
-  },
-})
-  .append(pluginImportX.flatConfigs.recommended, {
-    name: 'eslint-plugin-import-x-custom',
-    rules: {
-      'import-x/newline-after-import': ['error', { count: 1 }],
-      'import-x/no-named-default': 'error',
-      'import-x/no-self-import': 'error',
-      'import-x/no-unresolved': 'off',
-      'import-x/order': ['error', { alphabetize: { order: 'asc' } }],
     },
-  })
+    vue: {
+      overrides: {
+        'vue/define-macros-order': ['error', {
+          order: [
+            'defineOptions',
+            'defineModel',
+            'defineProps',
+            'defineEmits',
+            'defineSlots',
+          ],
+        }],
+      },
+    },
+    rules: {
+      'antfu/if-newline': 'off',
+      'antfu/top-level-function': 'off',
+      'style/comma-dangle': 'off',
+      'vue/comma-dangle': 'off',
+      'vue/singleline-html-element-content-newline': 'off',
+    },
+  }),
+)
   .append({
-    name: 'eslint-plugin-unused-imports',
+    name: 'eslint-plugin-readable-tailwind',
+    settings: {
+      'readable-tailwind': {
+        entryPoint: 'app/assets/main.css',
+      },
+    },
     plugins: {
-      'unused-imports': unusedImports,
+      'readable-tailwind': eslintPluginReadableTailwind,
     },
     rules: {
-      'no-unused-vars': 'off',
-      'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': [
-        'error',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-        },
-      ],
+      'readable-tailwind/multiline': 'off',
+      'readable-tailwind/no-duplicate-classes': 'error',
+      'readable-tailwind/no-unnecessary-whitespace': 'error',
+      'readable-tailwind/sort-classes': 'error',
     },
-  })
-  .append({
-    name: 'eslint-config-prettier',
-    rules: eslintConfigPrettier.rules,
   });

@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         prefix: 'og: http://ogp.me/ns#',
       },
       title: SITE_NAME,
-      titleTemplate: '%s | ' + SITE_NAME,
+      titleTemplate: `%s | ${SITE_NAME}`,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -102,7 +102,7 @@ export default defineNuxtConfig({
 
   eslint: {
     config: {
-      stylistic: false,
+      standalone: false,
       nuxt: {
         sortConfigKeys: true,
       },
