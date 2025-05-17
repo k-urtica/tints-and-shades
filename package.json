@@ -11,8 +11,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "analyze": "nuxt analyze",
-    "postinstall": "nuxt prepare",
-    "prepare": "husky"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@ctrl/tinycolor": "4.1.0",
@@ -38,8 +37,8 @@
     "eslint": "9.27.0",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-readable-tailwind": "^2.1.2",
-    "husky": "9.1.7",
     "lint-staged": "16.0.0",
+    "simple-git-hooks": "^2.13.0",
     "tailwind-merge": "^3.3.0",
     "typescript": "5.8.3"
   },
@@ -49,8 +48,12 @@
       "@tailwindcss/oxide",
       "esbuild",
       "sharp",
+      "simple-git-hooks",
       "unrs-resolver",
       "vue-demi"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }
