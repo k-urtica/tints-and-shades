@@ -109,6 +109,12 @@ export default defineNuxtConfig({
     },
   },
 
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 900]
+    }
+  },
+
   i18n: {
     baseUrl: SITE_URL,
     locales: [
