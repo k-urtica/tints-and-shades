@@ -8,6 +8,7 @@ export default withNuxt(
   antfu({
     formatters: {
       css: true,
+      markdown: 'prettier'
     },
     stylistic: {
       semi: true,
@@ -15,7 +16,6 @@ export default withNuxt(
         'style/arrow-parens': ['error', 'always'],
         'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
         'style/operator-linebreak': ['error', 'after', { overrides: { '?': 'ignore', ':': 'ignore' } }],
-
       },
     },
     vue: {
