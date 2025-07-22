@@ -27,7 +27,7 @@ Please consider disabling your ad blocker to support the development of this sit
 About This Tool: このツールについて
 A tool to create color variations by generating tints and shades from any base color: 任意の基本色から明暗のバリエーションを生成するツール
 Tints and Shades Generator is a tool designed to help you create tint and shade variations from any color. Easily adjust color intensity and customize how your color palette displays to suit your design needs.: Tints and Shades Generatorは、あらゆる色から明暗のバリエーションを作成するためのツールです。色の濃度を簡単に調整し、デザインニーズに合わせてカラーパレットの表示方法をカスタマイズできます。
-Built with Nuxt3 and NuxtUI: Nuxt3とNuxtUIで開発
+Built with Nuxt and NuxtUI: NuxtとNuxtUIで開発
 Generate smooth tints and shades from any color code: どんなカラーコードからも滑らかな明暗バリエーションを生成
 Precisely adjust color weight to suit your design needs: デザインニーズに合わせて色の濃度を精密に調整
 Customize color card appearance and information display: カラーカードの外観と表示情報をカスタマイズ

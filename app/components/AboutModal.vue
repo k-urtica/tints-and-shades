@@ -29,7 +29,7 @@
           <UBadge
             color="primary"
             variant="subtle"
-            :label="`💚 ${$t('Built with Nuxt3 and NuxtUI')}`"
+            :label="`💚 ${$t('Built with Nuxt and NuxtUI')}`"
           />
         </div>
 
