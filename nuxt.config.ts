@@ -88,11 +88,7 @@ export default defineNuxtConfig({
     fonts: true,
   },
 
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-07-15',
 
   vite: {
     optimizeDeps: {
@@ -166,11 +162,6 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
     vueI18n: './i18n.config.ts',
-    restructureDir: 'i18n',
-    lazy: true,
-    experimental: {
-      autoImportTranslationFunctions: true,
-    },
   },
 
   icon: {
