@@ -88,11 +88,7 @@ export default defineNuxtConfig({
     fonts: true,
   },
 
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-07-15',
 
   vite: {
     optimizeDeps: {
