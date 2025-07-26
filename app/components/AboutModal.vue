@@ -16,6 +16,7 @@
       color="neutral"
       leading-icon="i-lucide-info"
       size="sm"
+      class="rounded-full"
     >
       About
     </UButton>
