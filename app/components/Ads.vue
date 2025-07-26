@@ -5,7 +5,7 @@
     data-ad-client="ca-pub-6155745382628091"
     data-ad-slot="3784163880"
     :data-full-width-responsive="false"
-    data-ad-format="rectangle"
+    data-ad-format="autorelaxed"
     class="mx-auto size-[230px] max-w-full"
   >
     <template #error>

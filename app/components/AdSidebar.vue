@@ -29,7 +29,6 @@ useMutationObserver(
         <span class="px-3 text-xs text-muted">Sponsored link</span>
         <div class="mt-1 flex flex-col gap-4">
           <Ads />
-          <Ads />
         </div>
       </div>
 
