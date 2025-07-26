@@ -13,7 +13,11 @@ const isDark = computed({
 
 <template>
   <div class="flex items-center justify-between gap-2">
-    <div class="text-sm">{{ $t('Theme') }}</div>
+    <div class="flex items-center gap-1 text-sm font-semibold">
+      <UIcon name="i-lucide-sun-moon" class="size-4" />
+      {{ $t('Theme') }}
+    </div>
+
     <ClientOnly>
       <USwitch
         v-model="isDark"
