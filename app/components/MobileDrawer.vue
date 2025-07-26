@@ -19,7 +19,7 @@ const isOpen = ref(false);
       />
     </div>
 
-    <UDrawer v-model:open="isOpen">
+    <UDrawer v-model:open="isOpen" :overlay="false">
       <template #content>
         <div class="p-5">
           <div class="flex flex-col gap-5">

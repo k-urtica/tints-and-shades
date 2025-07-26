@@ -11,7 +11,12 @@
       content: 'max-w-xl',
     }"
   >
-    <UButton variant="outline" color="neutral" leading-icon="i-lucide-info" size="sm">
+    <UButton
+      variant="outline"
+      color="neutral"
+      leading-icon="i-lucide-info"
+      size="sm"
+    >
       About
     </UButton>
 

@@ -29,7 +29,12 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
         :hint="weight.toString()"
         :ui="{ help: 'flex items-center justify-between text-xs' }"
       >
-        <USlider v-model="weight" :min="1" :max="50" :step="currentStep" />
+        <USlider
+          v-model="weight"
+          :min="1"
+          :max="50"
+          :step="currentStep"
+        />
 
         <template #help>
           <span>{{ $t('Lighter') }}</span>

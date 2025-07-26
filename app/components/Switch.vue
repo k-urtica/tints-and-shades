@@ -10,6 +10,11 @@ defineProps<{
 
 <template>
   <UFormField :help>
-    <USwitch v-model="modelValue" size="lg" :disabled :label />
+    <USwitch
+      v-model="modelValue"
+      size="lg"
+      :disabled
+      :label
+    />
   </UFormField>
 </template>
