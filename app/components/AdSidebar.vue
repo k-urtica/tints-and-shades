@@ -25,8 +25,8 @@ useMutationObserver(
       ref="container"
       class="flex h-full flex-col overflow-auto rounded-tl-2xl border bg-default"
     >
-      <div class="py-3">
-        <span class="px-3 text-xs text-muted">Sponsored link</span>
+      <div class="px-4 py-3">
+        <span class="text-xs text-muted">Sponsored link</span>
         <div class="mt-1 flex flex-col gap-4">
           <Ads />
         </div>
