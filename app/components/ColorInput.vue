@@ -28,7 +28,6 @@ const setRandomColor = () => {
       >
         <template #leading>
           <UButton
-            color="neutral"
             variant="ghost"
             square
             :aria-label="$t('Pick color')"
@@ -50,7 +49,6 @@ const setRandomColor = () => {
         <template #trailing>
           <UTooltip :text="$t('Random color')" arrow :content="{ side: 'top' }">
             <UButton
-              color="neutral"
               variant="ghost"
               square
               icon="i-lucide-refresh-cw"

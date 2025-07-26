@@ -86,6 +86,13 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true,
     fonts: true,
+
+    theme: {
+      defaultVariants: {
+        color: 'neutral',
+        size: 'sm'
+      }
+    }
   },
 
   compatibilityDate: '2025-07-15',

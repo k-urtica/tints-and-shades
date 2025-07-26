@@ -13,7 +13,6 @@ const isOpen = ref(false);
       <UButton
         icon="i-lucide-settings-2"
         variant="ghost"
-        color="neutral"
         :aria-label="$t('Open settings')"
         @click="isOpen = true"
       />

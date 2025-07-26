@@ -74,7 +74,6 @@ const doCopy = async (hexColor: string) => {
             <UTabs
               v-model="activeTab"
               :items="tabItems"
-              color="neutral"
               :content="false"
               size="xs"
             />

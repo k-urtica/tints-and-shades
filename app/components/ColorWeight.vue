@@ -52,7 +52,6 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       variant="table"
       orientation="horizontal"
       indicator="start"
-      size="sm"
       :legend="$t('Step size')"
       :items="WEIGHT_STEPS"
       :ui="{ item: 'py-1.5' }"

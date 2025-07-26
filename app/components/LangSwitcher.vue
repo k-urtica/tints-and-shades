@@ -19,8 +19,6 @@ const items = computed(() =>
     <div class="text-sm">{{ $t('Language') }}</div>
     <UDropdownMenu :items="items">
       <UButton
-        size="sm"
-        color="neutral"
         variant="outline"
         trailing-icon="i-lucide-chevron-down"
         block

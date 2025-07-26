@@ -21,8 +21,6 @@
           target="_blank"
           variant="outline"
           leading-icon="i-lucide-github"
-          color="neutral"
-          size="sm"
           aria-label="GitHub Repository"
           class="rounded-full"
         />

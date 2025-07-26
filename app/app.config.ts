@@ -4,21 +4,5 @@ export default defineAppConfig({
       primary: 'indigo',
       neutral: 'zinc',
     },
-
-    input: {
-      defaultVariants: {
-        color: 'neutral',
-      },
-    },
-    slider: {
-      defaultVariants: {
-        color: 'neutral',
-      },
-    },
-    switch: {
-      defaultVariants: {
-        color: 'neutral',
-      },
-    },
   },
 });
