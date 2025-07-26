@@ -3,7 +3,7 @@
 <h1 align="center">🎨 Tints and Shades Generator 💚</h1>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/778df118-0df3-4289-aec5-47289db32ef2" alt="Tints and Shades Generator"  />
+  <img src="https://github.com/user-attachments/assets/213bc9c5-6bfa-4cfb-9fd3-1af3f5e7e1c4" alt="Tints and Shades Generator"  />
 </p>
 
 <p align="center">
