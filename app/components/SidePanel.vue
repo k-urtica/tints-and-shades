@@ -3,11 +3,11 @@ const { color, weight } = useColorQuery();
 </script>
 
 <template>
-  <div class="sticky top-3 my-3 ml-3 h-[calc(100dvh-24px)] w-[320px]">
-    <div class="flex h-full flex-col overflow-auto rounded-2xl border bg-default">
-      <SiteTitle class="border-b p-4 text-center" />
+  <div class="sticky top-0 h-dvh w-[340px] py-3 pl-3">
+    <div class="flex h-full flex-col rounded-2xl border-2 border-default/60 bg-default">
+      <SiteTitle class="border-b p-5 text-center" />
 
-      <div class="mt-4 flex flex-1 flex-col gap-6 p-5 pb-10">
+      <div class="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-6">
         <div class="flex flex-col gap-3">
           <h3 class="flex items-center gap-1.5 font-bold">
             <UIcon name="i-lucide-palette" class="size-4.5" />
@@ -26,7 +26,7 @@ const { color, weight } = useColorQuery();
         </div>
       </div>
 
-      <PanelFooter class="mt-auto border-t px-5 py-4" />
+      <PanelFooter class="border-t px-5 py-4" />
     </div>
   </div>
 </template>
