@@ -43,10 +43,12 @@ useHead({
     :locale="locales[locale]"
     :tooltip="{ delayDuration: 100, skipDelayDuration: 150 }"
   >
-    <MobileHeader />
+    <div class="flex h-dvh flex-col bg-base-0">
+      <AppHeader class="shrink-0" />
 
-    <main class="bg-base-0">
-      <NuxtPage />
-    </main>
+      <main class="flex-1">
+        <NuxtPage />
+      </main>
+    </div>
   </UApp>
 </template>

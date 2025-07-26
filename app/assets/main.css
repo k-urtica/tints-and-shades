@@ -27,6 +27,8 @@
 
   --ui-radius: 0.375rem;
 
+  --header-height: 56px;
+
   --font-family:
     'Exo 2', Inter, '-apple-system', BlinkMacSystemFont, Helvetica, Arial, 'Noto Sans JP', Meiryo, sans-serif;
 }

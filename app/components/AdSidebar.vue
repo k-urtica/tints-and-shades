@@ -1,52 +1,34 @@
 <script setup lang="ts">
 const currentYear = new Date().getFullYear();
-
-const container = useTemplateRef('container');
-
-useMutationObserver(
-  container,
-  () => {
-    // Remove height: auto !important that AdSense automatically sets,
-    // to prioritize the height settings specified in our component's CSS
-    if (container.value?.style.height) {
-      container.value.style.height = '';
-    }
-  },
-  {
-    attributes: true,
-    attributeFilter: ['style'],
-  }
-);
 </script>
 
 <template>
-  <aside class="sticky top-0 max-h-svh w-[260px] pt-3">
+  <aside class="sticky top-(--header-height) h-full w-[260px] py-3">
     <div
-      ref="container"
-      class="flex h-full flex-col overflow-auto rounded-tl-2xl border bg-default"
+      class="flex h-full flex-col rounded-l-2xl border-2 border-default/70 bg-default"
     >
-      <div class="px-4 py-3">
+      <div class="flex-1 px-4 py-3">
         <span class="text-xs text-muted">Sponsored link</span>
         <div class="mt-1 flex flex-col gap-4">
           <Ads />
         </div>
       </div>
 
-      <div class="mt-auto p-4">
+      <div class="p-4">
         <ULink
           to="https://web-toolbox.dev/en"
           target="_blank"
-          class="group block rounded-lg border bg-primary/5 px-3 py-4 transition-colors hover:border-primary"
+          class="group block rounded-lg bg-muted/80 px-3 py-4 shadow-sm transition-colors hover:ring-1 hover:ring-primary"
         >
           <div class="flex items-center gap-3">
             <span
-              class="grid content-center rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20"
+              class="grid content-center rounded-lg bg-primary/10 p-2 group-hover:bg-primary/20"
             >
               <UIcon name="i-lucide-box" class="size-5 text-primary" />
             </span>
             <div>
-              <div class="text-sm font-semibold transition-colors">Web ToolBox</div>
-              <div class="mt-1 text-xs text-balance text-muted">
+              <div class="text-sm font-bold">Web ToolBox</div>
+              <div class="mt-1 text-xs leading-snug text-balance text-muted">
                 {{ $t('All the web tools you need, in one place') }}
               </div>
             </div>

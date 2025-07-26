@@ -55,56 +55,61 @@ const doCopy = async (hexColor: string) => {
 </script>
 
 <template>
-  <div class="bg-default p-5">
-    <UAlert
-      v-if="!filteredColorItems.length"
-      variant="subtle"
-      color="warning"
-      title="Could not preview. Check configuration."
-    />
+  <div class="flex flex-col p-3">
+    <div class="flex h-full flex-1 flex-col overflow-hidden rounded-2xl border-2 border-default/70 bg-default shadow-xs">
+      <div v-if="!filteredColorItems.length" class="p-5">
+        <UAlert
+          variant="subtle"
+          color="warning"
+          title="Could not preview. Check configuration."
+        />
+      </div>
 
-    <template v-else>
-      <div class="flex flex-wrap items-center gap-2">
-        <h3 class="font-bold">{{ $t('Preview') }}</h3>
-        <UBadge variant="subtle">{{ $t('Click to Copy') }}</UBadge>
+      <template v-else>
+        <div class="flex flex-wrap items-center gap-2 px-5 pt-5 pb-2">
+          <h3 class="font-bold">{{ $t('Preview') }}</h3>
+          <UBadge variant="subtle">{{ $t('Click to Copy') }}</UBadge>
 
-        <div class="ml-auto w-full md:w-96">
-          <UTabs
-            v-model="activeTab"
-            :items="tabItems"
-            color="neutral"
-            :content="false"
-            size="xs"
-          />
+          <div class="ml-auto w-full md:w-96">
+            <UTabs
+              v-model="activeTab"
+              :items="tabItems"
+              color="neutral"
+              :content="false"
+              size="xs"
+            />
+          </div>
         </div>
-      </div>
 
-      <div
-        class="mt-4 grid transition-[gap,padding]"
-        :class="[
-          appearance.isPadded ? 'gap-2' : 'gap-0',
-          appearance.isOneLine
-            ? 'grid-cols-1 overflow-hidden rounded-lg'
-            : 'sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5',
-        ]"
-      >
-        <ClientOnly>
-          <ColorCard
-            v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
-            :key="idx"
-            :color-item="{
-              ...colorItem,
-              indicator: appearance.indicator && colorItem.type === 'base',
-            }"
-            :is-bright
-            :has-border="appearance.border"
-            :show-text="appearance.showText"
-            :class="{ 'rounded-lg': appearance.isPadded }"
-            class="w-full"
-            @click="doCopy"
-          />
-        </ClientOnly>
-      </div>
-    </template>
+        <div class="h-full overflow-y-auto p-5">
+          <div
+            class="grid transition-[gap,padding]"
+            :class="[
+              appearance.isPadded ? 'gap-2' : 'gap-0',
+              appearance.isOneLine
+                ? 'grid-cols-1 overflow-hidden rounded-lg'
+                : 'sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5',
+            ]"
+          >
+            <ClientOnly>
+              <ColorCard
+                v-for="({ isBright, ...colorItem }, idx) in filteredColorItems"
+                :key="idx"
+                :color-item="{
+                  ...colorItem,
+                  indicator: appearance.indicator && colorItem.type === 'base',
+                }"
+                :is-bright
+                :has-border="appearance.border"
+                :show-text="appearance.showText"
+                :class="{ 'rounded-lg': appearance.isPadded }"
+                class="w-full"
+                @click="doCopy"
+              />
+            </ClientOnly>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>

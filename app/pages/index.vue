@@ -7,12 +7,10 @@ useHead({
 </script>
 
 <template>
-  <div class="flex min-h-svh flex-row gap-3">
+  <div class="flex h-[calc(100dvh-(var(--header-height)))] flex-1 flex-row">
     <SidePanel class="hidden lg:block" />
 
-    <Motion as-child v-bind="motionTween()">
-      <Generator class="flex-1 lg:mt-3 lg:rounded-t-2xl lg:border" />
-    </Motion>
+    <Generator class="flex-1" />
 
     <AdSidebar class="hidden shrink-0 xl:block" />
 
