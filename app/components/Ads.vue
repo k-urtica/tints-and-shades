@@ -6,7 +6,7 @@
     data-ad-slot="3784163880"
     :data-full-width-responsive="false"
     data-ad-format="autorelaxed"
-    class="mx-auto size-[230px] max-w-full"
+    class="mx-auto max-w-full"
   >
     <template #error>
       <p class="text-sm text-muted">
