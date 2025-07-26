@@ -22,7 +22,7 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
 </script>
 
 <template>
-  <div>
+  <div class="space-y-4">
     <ClientOnly>
       <UFormField
         :label="$t('Weight')"
@@ -55,8 +55,7 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       size="sm"
       :legend="$t('Step size')"
       :items="WEIGHT_STEPS"
-      :ui="{ item: 'py-1' }"
-      class="mt-2"
+      :ui="{ item: 'py-1.5' }"
       :style="{ '--ui-radius': '0.25rem' }"
     />
   </div>
