@@ -1,6 +1,6 @@
 <template>
   <UModal
-    :title="$t('About This Tool')"
+    :title="$t('About Tints and Shades Generator')"
     :description="
       $t(
         'A tool to create color variations by generating tints and shades from any base color'
@@ -11,14 +11,15 @@
       content: 'max-w-xl',
     }"
   >
-    <UButton
-      variant="outline"
-      size="sm"
-      leading-icon="i-lucide-info"
-      class="rounded-full"
-    >
-      About
-    </UButton>
+    <UTooltip :text="$t('About this tool')" arrow>
+      <UButton
+        variant="outline"
+        size="sm"
+        icon="i-lucide-info"
+        :aria-label="$t('About this tool')"
+        class="rounded-full"
+      />
+    </UTooltip>
 
     <template #body>
       <div class="space-y-5">

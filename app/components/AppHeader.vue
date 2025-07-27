@@ -20,7 +20,7 @@
           to="https://github.com/k-urtica/tints-and-shades"
           target="_blank"
           variant="outline"
-          leading-icon="i-lucide-github"
+          icon="i-lucide-github"
           aria-label="GitHub Repository"
           size="sm"
           class="rounded-full"
