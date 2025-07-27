@@ -108,6 +108,14 @@ const doCopy = async (hexColor: string) => {
                 class="w-full"
                 @click="doCopy"
               />
+
+              <template #fallback>
+                <USkeleton
+                  v-for="n in 12"
+                  :key="n"
+                  class="h-20 w-full rounded-xl"
+                />
+              </template>
             </ClientOnly>
           </div>
         </div>
