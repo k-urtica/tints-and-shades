@@ -7,7 +7,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-[calc(100dvh-(var(--header-height)))] flex-1 flex-row">
+  <div class="flex h-(--viewport-content-height) flex-row gap-2.5 p-2.5">
     <SettingsPanel class="hidden lg:block" />
 
     <ColorGenerator class="flex-1" />

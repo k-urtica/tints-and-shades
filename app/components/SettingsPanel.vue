@@ -3,7 +3,7 @@ const { color, weight } = useColorQuery();
 </script>
 
 <template>
-  <div class="sticky top-(--header-height) h-full w-[340px] py-2.5 pl-2.5">
+  <div class="w-[340px]">
     <PanelContainer class="flex h-full flex-col">
       <div class="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-6">
         <div class="space-y-3">

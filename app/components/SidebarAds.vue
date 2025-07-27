@@ -3,9 +3,9 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <aside class="sticky top-(--header-height) h-full w-[260px] py-2.5">
+  <aside class="w-[260px]">
     <PanelContainer
-      class="flex h-full flex-col rounded-r-none"
+      class="flex h-full flex-col"
     >
       <div class="flex-1 px-4 py-3">
         <span class="text-xs text-muted">Sponsored link</span>
