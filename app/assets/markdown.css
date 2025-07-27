@@ -1,0 +1,305 @@
+.markdown-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ui-text-toned);
+  max-width: none;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    font-weight: 700;
+    color: var(--ui-text-highlighted);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--ui-highlight);
+      text-decoration: none;
+    }
+  }
+
+  /* 見出しサイズ */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid --alpha(var(--ui-border) / 0.3);
+    margin-bottom: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid --alpha(var(--ui-border) / 0.25);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* 段落 */
+  p {
+    font-size: 1rem;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    color: var(--ui-text-toned);
+  }
+
+  /* 強調表現 */
+  strong,
+  b {
+    font-weight: 700;
+    color: var(--ui-text-highlighted);
+  }
+
+  em,
+  i {
+    font-style: italic;
+    color: var(--ui-text-highlighted);
+  }
+
+  /* リスト */
+  ul,
+  ol {
+    padding-inline-start: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1.2em;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul > li {
+    position: relative;
+    padding-left: 0.5em;
+  }
+
+  ul > li::before {
+    content: '→';
+    position: absolute;
+    left: -1.2em;
+    color: var(--ui-text-highlighted);
+    font-weight: 600;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    font-size: 1rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+    color: var(--ui-text-toned);
+  }
+
+  /* ネストしたリスト */
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* インラインコード */
+  code {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      SF Mono,
+      Menlo,
+      HackGenNerd,
+      Consolas,
+      Liberation Mono,
+      monospace;
+    word-break: break-word;
+    font-size: 0.875em;
+    font-weight: 600;
+    background: --alpha(var(--ui-border) / 0.12);
+    color: var(--ui-text-highlighted);
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.15rem;
+    border-radius: 0.375rem;
+    border: 1px solid --alpha(var(--ui-border) / 0.2);
+  }
+
+  /* リンク */
+  a {
+    color: var(--ui-primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    transition: all 0.2s ease;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background: --alpha(var(--ui-primary) / 0.05);
+  }
+
+  /* 見出し内のリンクは下線なし */
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    text-decoration: none;
+  }
+
+  h1 a:hover,
+  h2 a:hover,
+  h3 a:hover,
+  h4 a:hover,
+  h5 a:hover,
+  h6 a:hover {
+    background: none;
+    opacity: 0.8;
+  }
+
+  /* 画像 */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em auto;
+    border-radius: 1rem;
+  }
+
+  /* 区切り線 */
+  hr {
+    margin: 2.5em 0;
+    border: 0;
+    border-top: 1px solid --alpha(var(--ui-border) / 0.6);
+    position: relative;
+  }
+
+  hr::after {
+    content: '✦';
+    position: absolute;
+    top: -0.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ui-bg-base);
+    color: --alpha(var(--ui-border) / 0.8);
+    padding: 0 1em;
+    font-size: 1.2em;
+  }
+
+  /* コードブロック（改善） */
+  pre {
+    margin: 1.5em 0;
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    background: --alpha(var(--ui-border) / 0.03);
+    border: 1px solid --alpha(var(--ui-border) / 0.1);
+    overflow-x: auto;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px --alpha(var(--ui-border) / 0.05);
+
+    code {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      font-size: 0.875em;
+      line-height: 1.6;
+      color: var(--ui-text-toned);
+    }
+  }
+
+  /* 引用（改善） */
+  blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--ui-primary);
+    background: --alpha(var(--ui-border) / 0.06);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: italic;
+    color: var(--ui-text-toned);
+    position: relative;
+  }
+
+  blockquote::before {
+    content: '"';
+    position: absolute;
+    top: 0.2em;
+    left: 0.5em;
+    font-size: 2em;
+    color: --alpha(var(--ui-border) / 0.4);
+    font-family: serif;
+  }
+
+  blockquote p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-left: 1em;
+  }
+
+  blockquote p:first-child {
+    margin-top: 0;
+  }
+
+  blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* テーブル（追加） */
+  table {
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.875rem;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  thead {
+    background-color: --alpha(var(--ui-border) / 0.04);
+  }
+
+  th {
+    border: 1px solid --alpha(var(--ui-border) / 0.15);
+    padding: 0.5em 0.75em;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    border: 1px solid --alpha(var(--ui-border) / 0.15);
+    padding: 0.4em 0.75em;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: --alpha(var(--ui-border) / 0.02);
+  }
+}

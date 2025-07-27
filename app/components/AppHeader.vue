@@ -14,6 +14,8 @@
       </div>
 
       <div class="ms-auto flex shrink-0 items-center gap-2.5">
+        <DocSwitcher />
+
         <AboutModal />
 
         <UButton

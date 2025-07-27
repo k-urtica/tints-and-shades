@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-og-image',
     'motion-v/nuxt',
+    '@nuxt/content'
   ],
 
   $production: {
