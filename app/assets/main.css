@@ -18,14 +18,14 @@
 
 @theme static {
   --color-base-0: var(--bg-base-0);
+  --color-surface: var(--bg-surface);
 
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 :root {
   --bg-base-0: rgb(249 250 251);
-
-  --ui-radius: 0.375rem;
+  --bg-surface: rgb(255 255 255);
 
   --header-height: 56px;
 
@@ -34,7 +34,8 @@
 }
 
 .dark {
-  --bg-base-0: rgb(20, 20, 20);
+  --bg-base-0: rgb(20 20 20);
+  --bg-surface: rgb(26 26 30);
 }
 
 body {

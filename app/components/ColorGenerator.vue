@@ -55,8 +55,8 @@ const doCopy = async (hexColor: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col p-3">
-    <div class="flex h-full flex-1 flex-col overflow-hidden rounded-2xl border-2 border-default/70 bg-default shadow-xs">
+  <div class="flex flex-col p-2.5">
+    <PanelContainer class="flex h-full flex-1 flex-col overflow-hidden">
       <div v-if="!filteredColorItems.length" class="p-5">
         <UAlert
           variant="subtle"
@@ -68,7 +68,7 @@ const doCopy = async (hexColor: string) => {
       <template v-else>
         <div class="flex flex-wrap items-center gap-2 px-5 pt-5 pb-2">
           <h3 class="font-bold">{{ $t('Preview') }}</h3>
-          <UBadge variant="subtle">{{ $t('Click to Copy') }}</UBadge>
+          <UBadge variant="subtle" color="primary" size="sm">{{ $t('Click to Copy') }}</UBadge>
 
           <div class="ml-auto w-full md:w-96">
             <UTabs
@@ -76,6 +76,9 @@ const doCopy = async (hexColor: string) => {
               :items="tabItems"
               :content="false"
               size="xs"
+              :ui="{
+                list: 'bg-accented/30'
+              }"
             />
           </div>
         </div>
@@ -101,7 +104,7 @@ const doCopy = async (hexColor: string) => {
                 :is-bright
                 :has-border="appearance.border"
                 :show-text="appearance.showText"
-                :class="{ 'rounded-lg': appearance.isPadded }"
+                :class="{ 'rounded-xl': appearance.isPadded }"
                 class="w-full"
                 @click="doCopy"
               />
@@ -109,6 +112,6 @@ const doCopy = async (hexColor: string) => {
           </div>
         </div>
       </template>
-    </div>
+    </PanelContainer>
   </div>
 </template>

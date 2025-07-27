@@ -3,8 +3,8 @@ const { color, weight } = useColorQuery();
 </script>
 
 <template>
-  <div class="sticky top-(--header-height) h-full w-[340px] py-3 pl-3">
-    <div class="flex h-full flex-col rounded-2xl border-2 border-default/70 bg-default">
+  <div class="sticky top-(--header-height) h-full w-[340px] py-2.5 pl-2.5">
+    <PanelContainer class="flex h-full flex-col">
       <div class="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-6">
         <div class="space-y-3">
           <h3 class="flex items-center gap-1.5 font-bold">
@@ -25,6 +25,6 @@ const { color, weight } = useColorQuery();
       </div>
 
       <PanelFooter class="border-t px-5 py-4" />
-    </div>
+    </PanelContainer>
   </div>
 </template>

@@ -13,6 +13,7 @@
   >
     <UButton
       variant="outline"
+      size="sm"
       leading-icon="i-lucide-info"
       class="rounded-full"
     >

@@ -1,6 +1,6 @@
 <template>
-  <header class="sticky top-0 z-10 h-(--header-height) px-2 pt-1">
-    <div class="flex h-full items-center rounded-xl border-2 border-default/70 bg-default px-4">
+  <header class="sticky top-0 z-10 h-(--header-height) px-2.5">
+    <PanelContainer class="flex h-full items-center rounded-t-none border-t-0 px-4">
       <div class="flex items-center gap-2">
         <NuxtImg
           src="/favicon.svg"
@@ -22,9 +22,10 @@
           variant="outline"
           leading-icon="i-lucide-github"
           aria-label="GitHub Repository"
+          size="sm"
           class="rounded-full"
         />
       </div>
-    </div>
+    </PanelContainer>
   </header>
 </template>

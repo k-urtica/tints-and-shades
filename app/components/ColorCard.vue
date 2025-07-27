@@ -18,7 +18,7 @@ defineEmits<{
 
 const cardClasses = computed(() =>
   cn(props.isBright ? 'text-zinc-950' : 'text-zinc-50', {
-    'ring-1 ring-(--ui-border)': props.hasBorder,
+    'ring-1 ring-muted/60': props.hasBorder,
   })
 );
 </script>

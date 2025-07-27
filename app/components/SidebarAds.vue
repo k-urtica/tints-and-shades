@@ -3,9 +3,9 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <aside class="sticky top-(--header-height) h-full w-[260px] py-3">
-    <div
-      class="flex h-full flex-col rounded-l-2xl border-2 border-default/70 bg-default"
+  <aside class="sticky top-(--header-height) h-full w-[260px] py-2.5">
+    <PanelContainer
+      class="flex h-full flex-col rounded-r-none"
     >
       <div class="flex-1 px-4 py-3">
         <span class="text-xs text-muted">Sponsored link</span>
@@ -18,9 +18,9 @@ const currentYear = new Date().getFullYear();
         <ULink
           to="https://web-toolbox.dev/en"
           target="_blank"
-          class="group block rounded-lg bg-muted/80 px-3 py-4 shadow-sm transition-colors hover:ring-1 hover:ring-primary"
+          class="group block rounded-lg bg-muted/60 p-4 shadow-sm ring-1 ring-muted/40 transition-colors hover:ring-1 hover:ring-primary"
         >
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2">
             <span
               class="grid content-center rounded-lg bg-primary/10 p-2 group-hover:bg-primary/20"
             >
@@ -39,6 +39,6 @@ const currentYear = new Date().getFullYear();
           © {{ currentYear }} Tints & Shades
         </div>
       </div>
-    </div>
+    </PanelContainer>
   </aside>
 </template>

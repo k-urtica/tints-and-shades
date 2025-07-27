@@ -54,8 +54,7 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       indicator="start"
       :legend="$t('Step size')"
       :items="WEIGHT_STEPS"
-      :ui="{ item: 'py-1.5' }"
-      :style="{ '--ui-radius': '0.25rem' }"
+      :ui="{ item: 'py-1' }"
     />
   </div>
 </template>
