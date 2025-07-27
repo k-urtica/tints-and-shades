@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "4.1.0",
+    "@nuxt/content": "^3.6.3",
     "@nuxt/image": "1.10.0",
     "@nuxt/ui": "3.3.0",
     "@nuxtjs/robots": "5.4.0",
     "@vueuse/core": "13.5.0",
     "@vueuse/nuxt": "13.5.0",
+    "better-sqlite3": "^12.2.0",
     "motion-v": "1.6.1",
     "nuxt": "4.0.1",
     "nuxt-og-image": "5.1.9",
@@ -46,6 +48,7 @@
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@tailwindcss/oxide",
+      "better-sqlite3",
       "esbuild",
       "sharp",
       "simple-git-hooks",
