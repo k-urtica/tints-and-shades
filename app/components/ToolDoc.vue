@@ -10,7 +10,7 @@ const { data: doc } = await useAsyncData(
 </script>
 
 <template>
-  <PanelContainer class="flex flex-1 flex-col overflow-auto p-5 md:p-8">
+  <PanelContainer class="overflow-auto p-5 md:p-8">
     <ContentRenderer
       v-if="doc"
       :value="doc.meta"
