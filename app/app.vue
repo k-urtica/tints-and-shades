@@ -43,7 +43,7 @@ useHead({
     :locale="locales[locale]"
     :tooltip="{ delayDuration: 100, skipDelayDuration: 150 }"
   >
-    <div class="flex flex-col bg-base-0">
+    <div class="flex h-dvh flex-col overflow-y-clip bg-base-0">
       <AppHeader class="shrink-0" />
 
       <main class="flex-1">

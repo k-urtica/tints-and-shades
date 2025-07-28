@@ -3,13 +3,13 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <aside class="w-[260px]">
+  <aside class="w-[260px] overflow-hidden">
     <PanelContainer
       class="flex h-full flex-col"
     >
-      <div class="flex-1 px-4 py-3">
-        <span class="text-xs text-muted">Sponsored link</span>
-        <div class="mt-1 flex flex-col gap-4">
+      <div class="flex h-full min-h-0 flex-1 flex-col gap-1 py-3">
+        <span class="px-4 text-xs text-muted">Sponsored link</span>
+        <div class="h-full overflow-y-auto px-4">
           <Ads />
         </div>
       </div>
