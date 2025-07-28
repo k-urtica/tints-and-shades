@@ -55,7 +55,7 @@ const doCopy = async (hexColor: string) => {
 </script>
 
 <template>
-  <PanelContainer class="flex flex-1 flex-col overflow-hidden">
+  <PanelContainer class="flex h-full flex-1 flex-col overflow-hidden">
     <div v-if="!filteredColorItems.length" class="p-5">
       <UAlert
         variant="subtle"

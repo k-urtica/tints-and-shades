@@ -9,14 +9,16 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-(--viewport-content-height) flex-row gap-2.5 p-2.5">
+  <div class="flex h-(--viewport-content-height) flex-row gap-2.5 p-2">
     <SettingsPanel class="hidden lg:block" />
 
-    <ColorGenerator v-show="!isDocVisible" class="flex-1" />
-    <ToolDoc v-show="isDocVisible" class="flex-1" />
+    <div class="flex flex-1 flex-col gap-2 lg:block">
+      <ColorGenerator v-show="!isDocVisible" />
+      <ToolDoc v-show="isDocVisible" />
+
+      <MobileDrawer class="lg:hidden" />
+    </div>
 
     <SidebarAds class="hidden shrink-0 xl:block" />
-
-    <MobileDrawer class="lg:hidden" />
   </div>
 </template>

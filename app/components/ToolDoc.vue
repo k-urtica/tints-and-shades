@@ -11,7 +11,7 @@ const { data: doc } = await useAsyncData(
 </script>
 
 <template>
-  <PanelContainer class="overflow-hidden">
+  <PanelContainer class="h-full overflow-hidden">
     <div class="h-full overflow-y-auto p-5 lg:p-8">
       <div class="mb-4 flex justify-end">
         <UButton
