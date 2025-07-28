@@ -26,7 +26,8 @@ const items = computed(() =>
         variant="outline"
         trailing-icon="i-lucide-chevron-down"
         block
-        class="w-30"
+        size="sm"
+        class="w-28"
       >
         {{ activeLocale }}
       </UButton>
