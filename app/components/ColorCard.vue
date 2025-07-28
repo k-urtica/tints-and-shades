@@ -44,12 +44,12 @@ const cardClasses = computed(() =>
     >
       <UIcon
         name="i-lucide-copy"
-        class="absolute top-2 right-2 size-4 opacity-30 transition-opacity group-hover:opacity-80"
+        class="absolute top-2 right-2 size-4 opacity-0 transition-opacity group-hover:opacity-80"
       />
 
       <template v-if="showText">
-        <div class="font-mono font-medium tabular-nums">{{ colorItem.weight }}</div>
-        <div class="mt-0.5 flex items-center gap-2">
+        <div class="text-xs tabular-nums">{{ colorItem.weight }}</div>
+        <div class="mt-1 flex items-center gap-2">
           <span class="font-semibold uppercase">{{ colorItem.color }}</span>
           <UIcon
             v-if="colorItem.indicator"
