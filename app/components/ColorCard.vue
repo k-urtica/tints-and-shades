@@ -48,9 +48,9 @@ const cardClasses = computed(() =>
       />
 
       <template v-if="showText">
-        <div class="text-xs tabular-nums">{{ colorItem.weight }}</div>
+        <div class="font-mono text-xs">{{ colorItem.weight }}</div>
         <div class="mt-1 flex items-center gap-2">
-          <span class="font-semibold uppercase">{{ colorItem.color }}</span>
+          <span class="font-mono font-semibold uppercase">{{ colorItem.color }}</span>
           <UIcon
             v-if="colorItem.indicator"
             name="i-lucide-badge-alert"
