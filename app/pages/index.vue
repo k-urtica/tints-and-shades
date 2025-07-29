@@ -10,15 +10,15 @@ useHead({
 
 <template>
   <div class="flex h-(--viewport-content-height) flex-row gap-2.5 p-2">
-    <SettingsPanel class="hidden lg:block" />
+    <ControlPanel class="hidden lg:block" />
 
     <div class="flex flex-1 flex-col gap-2 lg:block">
-      <ColorGenerator v-show="!isDocVisible" />
+      <ContentPanel v-show="!isDocVisible" />
       <ToolDoc v-show="isDocVisible" />
 
-      <MobileDrawer class="lg:hidden" />
+      <MobileControlPanel class="lg:hidden" />
     </div>
 
-    <SidebarAds class="hidden shrink-0 xl:block" />
+    <AsidePanel class="hidden shrink-0 xl:block" />
   </div>
 </template>

@@ -24,7 +24,7 @@ const { color, weight } = useColorQuery();
         </div>
       </div>
 
-      <SettingsPanelFooter class="border-t px-5 py-4" />
+      <ControlPanelFooter class="border-t px-5 py-4" />
     </PanelContainer>
   </div>
 </template>

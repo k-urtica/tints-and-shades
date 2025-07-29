@@ -20,7 +20,7 @@ const { color, weight } = useColorQuery();
             <ColorWeight v-model="weight" />
             <AppearanceSettings />
 
-            <PanelFooter class="mt-4 border-t pt-4" />
+            <ControlPanelFooter class="mt-4 border-t pt-4" />
           </div>
         </template>
       </UDrawer>
