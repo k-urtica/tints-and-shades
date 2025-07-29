@@ -6,7 +6,7 @@ const { color, weight } = useColorQuery();
   <div class="w-[340px]">
     <PanelContainer class="flex h-full flex-col">
       <div class="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-6">
-        <div class="space-y-3">
+        <div class="space-y-4">
           <h3 class="flex items-center gap-1.5 font-bold">
             <UIcon name="i-lucide-palette" class="size-4.5" />
             {{ $t('Color Settings') }}
@@ -24,7 +24,7 @@ const { color, weight } = useColorQuery();
         </div>
       </div>
 
-      <PanelFooter class="border-t px-5 py-4" />
+      <SettingsPanelFooter class="border-t px-5 py-4" />
     </PanelContainer>
   </div>
 </template>
