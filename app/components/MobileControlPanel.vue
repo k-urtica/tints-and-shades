@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { color, weight } = useColorQuery();
+const { color, weight, format } = useColorQuery();
 </script>
 
 <template>
@@ -18,6 +18,7 @@ const { color, weight } = useColorQuery();
         <template #content>
           <div class="flex flex-col gap-5 p-5">
             <ColorWeight v-model="weight" />
+            <ColorFormatSelector v-model="format" />
             <AppearanceSettings />
 
             <ControlPanelFooter class="mt-4 border-t pt-4" />
