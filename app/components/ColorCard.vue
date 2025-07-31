@@ -34,8 +34,7 @@ const cardClasses = computed(() =>
       :aria-label="`Copy Color ${colorItem.color}`"
       :class="
         cn(
-          'group relative block px-4 py-5 text-left text-sm transition-colors',
-          { 'h-16': !showText },
+          'group relative block min-h-20 px-4 py-5 text-left text-sm transition-colors',
           cardClasses
         )
       "
