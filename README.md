@@ -21,11 +21,16 @@
 
 ## 📝 Overview
 
-Tints and Shades Generator is a tool that allows designers and developers to easily create color variations. It generates tints (lighter colors mixed with white) and shades (darker colors mixed with black) from a base color, supporting the creation of color palettes for web and UI design.
+Tints and Shades Generator is a web tool that creates color variations that look truly natural to the human eye, all from a single base color.
+
+Unlike simple color mixing, this tool uses the latest **oklch color space** technology to generate perceptually smooth and beautiful gradients. Oklch lets you adjust "lightness," "hue," and "chroma" in a way that's much closer to how people actually see color. So, no matter what color you start with, you get gradients that just feel right—no more muddy or awkward transitions.
+
+For example, when you lighten blue towards white, you get a clean, beautiful light blue (not a dull, washed-out color). When you darken a color towards black, you keep the richness and depth, not just a muddy gray. This means designers and developers can instantly create unified, beautiful palettes without tedious manual tweaking.
 
 ## ✨ Features
 
-- 💪 Simple yet powerful color generation
+- 💪 Perceptually-correct color generation using oklch color space
+- 🎨 Beautiful, natural gradients for any base color
 - ⚡ Fast and intuitive user experience
 - 🎨 TailwindCSS compatible color palette generation
 - 🎚 Adjust color weights with 0.1% precision
@@ -48,7 +53,7 @@ Tints and Shades Generator is a tool that allows designers and developers to eas
 - [Nuxt 3](https://nuxt.com/)
 - [NuxtUI 3](https://ui.nuxt.com/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [tinycolor](https://github.com/scttcper/tinycolor)
+- [culori](https://culorijs.org/) (oklch color space)
 
 ## 🔧 Installation
 
