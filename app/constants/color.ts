@@ -4,4 +4,4 @@ export const DEFAULT_WEIGHT = 5;
 
 export const MIN_WEIGHT = 1;
 
-export const MAX_WEIGHT = 50;
+export const MAX_WEIGHT = 20;
