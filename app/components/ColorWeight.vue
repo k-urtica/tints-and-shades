@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { RadioGroupItem } from '@nuxt/ui';
+import { DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT } from '~/constants/color';
 
-const weight = defineModel<number>({ default: 5 });
+const weight = defineModel<number>({ default: DEFAULT_WEIGHT });
 
 const currentStep = ref(1);
 
@@ -31,8 +32,8 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       >
         <USlider
           v-model="weight"
-          :min="1"
-          :max="50"
+          :min="MIN_WEIGHT"
+          :max="MAX_WEIGHT"
           :step="currentStep"
         />
 

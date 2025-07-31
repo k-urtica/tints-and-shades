@@ -1,12 +1,8 @@
 import { parseHex } from 'culori/fn';
+import { DEFAULT_COLOR, DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT } from '~/constants/color';
 
 export function useColorQuery() {
   const route = useRoute();
-
-  const DEFAULT_COLOR = '#7085f0';
-  const DEFAULT_WEIGHT = 5;
-  const MIN_WEIGHT = 1;
-  const MAX_WEIGHT = 50;
 
   interface ColorQueryParams {
     color?: string;
