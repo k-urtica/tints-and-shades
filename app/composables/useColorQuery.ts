@@ -1,6 +1,7 @@
+import { parseHex } from 'culori/fn';
+
 export function useColorQuery() {
   const route = useRoute();
-  const router = useRouter();
 
   const DEFAULT_COLOR = '#7085f0';
   const DEFAULT_WEIGHT = 5;
@@ -13,7 +14,7 @@ export function useColorQuery() {
   }
 
   const isValidHexColor = (value: unknown): value is string => {
-    return typeof value === 'string' && /^#[0-9A-F]{6}$/i.test(value);
+    return typeof value === 'string' && !!parseHex(value);
   };
 
   const isValidWeight = (value: unknown): value is number => {
@@ -26,7 +27,7 @@ export function useColorQuery() {
   };
 
   const updateQuery = (queryParams: ColorQueryParams) => {
-    router.replace({
+    navigateTo({
       query: { ...route.query, ...queryParams },
     });
   };

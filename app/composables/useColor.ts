@@ -1,4 +1,4 @@
-import { random, TinyColor } from '@ctrl/tinycolor';
+import { formatHex, interpolate, parse, wcagLuminance } from 'culori/fn';
 
 export type ColorType = 'tint' | 'base' | 'shade';
 
@@ -9,77 +9,98 @@ export interface GeneratedColor {
   isBright: boolean;
 }
 
+const BRIGHTNESS_THRESHOLD = 0.2;
+
 export function useColor() {
-  const createTinyColor = (colorCode: string) => {
-    const tinyColor = new TinyColor(colorCode);
-    return tinyColor.isValid ? tinyColor : undefined;
+  const isBrightColor = (color: string): boolean => wcagLuminance(color) > BRIGHTNESS_THRESHOLD;
+
+  const isValidColor = (input: string): boolean => !!parse(input);
+
+  const mixOklch = (color1: string, color2: string, amount: number): string => {
+    const interpolator = interpolate([color1, color2], 'oklch');
+    return formatHex(interpolator(amount));
   };
+
+  /**
+   * Generates a tint of the base color by mixing it with white.
+   * @param baseColor - The base color in hex format.
+   * @param amount - The amount of white to mix in, between 0 and 1.
+   * @returns The tinted color in hex format.
+   */
+  const tintMix = (baseColor: string, amount: number): string =>
+    mixOklch(baseColor, '#FFFFFF', amount);
+
+  /**
+   * Generates a shade of the base color by mixing it with black.
+   * @param baseColor - The base color in hex format.
+   * @param amount - The amount of black to mix in, between 0 and 1.
+   * @returns The shaded color in hex format.
+   */
+  const shadeMix = (baseColor: string, amount: number): string =>
+    mixOklch(baseColor, '#000000', amount);
 
   const generateColors = (baseColor: string, weightStep: number): GeneratedColor[] => {
-    const tinyColor = createTinyColor(baseColor);
-    if (!tinyColor) return [];
+    if (!isValidColor(baseColor)) return [];
 
-    try {
-      const steps = Math.floor(100 / weightStep);
-      const result: GeneratedColor[] = [];
+    const steps = Math.floor(100 / weightStep);
+    const colors: GeneratedColor[] = [];
 
-      // tints
-      for (let i = steps; i > 0; i--) {
-        const percentage = Number((i * weightStep).toFixed(1));
-        const tintColor = tinyColor.clone().tint(percentage);
-
-        result.push({
-          color: tintColor.toHexString(),
-          weight: `+${percentage}%`,
-          type: 'tint',
-          isBright: tintColor.isLight(),
-        });
-      }
-
-      // base color
-      result.push({
-        color: tinyColor.toHexString(),
-        weight: '0%',
-        type: 'base',
-        isBright: tinyColor.isLight(),
+    for (let i = steps; i > 0; i--) {
+      const amount = i / steps;
+      const weight = Math.round(amount * 100);
+      const tintHex = tintMix(baseColor, amount);
+      colors.push({
+        color: tintHex,
+        weight: `+${weight}%`,
+        type: 'tint',
+        isBright: isBrightColor(tintHex),
       });
-
-      // shades
-      for (let i = 1; i <= steps; i++) {
-        const percentage = Number((i * weightStep).toFixed(1));
-        const shadeColor = tinyColor.clone().shade(percentage);
-
-        result.push({
-          color: shadeColor.toHexString(),
-          weight: `-${percentage}%`,
-          type: 'shade',
-          isBright: shadeColor.isLight(),
-        });
-      }
-
-      return result;
-    } catch (error) {
-      console.error('Error generating colors:', error);
-      return [];
     }
+
+    colors.push({
+      color: baseColor,
+      weight: '0%',
+      type: 'base',
+      isBright: isBrightColor(baseColor),
+    });
+
+    for (let i = 1; i <= steps; i++) {
+      const amount = i / steps;
+      const weight = Math.round(amount * 100);
+      const shadeHex = shadeMix(baseColor, amount);
+      colors.push({
+        color: shadeHex,
+        weight: `-${weight}%`,
+        type: 'shade',
+        isBright: isBrightColor(shadeHex),
+      });
+    }
+
+    return colors;
   };
 
-  const formatHexColor = (hexColor: string, includeHash = true): string =>
-    includeHash
-      ? hexColor.startsWith('#')
-        ? hexColor
-        : `#${hexColor}`
-      : hexColor.startsWith('#')
-        ? hexColor.slice(1)
-        : hexColor;
-
-  const getRandomColor = () => {
-    return random().toHexString();
+  const formatHexColor = (hexColor: string, includeHash = true): string => {
+    const hasHash = hexColor.startsWith('#');
+    return includeHash
+      ? hasHash ? hexColor : `#${hexColor}`
+      : hasHash ? hexColor.slice(1) : hexColor;
   };
+
+  const getRandomColor = (): string =>
+    formatHex({
+      mode: 'rgb',
+      r: Math.random(),
+      g: Math.random(),
+      b: Math.random(),
+    });
 
   return {
     generateColors,
     formatHexColor,
     getRandomColor,
+    isBrightColor,
+    isValidColor,
+    tintMix,
+    shadeMix,
   };
 }

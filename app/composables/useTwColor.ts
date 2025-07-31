@@ -1,118 +1,94 @@
 import type { ColorType, GeneratedColor } from '@/composables/useColor';
-import { TinyColor } from '@ctrl/tinycolor';
+import { formatHex, parse } from 'culori/fn';
 
 const TAILWIND_SCALES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
 const BASE_SCALE = 500;
 
-const TINT_RANGES = [
-  { min: 0, max: 100, startPercent: 85, endPercent: 95 }, // brightest
-  { min: 100, max: 200, startPercent: 65, endPercent: 85 },
-  { min: 200, max: 300, startPercent: 45, endPercent: 65 }, // 200-300 range
-  { min: 300, max: 400, startPercent: 25, endPercent: 45 }, // 300-400 range
-  { min: 400, max: BASE_SCALE, startPercent: 0, endPercent: 25 }, // darkest (closest to base)
-] as const;
+const MAX_TINT_AMOUNT = 0.92;
+const MAX_SHADE_AMOUNT = 0.82;
+const TINT_SATURATION_DIVISOR = 450;
+const TINT_SATURATION_FACTOR = 0.5;
+const SHADE_SATURATION_MID = 300;
+const SHADE_SATURATION_MID_FACTOR = 0.2;
+const SHADE_SATURATION_HIGH = 150;
+const SHADE_SATURATION_HIGH_FACTOR = 0.5;
+const WEIGHT_THRESHOLD = 10;
+const WEIGHT_FACTOR_STEP = 0.01;
 
-const SHADE_RANGES = [
+const COLOR_RANGES = [
+  { min: 0, max: 100, startPercent: 85, endPercent: 95 },
+  { min: 100, max: 200, startPercent: 65, endPercent: 85 },
+  { min: 200, max: 300, startPercent: 45, endPercent: 65 },
+  { min: 300, max: 400, startPercent: 25, endPercent: 45 },
+  { min: 400, max: BASE_SCALE, startPercent: 0, endPercent: 25 },
   { min: BASE_SCALE, max: 600, startPercent: 0, endPercent: 20 },
   { min: 600, max: 800, startPercent: 20, endPercent: 55 },
   { min: 800, max: 900, startPercent: 55, endPercent: 70 },
   { min: 900, max: 951, startPercent: 70, endPercent: 82 },
 ] as const;
 
-/**
- * Composable that generates colors according to Tailwind CSS color scale (50-950)
- */
-export const useTwColor = () => {
-  const getAdjustmentRange = (scale: number) =>
-    scale < BASE_SCALE
-      ? TINT_RANGES.find((r) => scale >= r.min && scale < r.max)
-      : SHADE_RANGES.find((r) => scale >= r.min && scale < r.max);
+export function useTwColor() {
+  const { isValidColor, isBrightColor, formatHexColor, tintMix, shadeMix } = useColor();
 
-  /**
-   * Calculate color amount for both tints and shades
-   * @param scale - Tailwind scale value
-   * @param weightValue - Weight parameter for adjusting color intensity
-   */
+  const getMaxAmount = (scale: number) => scale < BASE_SCALE ? MAX_TINT_AMOUNT : MAX_SHADE_AMOUNT;
+  const getColorType = (scale: number): ColorType => scale < BASE_SCALE ? 'tint' : 'shade';
+
   const calculateColorAmount = (scale: number, weightValue: number): number => {
-    const range = getAdjustmentRange(scale);
+    const range = COLOR_RANGES.find((r) => scale >= r.min && scale < r.max);
     if (!range) return 0;
 
-    const { min, max, startPercent, endPercent } = range;
+    const normalized = (scale - range.min) / (range.max - range.min);
+    const percent = range.startPercent + normalized * (range.endPercent - range.startPercent);
+    const weight = 1 + (weightValue > WEIGHT_THRESHOLD ? (weightValue - WEIGHT_THRESHOLD) * WEIGHT_FACTOR_STEP : 0);
 
-    const normalizedPosition = (scale - min) / (max - min);
-    const basePercentage =
-      startPercent + normalizedPosition * (endPercent - startPercent);
-
-    // Apply weight factor - higher weight means more pronounced changes
-    const weightFactor = 1 + (weightValue > 10 ? (weightValue - 10) * 0.01 : 0);
-
-    return Math.min(scale < BASE_SCALE ? 92 : 82, basePercentage * weightFactor);
+    return Math.min(getMaxAmount(scale), (percent * weight) / 100);
   };
 
-  const adjustSaturation = (color: TinyColor, scale: number): TinyColor => {
+  const adjustSaturation = (color: string, scale: number): string => {
     if (scale === BASE_SCALE) return color;
 
-    const hsl = color.toHsl();
+    const parsed = parse(color);
+    if (!parsed || parsed.mode !== 'hsl') return color;
+
+    let { h, s, l, alpha } = parsed;
 
     if (scale < BASE_SCALE) {
-      // Decrease saturation for tints (closer to white)
-      hsl.s *= 1 - ((BASE_SCALE - scale) / 450) * 0.5;
+      s *= 1 - ((BASE_SCALE - scale) / TINT_SATURATION_DIVISOR) * TINT_SATURATION_FACTOR;
     } else if (scale <= 800) {
-      // Increase saturation for mid-range shades
-      hsl.s = Math.min(1, hsl.s * (1 + ((scale - BASE_SCALE) / 300) * 0.2));
+      s = Math.min(1, s * (1 + ((scale - BASE_SCALE) / SHADE_SATURATION_MID) * SHADE_SATURATION_MID_FACTOR));
     } else {
-      // Decrease saturation for dark shades (closer to black)
-      hsl.s *= 1 - ((scale - 800) / 150) * 0.5;
+      s *= 1 - ((scale - 800) / SHADE_SATURATION_HIGH) * SHADE_SATURATION_HIGH_FACTOR;
     }
-
-    return new TinyColor(hsl);
+    return formatHex({ mode: 'hsl', h, s, l, alpha });
   };
 
-  const generateTailwindColors = (
-    baseColor: string,
-    weightValue: number
-  ): GeneratedColor[] => {
-    const tinyColor = new TinyColor(baseColor);
-    if (!tinyColor.isValid) return [];
-
-    try {
-      const result = TAILWIND_SCALES.map((scale) => {
-        if (scale === BASE_SCALE) {
-          return {
-            color: tinyColor.toHexString(),
-            weight: `${scale}`,
-            type: 'base' as const,
-            isBright: tinyColor.isLight(),
-          };
-        }
-
-        const amount = calculateColorAmount(scale, weightValue);
-        const isLighter = scale < BASE_SCALE;
-        const type = isLighter ? 'tint' : 'shade';
-
-        const colorInstance = isLighter
-          ? tinyColor.clone().tint(amount)
-          : tinyColor.clone().shade(amount);
-
-        const adjustedColor = adjustSaturation(colorInstance, scale);
-
+  const generateTailwindColors = (baseColor: string, weightValue: number): GeneratedColor[] => {
+    if (!isValidColor(baseColor)) return [];
+    return TAILWIND_SCALES.map((scale) => {
+      if (scale === BASE_SCALE) {
         return {
-          color: adjustedColor.toHexString(),
+          color: formatHexColor(baseColor),
           weight: `${scale}`,
-          type: type as ColorType,
-          isBright: adjustedColor.isLight(),
+          type: 'base' as const,
+          isBright: isBrightColor(baseColor),
         };
-      });
+      }
 
-      return result;
-    } catch (error) {
-      console.error('Error generating Tailwind colors:', error);
-      return [];
-    }
+      const amount = calculateColorAmount(scale, weightValue);
+      const rawColor = scale < BASE_SCALE ? tintMix(baseColor, amount) : shadeMix(baseColor, amount);
+      const adjustedColor = adjustSaturation(rawColor, scale);
+
+      return {
+        color: formatHexColor(adjustedColor),
+        weight: `${scale}`,
+        type: getColorType(scale),
+        isBright: isBrightColor(adjustedColor),
+      };
+    });
   };
 
   return {
     tailwindScales: TAILWIND_SCALES,
     generateTailwindColors,
   };
-};
+}
