@@ -37,7 +37,8 @@ For example, when you lighten blue towards white, you get a clean, beautiful lig
 - 🖌 Visual color selection with a color picker
 - 📊 Preview and listing of generated colors
 - 😍 Customizable display options
-- 📋 One-click copy of color codes
+- 📋 One-click copy of color codes (hex / rgb / hsl)
+- 🔄 Switch between hex, rgb, and hsl formats for display and copy
 - 📱 Responsive design for mobile compatibility
 
 ## 🚀 How to Use
@@ -45,8 +46,9 @@ For example, when you lighten blue towards white, you get a clean, beautiful lig
 1. Enter or select a base color from the color picker
 2. Adjust the weights as needed
 3. Check the generated color palette
-4. Click on your preferred color code to copy it
-5. Customize display options as needed
+4. Switch the color format (hex / rgb / hsl) as needed
+5. Click on your preferred color code to copy it
+6. Customize display options as needed
 
 ## 💻 Technology Stack
 
