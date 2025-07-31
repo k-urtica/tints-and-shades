@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { color, weight } = useColorQuery();
+const { color, weight, format } = useColorQuery();
 </script>
 
 <template>
@@ -13,6 +13,7 @@ const { color, weight } = useColorQuery();
           </h3>
           <ColorInput v-model="color" :label="$t('Hex Color')" />
           <ColorWeight v-model="weight" />
+          <ColorFormatSelector v-model="format" />
         </div>
 
         <div class="space-y-3 border-t pt-4">

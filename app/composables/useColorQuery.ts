@@ -1,12 +1,16 @@
 import { parseHex } from 'culori/fn';
-import { DEFAULT_COLOR, DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT } from '~/constants/color';
+import { DEFAULT_COLOR, DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT, OUTPUT_FORMATS } from '~/constants/color';
 
+/**
+ * Composables for managing color query parameters in the URL.
+ */
 export function useColorQuery() {
   const route = useRoute();
 
   interface ColorQueryParams {
     color?: string;
     weight?: string;
+    format?: ColorFormat;
   }
 
   const isValidHexColor = (value: unknown): value is string => {
@@ -52,7 +56,19 @@ export function useColorQuery() {
     },
   });
 
-  tryOnMounted(() => {
+  const format = computed<ColorFormat>({
+    get: () => {
+      const queryFormat = route.query.format as ColorFormat;
+      return OUTPUT_FORMATS.includes(queryFormat) ? queryFormat : 'hex';
+    },
+    set: (newValue: ColorFormat) => {
+      if (OUTPUT_FORMATS.includes(newValue)) {
+        updateQuery({ format: newValue });
+      }
+    },
+  });
+
+  onMounted(() => {
     const queryColor = route.query.color;
     const queryWeight = Number(route.query.weight);
 
@@ -70,5 +86,6 @@ export function useColorQuery() {
   return {
     color,
     weight,
+    format,
   };
 }

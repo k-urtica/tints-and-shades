@@ -5,7 +5,7 @@ import type { ColorType, GeneratedColor } from '@/composables/useColor';
 
 type TabValue = 'all' | 'tints' | 'shades' | 'tailwind';
 
-const { color, weight } = useColorQuery();
+const { color, weight, format } = useColorQuery();
 const appearance = useState<Appearance>('appearance');
 
 const { copy, copied } = useClipboard({ legacy: true });
@@ -23,7 +23,7 @@ const tabItems = [
 const activeTab = ref<TabValue>(tabItems[0].value);
 
 const colors = computed<GeneratedColor[]>(() =>
-  generateColors(color.value, weight.value)
+  generateColors(color.value, weight.value, format.value)
 );
 
 const tailwindColors = computed<GeneratedColor[]>(() =>
@@ -44,12 +44,12 @@ watch(activeTab, (v) => {
   appearance.value.isOneLine = v === 'tailwind';
 });
 
-const doCopy = async (hexColor: string) => {
-  const formattedColor = formatHexColor(hexColor, appearance.value.copyWithHash);
-  await copy(formattedColor);
+const doCopy = async (color: string) => {
+  const _color = format.value === 'hex' ? formatHexColor(color, appearance.value.copyWithHash) : color;
+  await copy(_color);
 
   if (copied.value) {
-    show({ title: `${$t('Copied!')} ${formattedColor}`, toastType: 'success' });
+    show({ title: `${$t('Copied!')} ${_color}`, toastType: 'success' });
   }
 };
 </script>

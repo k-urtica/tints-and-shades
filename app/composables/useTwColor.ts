@@ -27,6 +27,10 @@ const COLOR_RANGES = [
   { min: 900, max: 951, startPercent: 70, endPercent: 82 },
 ] as const;
 
+/**
+ * Composables for generating Tailwind CSS color scales based on a base color.
+ * Provides functions to generate tints and shades, adjust saturation, and format colors.
+ */
 export function useTwColor() {
   const { isValidColor, isBrightColor, formatHexColor, tintMix, shadeMix } = useColor();
 
