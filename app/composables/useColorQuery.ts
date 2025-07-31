@@ -1,19 +1,20 @@
+import { parseHex } from 'culori/fn';
+import { DEFAULT_COLOR, DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT, OUTPUT_FORMATS } from '~/constants/color';
+
+/**
+ * Composables for managing color query parameters in the URL.
+ */
 export function useColorQuery() {
   const route = useRoute();
-  const router = useRouter();
-
-  const DEFAULT_COLOR = '#7085f0';
-  const DEFAULT_WEIGHT = 5;
-  const MIN_WEIGHT = 1;
-  const MAX_WEIGHT = 50;
 
   interface ColorQueryParams {
     color?: string;
     weight?: string;
+    format?: ColorFormat;
   }
 
   const isValidHexColor = (value: unknown): value is string => {
-    return typeof value === 'string' && /^#[0-9A-F]{6}$/i.test(value);
+    return typeof value === 'string' && !!parseHex(value);
   };
 
   const isValidWeight = (value: unknown): value is number => {
@@ -26,7 +27,7 @@ export function useColorQuery() {
   };
 
   const updateQuery = (queryParams: ColorQueryParams) => {
-    router.replace({
+    navigateTo({
       query: { ...route.query, ...queryParams },
     });
   };
@@ -55,7 +56,19 @@ export function useColorQuery() {
     },
   });
 
-  tryOnMounted(() => {
+  const format = computed<ColorFormat>({
+    get: () => {
+      const queryFormat = route.query.format as ColorFormat;
+      return OUTPUT_FORMATS.includes(queryFormat) ? queryFormat : 'hex';
+    },
+    set: (newValue: ColorFormat) => {
+      if (OUTPUT_FORMATS.includes(newValue)) {
+        updateQuery({ format: newValue });
+      }
+    },
+  });
+
+  onMounted(() => {
     const queryColor = route.query.color;
     const queryWeight = Number(route.query.weight);
 
@@ -73,5 +86,6 @@ export function useColorQuery() {
   return {
     color,
     weight,
+    format,
   };
 }

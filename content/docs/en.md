@@ -2,17 +2,36 @@
 
 ## What is Tints and Shades Generator?
 
-**Tints and Shades Generator** is a web tool that automatically generates beautiful color variations from a single base color.
+**Tints and Shades Generator** is a web tool that creates color variations that look truly natural to the human eye, all from a single base color.
 
-**Tints** refer to lighter colors created by mixing the original color with white. **Shades** refer to darker colors created by mixing the original color with black.
+**Tints** are lighter colors made by mixing the base color with white. **Shades** are darker colors made by mixing the base color with black.
 
-With this tool, designers and developers no longer need to manually adjust colors one by one. You can instantly create unified and beautiful color palettes. It's a practical tool that can be used in various scenarios such as web design, UI design, and brand color development.
+But this tool doesn't just mix colors in a simple way. It uses the latest **oklch color space** technology to make color changes feel perceptually smooth and natural.
+
+Oklch lets us adjust "lightness," "hue," and "chroma" in a way that's much closer to how people actually see color. So, no matter what color you start with, you get gradients that just feel right.
+
+For example, when you lighten blue towards white, you don't get a dull, washed-out blue—you get a clean, beautiful light blue. When you darken a color towards black, you keep the richness and depth, not just a muddy gray.
+
+Thanks to this, designers and developers can instantly create unified, beautiful palettes without tedious manual tweaking. Whether it's for web design, UI, or brand colors, this tool is practical and reliable.
 
 ## Why was this tool created?
 
-Have you ever thought while designing, "This color is nice, but I'd like a slightly lighter version" or "I want to create a darker version too"?
+Ever found yourself thinking, "I love this color, but I wish I had a lighter version," or "I want a deeper, richer shade"?
 
-**Tints and Shades Generator** was born from such common design challenges. Creating natural and beautiful gradients instantly from a single color - that's the reason this tool exists.
+But when you try to adjust colors by hand, they often end up looking dull or not quite right.
+
+**Tints and Shades Generator** was made to solve those color struggles. With just one color, you get a full, natural gradient—no more muddy or awkward transitions. Every color keeps its character, and the balance of brightness and vibrancy always feels good.
+
+## Technical Details & Why It Matters
+
+This tool uses the **oklch color space** for all color mixing and gradients.
+Oklch is designed to match human color perception, so gradients look much more natural than with traditional RGB or Lab mixing.
+
+- Mixing with white (#fff) and black (#000) is done in oklch
+- TailwindCSS color scales are generated using oklch
+- Any color you choose will produce smooth, perceptually-correct gradients
+
+That means colors rarely break or look off, and the balance of lightness and vibrancy is always spot-on.
 
 ## When to use it?
 

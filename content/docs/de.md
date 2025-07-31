@@ -10,9 +10,22 @@ Mit diesem Tool müssen Designer und Entwickler nicht mehr manuell Farbe für Fa
 
 ## Warum wurde dieses Tool entwickelt?
 
-Haben Sie beim Designen schon einmal gedacht: "Diese Farbe ist schön, aber ich hätte gerne eine etwas hellere Version" oder "Ich möchte auch eine dunklere Version erstellen"?
+Haben Sie sich schon einmal gedacht: "Ich liebe diese Farbe, aber ich hätte gerne eine hellere Version" oder "Ich möchte einen tieferen, satteren Farbton"?
 
-**Tints and Shades Generator** entstand aus solchen häufigen Design-Herausforderungen. Natürliche und schöne Farbverläufe sofort aus einer einzigen Farbe zu erstellen - das ist der Grund für die Existenz dieses Tools.
+Aber wenn man Farben von Hand anpasst, wirken sie oft stumpf oder nicht ganz richtig.
+
+**Tints and Shades Generator** wurde entwickelt, um diese Farbprobleme zu lösen. Mit nur einer Farbe erhalten Sie einen vollständigen, natürlichen Verlauf – keine matschigen oder seltsamen Übergänge mehr. Jede Farbe behält ihren Charakter, und das Gleichgewicht von Helligkeit und Lebendigkeit stimmt immer.
+
+## Technische Details & Warum das wichtig ist
+
+Dieses Tool verwendet das **oklch-Farbmodell** für alle Farbmischungen und Verläufe.
+Oklch ist darauf ausgelegt, der menschlichen Farbwahrnehmung zu entsprechen, sodass Verläufe viel natürlicher wirken als mit herkömmlichem RGB- oder Lab-Mischen.
+
+- Das Mischen mit Weiß (#fff) und Schwarz (#000) erfolgt in oklch
+- TailwindCSS-Farbskalen werden mit oklch erzeugt
+- Jede gewählte Farbe ergibt stimmige, wahrnehmungsgerechte Verläufe
+
+Das bedeutet: Farben brechen kaum auseinander, und das Gleichgewicht von Helligkeit und Lebendigkeit ist immer optimal.
 
 ## Wann verwendet man es?
 
