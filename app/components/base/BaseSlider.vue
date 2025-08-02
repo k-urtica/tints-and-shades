@@ -6,13 +6,10 @@ const props = withDefaults(defineProps<{
   min?: number;
   max?: number;
   step?: number;
-  unit?: string;
-  hint?: string;
 }>(), {
   min: 0,
   max: 100,
   step: 1,
-  unit: ''
 });
 
 const inputValue = ref<string>('');
@@ -54,6 +51,7 @@ const handleInputFocus = () => {
 };
 
 watch(model, (newValue) => {
+  // UX improvement: update input value only if input is not focused
   if (!isInputFocused.value) {
     inputValue.value = String(newValue);
   }
@@ -82,9 +80,6 @@ watch(model, (newValue) => {
     <div class="mt-2 flex items-center gap-0.5 self-start">
       <UInput
         v-model="inputValue"
-        :min="min"
-        :max="max"
-        :step="step"
         variant="soft"
         size="sm"
         inputmode="numeric"
