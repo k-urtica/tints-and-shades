@@ -4,11 +4,5 @@ export default defineAppConfig({
       primary: 'indigo',
       neutral: 'zinc',
     },
-
-    input: {
-      slots: {
-        base: 'rounded-lg'
-      }
-    },
   },
 });

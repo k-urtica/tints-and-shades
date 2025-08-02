@@ -11,13 +11,10 @@ const formats = OUTPUT_FORMATS.map((f) => ({
 
 <template>
   <ClientOnly>
-    <URadioGroup
+    <BaseRadioGroup
       v-model="model"
       :items="formats"
-      variant="table"
       :legend="$t('Output Format')"
-      orientation="horizontal"
-      :ui="{ item: 'py-1' }"
     />
     <template #fallback>
       <USkeleton class="h-14 w-full" />
