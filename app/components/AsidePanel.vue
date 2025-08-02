@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
       <div class="flex h-full min-h-0 flex-1 flex-col gap-1 py-3">
         <span class="px-4 text-xs text-muted">Sponsored link</span>
         <div class="h-full overflow-y-auto px-4">
-          <Ads />
+          <AdBanner />
         </div>
       </div>
 

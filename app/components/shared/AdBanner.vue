@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <ScriptGoogleAdsense
     data-ad-client="ca-pub-6155745382628091"
