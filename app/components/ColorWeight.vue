@@ -49,14 +49,10 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       </template>
     </ClientOnly>
 
-    <URadioGroup
+    <BaseRadioGroup
       v-model="currentStep"
-      variant="table"
-      orientation="horizontal"
-      indicator="hidden"
       :legend="$t('Step size')"
       :items="WEIGHT_STEPS"
-      :ui="{ item: 'w-full py-1' }"
     />
   </div>
 </template>

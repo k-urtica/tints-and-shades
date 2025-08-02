@@ -6,7 +6,7 @@ const { color, weight, format } = useColorQuery();
   <PanelContainer
     class="py-2 pr-6 pl-8"
   >
-    <div class="mx-auto flex max-w-72 items-center justify-between gap-4">
+    <div class="mx-auto flex max-w-72 items-center justify-between gap-5">
       <ColorInput v-model="color" class="w-full" />
 
       <UDrawer>
