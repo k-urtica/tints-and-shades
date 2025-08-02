@@ -16,7 +16,11 @@ defineProps<{
     :legend="legend"
     orientation="horizontal"
     indicator="hidden"
-    variant="table"
-    :ui="{ item: 'w-full py-1' }"
+    variant="card"
+    size="sm"
+    :ui="{
+      item: 'w-full py-1.5 has-data-[state=checked]:bg-elevated has-data-[state=checked]:border-inverted/40',
+      legend: 'text-sm'
+    }"
   />
 </template>
