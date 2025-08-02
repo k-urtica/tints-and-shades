@@ -23,18 +23,19 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div class="space-y-2">
     <ClientOnly>
       <UFormField
         :label="$t('Weight')"
         :hint="weight.toString()"
-        :ui="{ help: 'flex items-center justify-between text-xs' }"
+        :ui="{ help: 'flex items-center justify-between text-xs', container: 'mt-2' }"
       >
         <USlider
           v-model="weight"
           :min="MIN_WEIGHT"
           :max="MAX_WEIGHT"
           :step="currentStep"
+          size="sm"
         />
 
         <template #help>
@@ -52,10 +53,10 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
       v-model="currentStep"
       variant="table"
       orientation="horizontal"
-      indicator="start"
+      indicator="hidden"
       :legend="$t('Step size')"
       :items="WEIGHT_STEPS"
-      :ui="{ item: 'py-1' }"
+      :ui="{ item: 'w-full py-1' }"
     />
   </div>
 </template>

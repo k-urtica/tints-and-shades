@@ -61,15 +61,14 @@ const doCopy = async (color: string) => {
       <UBadge variant="subtle" color="primary" size="sm">{{ $t('Click to Copy') }}</UBadge>
 
       <div class="ml-auto w-full md:w-96">
-        <UTabs
-          v-model="activeTab"
-          :items="tabItems"
-          :content="false"
-          size="xs"
-          :ui="{
-            list: 'bg-accented/30'
-          }"
-        />
+        <div class="rounded-lg p-1 ring-1 ring-muted/70">
+          <UTabs
+            v-model="activeTab"
+            :items="tabItems"
+            :content="false"
+            size="xs"
+          />
+        </div>
       </div>
     </div>
 

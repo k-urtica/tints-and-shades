@@ -5,7 +5,7 @@ const { color, weight, format } = useColorQuery();
 <template>
   <div class="w-[340px]">
     <PanelContainer class="flex h-full flex-col">
-      <div class="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-6">
+      <div class="flex flex-1 flex-col gap-5 overflow-y-auto px-4 py-6">
         <div class="space-y-4">
           <h3 class="flex items-center gap-1.5 font-bold">
             <UIcon name="i-lucide-palette" class="size-4.5" />
