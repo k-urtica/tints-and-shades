@@ -5,7 +5,6 @@ import type { HTMLAttributes } from 'vue';
 export interface BaseTabsSelectorProps {
   label?: string;
   items: TabsProps['items'];
-  defaultValue?: TabsProps['defaultValue'];
   class?: HTMLAttributes['class'];
 }
 

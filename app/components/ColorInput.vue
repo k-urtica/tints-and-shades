@@ -22,9 +22,10 @@ const setRandomColor = () => {
       <UInput
         v-model="color"
         size="xl"
-        class="relative w-full"
         placeholder="#fafafa"
         maxlength="7"
+        :ui="{ base: 'rounded-lg' }"
+        class="relative w-full"
       >
         <template #leading>
           <UButton
