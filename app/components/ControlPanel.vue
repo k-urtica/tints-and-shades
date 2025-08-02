@@ -7,11 +7,15 @@ const { color, weight, format } = useColorQuery();
     <PanelContainer class="flex h-full flex-col">
       <div class="flex flex-1 flex-col gap-5 overflow-y-auto px-5 py-6">
         <div>
-          <h3 class="mb-3 flex items-center gap-1.5 font-semibold">
-            <UIcon name="i-lucide-palette" class="size-4.5" />
+          <BaseIconText
+            as="h3"
+            icon="i-lucide-palette"
+            class="mb-3 font-semibold"
+          >
             {{ $t('Color Settings') }}
-          </h3>
-          <div class="space-y-5">
+          </BaseIconText>
+
+          <div class="flex flex-col gap-5">
             <ColorInput v-model="color" :label="$t('Hex Color')" />
             <ColorWeight v-model="weight" />
             <ColorFormatSelector v-model="format" />
@@ -19,10 +23,14 @@ const { color, weight, format } = useColorQuery();
         </div>
 
         <div class="border-t pt-4">
-          <h3 class="mb-3 flex items-center gap-1.5 font-semibold">
-            <UIcon name="i-lucide-settings-2" class="size-4.5" />
+          <BaseIconText
+            as="h3"
+            icon="i-lucide-settings-2"
+            class="mb-3 font-semibold"
+          >
             {{ $t('Display Options') }}
-          </h3>
+          </BaseIconText>
+
           <AppearanceSettings />
         </div>
       </div>

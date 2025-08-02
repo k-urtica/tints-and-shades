@@ -16,10 +16,9 @@ const items = computed(() =>
 
 <template>
   <div class="flex items-center justify-between gap-2">
-    <div class="flex items-center gap-1 text-sm font-semibold">
-      <UIcon name="i-lucide-globe" class="size-4" />
+    <BaseIconText icon="i-lucide-globe" class="text-sm font-semibold">
       {{ $t('Language') }}
-    </div>
+    </BaseIconText>
 
     <UDropdownMenu :items="items">
       <UButton
