@@ -3,12 +3,6 @@ import * as locales from '@nuxt/ui/locale';
 
 const { locale } = useI18n();
 
-const description = computed(() =>
-  $t(
-    'Generate perfect tints and shades from any color code in seconds. Ideal for designers and developers building cohesive color palettes. Free tool, no sign-up required.'
-  )
-);
-
 const i18nHead = useLocaleHead({
   dir: true,
   lang: true,
@@ -20,21 +14,8 @@ useHead({
     lang: () => i18nHead.value.htmlAttrs!.lang,
     dir: () => locales[locale.value].dir,
   },
-  meta: () => [
-    {
-      key: 'description',
-      name: 'description',
-      content: description,
-    },
-    {
-      key: 'og:description',
-      property: 'og:description',
-      content: description,
-    },
-    ...(i18nHead.value.meta || []),
-  ],
-
-  link: () => [...(i18nHead.value.link || [])],
+  meta: () => i18nHead.value.meta ?? [],
+  link: () => i18nHead.value.link ?? [],
 });
 </script>
 

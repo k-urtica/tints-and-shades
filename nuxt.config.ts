@@ -52,12 +52,9 @@ export default defineNuxtConfig({
         prefix: 'og: http://ogp.me/ns#',
       },
       title: SITE_NAME,
-      titleTemplate: `%s | ${SITE_NAME}`,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        // OGP
-        { key: 'og:url', property: 'og:url', content: SITE_URL },
         { key: 'og:type', property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
       ],

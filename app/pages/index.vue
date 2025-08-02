@@ -3,8 +3,12 @@ defineOgImageComponent('Default');
 
 const { isDocVisible } = useDocToggle();
 
-useHead({
+useAppHead({
+  title: 'Tints and Shades Generator',
   titleTemplate: '%s',
+  description: () => $t(
+    'Generate perfect tints and shades from any color code in seconds. Ideal for designers and developers building cohesive color palettes. Free tool, no sign-up required.'
+  ),
 });
 </script>
 
