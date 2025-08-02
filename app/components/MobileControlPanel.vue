@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { color, weight, format } = useColorQuery();
+const { color } = useColorQuery();
 </script>
 
 <template>
@@ -16,12 +16,9 @@ const { color, weight, format } = useColorQuery();
           :aria-label="$t('Open settings')"
         />
         <template #content>
-          <div class="flex flex-col gap-5 p-5">
-            <ColorWeight v-model="weight" />
-            <ColorFormatSelector v-model="format" />
-            <AppearanceSettings />
-
-            <ControlPanelFooter class="mt-4 border-t pt-4" />
+          <div class="flex h-full min-h-0 flex-col overflow-hidden">
+            <ControlPanelContent class="flex-1 overflow-y-auto p-6 px-5" />
+            <ControlPanelFooter class="border-t p-5" />
           </div>
         </template>
       </UDrawer>
