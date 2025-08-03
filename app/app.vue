@@ -2,21 +2,6 @@
 import * as locales from '@nuxt/ui/locale';
 
 const { locale } = useI18n();
-
-const i18nHead = useLocaleHead({
-  dir: true,
-  lang: true,
-  seo: true,
-});
-
-useHead({
-  htmlAttrs: {
-    lang: () => i18nHead.value.htmlAttrs!.lang,
-    dir: () => locales[locale.value].dir,
-  },
-  meta: () => i18nHead.value.meta ?? [],
-  link: () => i18nHead.value.link ?? [],
-});
 </script>
 
 <template>

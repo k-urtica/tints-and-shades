@@ -1,18 +1,17 @@
 const SITE_NAME = 'Tints and Shades Generator';
+const SITE_DESCRIPTION = 'Generate perfect tints and shades from any color code in seconds. Ideal for designers and developers building cohesive color palettes. Free tool, no sign-up required.';
 const SITE_URL = 'https://tintsshades.web-toolbox.dev';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
+    '@nuxtjs/seo',
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/image',
-    'nuxt-og-image',
     'motion-v/nuxt',
     '@nuxt/content'
   ],
@@ -47,29 +46,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      htmlAttrs: {
-        lang: 'en',
-        prefix: 'og: http://ogp.me/ns#',
-      },
-      title: SITE_NAME,
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { key: 'og:type', property: 'og:type', content: 'website' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-      ],
       link: [
-        {
-          rel: 'icon',
-          href: '/favicon.ico',
-          sizes: '48x48',
-        },
-        {
-          rel: 'icon',
-          href: '/favicon.svg',
-          sizes: 'any',
-          type: 'image/svg+xml',
-        },
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', href: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
       ],
     },
   },
@@ -79,6 +58,7 @@ export default defineNuxtConfig({
   site: {
     name: SITE_NAME,
     url: SITE_URL,
+    description: SITE_DESCRIPTION,
   },
 
   ui: {
@@ -177,10 +157,21 @@ export default defineNuxtConfig({
     serverBundle: false,
   },
 
+  linkChecker: {
+    enabled: false
+  },
+
   ogImage: {
-    enabled: true,
-    fonts: ['Inter:700'],
-    zeroRuntime: true,
+    enabled: false,
+  },
+
+  seo: {
+    meta: {
+      author: 'K',
+      twitterCard: 'summary_large_image',
+      ogType: 'website',
+    },
+    metaDataFiles: true
   },
 
   sitemap: {

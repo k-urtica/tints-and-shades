@@ -1,9 +1,7 @@
 <script setup lang="ts">
-defineOgImageComponent('Default');
-
 const { isDocVisible } = useDocToggle();
 
-useAppHead({
+useSeoMeta({
   title: 'Tints and Shades Generator',
   titleTemplate: '%s',
   description: () => $t(
