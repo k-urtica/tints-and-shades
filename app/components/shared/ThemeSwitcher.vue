@@ -22,6 +22,7 @@ const isDark = computed({
         v-model="isDark"
         checked-icon="i-lucide-moon"
         unchecked-icon="i-lucide-sun"
+        aria-label="Toggle dark mode"
       />
       <template #fallback>
         <USkeleton class="ml-auto h-5 w-40" />

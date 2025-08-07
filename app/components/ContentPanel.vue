@@ -56,19 +56,19 @@ const doCopy = async (color: string) => {
 
 <template>
   <PanelContainer class="flex h-full flex-1 flex-col overflow-hidden">
-    <div class="flex flex-wrap items-center gap-2 px-5 pt-5 pb-2">
-      <h3 class="font-bold">{{ $t('Preview') }}</h3>
+    <header class="flex flex-wrap items-center gap-2 px-5 pt-5 pb-2">
+      <h2 class="font-bold">{{ $t('Preview') }}</h2>
       <UBadge variant="subtle" color="primary" size="sm">{{ $t('Click to Copy') }}</UBadge>
 
-      <div class="ml-auto w-full md:w-96">
+      <nav class="ml-auto w-full md:w-96">
         <BaseTabsSelector
           v-model="activeTab"
           :items="tabItems"
         />
-      </div>
-    </div>
+      </nav>
+    </header>
 
-    <div class="overflow-y-auto p-5">
+    <section aria-label="Generated color palette" class="overflow-y-auto p-5">
       <div
         class="grid transition-[gap,padding]"
         :class="[
@@ -103,6 +103,6 @@ const doCopy = async (color: string) => {
           </template>
         </ClientOnly>
       </div>
-    </div>
+    </section>
   </PanelContainer>
 </template>

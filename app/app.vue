@@ -12,9 +12,9 @@ const { locale } = useI18n();
     <div class="flex h-dvh flex-col overflow-y-clip bg-base-0">
       <AppHeader class="shrink-0" />
 
-      <main class="flex-1">
+      <div class="flex-1">
         <NuxtPage />
-      </main>
+      </div>
     </div>
   </UApp>
 </template>

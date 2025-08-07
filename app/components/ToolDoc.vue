@@ -12,8 +12,8 @@ const { data: doc } = await useAsyncData(
 
 <template>
   <PanelContainer class="h-full overflow-hidden">
-    <div class="h-full overflow-y-auto p-5 lg:p-8">
-      <div class="mb-4 flex justify-end">
+    <article class="h-full overflow-y-auto p-5 lg:p-8">
+      <nav class="mb-4 flex justify-end">
         <UButton
           variant="ghost"
           icon="i-lucide-chevron-left"
@@ -23,7 +23,7 @@ const { data: doc } = await useAsyncData(
         >
           Back to Tool
         </UButton>
-      </div>
+      </nav>
 
       <Motion v-bind="fade()">
         <ContentRenderer
@@ -33,6 +33,6 @@ const { data: doc } = await useAsyncData(
           tag="section"
         />
       </Motion>
-    </div>
+    </article>
   </PanelContainer>
 </template>
