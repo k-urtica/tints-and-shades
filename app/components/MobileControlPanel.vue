@@ -9,7 +9,11 @@ const { color } = useColorQuery();
     <div class="mx-auto flex max-w-72 items-center justify-between gap-5">
       <ColorInput v-model="color" class="w-full" />
 
-      <UDrawer>
+      <UDrawer
+        :ui="{
+          content: 'bg-default/85'
+        }"
+      >
         <UButton
           icon="i-lucide-settings-2"
           variant="ghost"

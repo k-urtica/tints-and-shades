@@ -56,7 +56,7 @@ const doCopy = async (color: string) => {
 
 <template>
   <PanelContainer class="flex h-full flex-1 flex-col overflow-hidden">
-    <header class="flex flex-wrap items-center gap-2 px-5 pt-5 pb-2">
+    <header class="flex flex-wrap items-center gap-2 px-4 pt-4 pb-2">
       <h2 class="font-bold">{{ $t('Preview') }}</h2>
       <UBadge variant="subtle" color="primary" size="sm">{{ $t('Click to Copy') }}</UBadge>
 
@@ -68,7 +68,7 @@ const doCopy = async (color: string) => {
       </nav>
     </header>
 
-    <section aria-label="Generated color palette" class="overflow-y-auto p-5">
+    <section aria-label="Generated color palette" class="overflow-y-auto p-4">
       <div
         class="grid transition-[gap,padding]"
         :class="[
