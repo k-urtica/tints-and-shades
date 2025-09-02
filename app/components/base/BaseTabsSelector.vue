@@ -18,7 +18,7 @@ withDefaults(defineProps<BaseTabsSelectorProps>(), {
   <UFormField
     :label="label"
   >
-    <div class="rounded-lg p-1 ring-1 ring-muted/70">
+    <div class="rounded-lg p-1 ring-1 ring-default">
       <UTabs
         v-model="model"
         :items="items"

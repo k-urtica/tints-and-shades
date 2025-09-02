@@ -9,7 +9,7 @@ const { locale } = useI18n();
     :locale="locales[locale]"
     :tooltip="{ delayDuration: 100, skipDelayDuration: 150 }"
   >
-    <div class="flex h-dvh flex-col overflow-y-clip bg-base-0">
+    <div class="flex h-dvh flex-col overflow-hidden bg-base-0">
       <AppHeader class="shrink-0" />
 
       <div class="flex-1">
