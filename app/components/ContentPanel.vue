@@ -9,7 +9,7 @@ const { color, weight, format } = useColorQuery();
 const appearance = useState<Appearance>('appearance');
 
 const { copy, copied } = useClipboard({ legacy: true });
-const { show } = useAppToast();
+const toast = useToast();
 const { generateColors, formatHexColor } = useColor();
 const { generateTailwindColors } = useTwColor();
 
@@ -49,7 +49,7 @@ const doCopy = async (color: string) => {
   await copy(_color);
 
   if (copied.value) {
-    show({ title: `${$t('Copied!')} ${_color}`, toastType: 'success' });
+    toast.add({ title: `${_color} ${$t('copied to clipboard')}`, color: 'success', icon: 'i-lucide-clipboard-copy' });
   }
 };
 </script>
