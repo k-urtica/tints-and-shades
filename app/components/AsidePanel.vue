@@ -1,5 +1,18 @@
 <script setup lang="ts">
 const currentYear = new Date().getFullYear();
+
+const promoLinks = [
+  {
+    to: 'https://gradient-text-pro.web-toolbox.dev',
+    src: '/images/logo-gradient-text-pro.webp',
+    title: 'Gradient Text Pro'
+  },
+  {
+    to: 'https://border-radius-pro.web-toolbox.dev',
+    src: '/images/logo-border-radius-pro.webp',
+    title: 'Border Radius Pro'
+  }
+] as const;
 </script>
 
 <template>
@@ -14,20 +27,39 @@ const currentYear = new Date().getFullYear();
         </div>
       </section>
 
-      <section aria-label="Links" class="p-4">
+      <div class="space-y-3 p-4">
+        <ULink
+          v-for="{ src, title, to } in promoLinks"
+          :key="to"
+          :to
+          target="_blank"
+          class="block rounded-xl bg-muted/40 p-3 ring-1 ring-default transition-colors hover:ring-primary"
+        >
+          <div class="flex items-center gap-2">
+            <img
+              :src
+              width="20"
+              height="20"
+              alt=""
+            >
+            <div class="text-sm font-semibold">{{ title }}</div>
+          </div>
+        </ULink>
+
         <ULink
           to="https://web-toolbox.dev/en"
           target="_blank"
-          class="group block rounded-xl bg-muted/40 p-4 shadow-sm ring-1 ring-muted/50 transition-colors hover:ring-1 hover:ring-primary"
+          class="group block rounded-xl bg-muted/40 p-4 ring-1 ring-default transition-colors hover:ring-primary"
         >
           <div class="flex items-center gap-2">
-            <span
-              class="grid content-center rounded-lg bg-primary/10 p-2 group-hover:bg-primary/20"
-            >
-              <UIcon name="i-lucide-box" class="size-5 text-primary" />
-            </span>
+            <UAvatar
+              icon="i-lucide-box"
+              size="md"
+              class="rounded-lg bg-primary/10 group-hover:bg-primary/20"
+              :ui="{ icon: 'text-primary' }"
+            />
             <div>
-              <div class="text-sm font-bold text-toned">Web ToolBox</div>
+              <div class="text-sm font-semibold text-toned">Web ToolBox</div>
               <div class="mt-1 text-xs leading-snug text-pretty text-muted">
                 {{ $t('All the web tools you need, in one place') }}
               </div>
@@ -37,11 +69,10 @@ const currentYear = new Date().getFullYear();
             Open Web ToolBox
           </div>
         </ULink>
-
-        <footer class="mt-5 border-t pt-2 text-center text-xs text-muted">
-          © {{ currentYear }} Tints & Shades
-        </footer>
-      </section>
+      </div>
+      <footer class="border-t px-4 py-3 text-center text-xs text-muted">
+        © {{ currentYear }} Tints & Shades
+      </footer>
     </PanelContainer>
   </aside>
 </template>
