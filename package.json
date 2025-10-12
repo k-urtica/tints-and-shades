@@ -2,7 +2,7 @@
   "name": "tints-and-shades",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.18.2",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -41,18 +41,6 @@
     "simple-git-hooks": "2.13.1",
     "tailwind-merge": "3.3.1",
     "typescript": "5.9.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "simple-git-hooks",
-      "unrs-resolver",
-      "vue-demi"
-    ]
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
