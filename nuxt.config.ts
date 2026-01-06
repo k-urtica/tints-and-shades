@@ -67,8 +67,10 @@ export default defineNuxtConfig({
     theme: {
       defaultVariants: {
         color: 'neutral',
-        // size: 'sm'
       }
+    },
+    experimental: {
+      componentDetection: true
     }
   },
 
@@ -174,6 +176,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
+    zeroRuntime: true,
     autoLastmod: false,
     discoverImages: false,
     sitemaps: false,
