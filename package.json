@@ -22,7 +22,7 @@
     "better-sqlite3": "12.5.0",
     "culori": "4.0.2",
     "motion-v": "1.7.5",
-    "nuxt": "4.1.2",
+    "nuxt": "4.2.2",
     "vue": "3.5.26",
     "vue-router": "4.6.4"
   },
