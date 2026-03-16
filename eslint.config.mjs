@@ -38,6 +38,7 @@ export default withNuxt(
       'style/comma-dangle': 'off',
       'vue/comma-dangle': 'off',
       'vue/singleline-html-element-content-newline': 'off',
+      'pnpm/yaml-enforce-settings': 'off',
     },
   }),
 )
