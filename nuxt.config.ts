@@ -78,7 +78,15 @@ export default defineNuxtConfig({
 
   vite: {
     optimizeDeps: {
-      entries: ['pages/**/*.vue', 'components/**/*.vue'],
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'culori/css',
+        'clsx',
+        'tailwind-merge',
+        'culori/fn',
+        '@unhead/schema-org/vue',
+      ]
     },
   },
 
