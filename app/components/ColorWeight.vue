@@ -24,26 +24,20 @@ const WEIGHT_STEPS: RadioGroupItem[] = [
 
 <template>
   <div class="space-y-2">
-    <ClientOnly>
-      <BaseSlider
-        v-model="weight"
-        :min="MIN_WEIGHT"
-        :max="MAX_WEIGHT"
-        :step="currentStep"
-        :label="$t('Weight')"
-      >
-        <template #help>
-          <span class="flex items-center justify-between text-xs">
-            <span>{{ $t('Lighter') }}</span>
-            <span>{{ $t('Stronger') }}</span>
-          </span>
-        </template>
-      </BaseSlider>
-
-      <template #fallback>
-        <USkeleton class="h-14 w-full" />
+    <BaseSlider
+      v-model="weight"
+      :min="MIN_WEIGHT"
+      :max="MAX_WEIGHT"
+      :step="currentStep"
+      :label="$t('Weight')"
+    >
+      <template #help>
+        <span class="flex items-center justify-between text-xs">
+          <span>{{ $t('Lighter') }}</span>
+          <span>{{ $t('Stronger') }}</span>
+        </span>
       </template>
-    </ClientOnly>
+    </BaseSlider>
 
     <BaseRadioGroup
       v-model="currentStep"

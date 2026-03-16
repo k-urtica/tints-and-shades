@@ -10,14 +10,9 @@ const formats = OUTPUT_FORMATS.map((f) => ({
 </script>
 
 <template>
-  <ClientOnly>
-    <BaseRadioGroup
-      v-model="model"
-      :items="formats"
-      :legend="$t('Output Format')"
-    />
-    <template #fallback>
-      <USkeleton class="h-14 w-full" />
-    </template>
-  </ClientOnly>
+  <BaseRadioGroup
+    v-model="model"
+    :items="formats"
+    :legend="$t('Output Format')"
+  />
 </template>
