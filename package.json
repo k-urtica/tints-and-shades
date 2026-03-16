@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/content": "3.12.0",
-    "@nuxt/ui": "4.3.0",
+    "@nuxt/ui": "4.5.1",
     "@nuxtjs/seo": "3.4.0",
     "@unhead/vue": "2.1.12",
     "@vueuse/core": "14.2.1",
