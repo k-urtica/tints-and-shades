@@ -2,7 +2,7 @@
   "name": "tints-and-shades",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.32.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
