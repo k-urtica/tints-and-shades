@@ -21,7 +21,7 @@
   --color-surface: var(--bg-surface);
 
   --font-mono:
-    'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 :root {
@@ -31,7 +31,7 @@
   --header-height: 56px;
   --viewport-content-height: calc(100dvh - var(--header-height));
 
-  --font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', Meiryo, sans-serif;
+  --font-family: Andika, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', Meiryo, sans-serif;
 }
 
 .dark {

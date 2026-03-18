@@ -19,7 +19,7 @@ defineProps<{
     variant="card"
     size="sm"
     :ui="{
-      item: 'w-full py-1.5 has-data-[state=checked]:bg-elevated has-data-[state=checked]:border-inverted/40',
+      item: 'w-full py-1.5 cursor-pointer has-data-[state=checked]:bg-elevated has-data-[state=checked]:border-inverted/40',
       legend: 'text-sm'
     }"
   />

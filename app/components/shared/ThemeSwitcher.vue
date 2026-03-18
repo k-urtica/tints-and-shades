@@ -12,10 +12,12 @@ const isDark = computed({
 </script>
 
 <template>
-  <div class="flex items-center justify-between gap-2">
-    <BaseIconText icon="i-lucide-sun-moon" class="text-sm font-semibold">
-      {{ $t('Theme') }}
-    </BaseIconText>
+  <UFormField orientation="horizontal">
+    <template #label>
+      <BaseIconText icon="i-lucide-sun-moon" class="text-sm font-semibold">
+        {{ $t('Theme') }}
+      </BaseIconText>
+    </template>
 
     <ClientOnly>
       <USwitch
@@ -25,8 +27,8 @@ const isDark = computed({
         aria-label="Toggle dark mode"
       />
       <template #fallback>
-        <USkeleton class="ml-auto h-5 w-40" />
+        <USkeleton class="ml-auto h-5 w-10" />
       </template>
     </ClientOnly>
-  </div>
+  </UFormField>
 </template>

@@ -47,16 +47,16 @@ const cardClasses = computed(() =>
       />
 
       <template v-if="showText">
-        <div class="font-mono text-xs">{{ colorItem.weight }}</div>
-        <div class="mt-2 flex items-center gap-2">
-          <span class="font-mono text-xs font-semibold tracking-tight uppercase">{{ colorItem.color }}</span>
+        <div class="flex items-center">
+          <div class="font-mono text-xs">{{ colorItem.weight }}</div>
           <UIcon
             v-if="colorItem.indicator"
-            name="i-lucide-badge-alert"
+            name="i-lucide-badge-check"
             aria-label="Base color indicator"
-            class="size-5 animate-pulse"
+            class="ms-auto size-4 shrink-0 animate-pulse"
           />
         </div>
+        <div class="mt-2 font-mono text-xs font-medium tracking-tight uppercase">{{ colorItem.color }}</div>
       </template>
     </button>
   </UTooltip>

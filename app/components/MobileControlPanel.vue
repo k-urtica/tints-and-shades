@@ -11,7 +11,7 @@ const { color } = useColorQuery();
 
       <UDrawer
         :ui="{
-          content: 'bg-default/85'
+          content: 'bg-default/85 backdrop-blur-xs'
         }"
       >
         <UButton
