@@ -47,7 +47,12 @@ const setRandomColor = () => {
         >
       </template>
       <template #trailing>
-        <UTooltip :text="$t('Random color')" arrow :content="{ side: 'top' }">
+        <UTooltip
+          :text="$t('Random color')"
+          arrow
+          disable-closing-trigger
+          :content="{ side: 'top' }"
+        >
           <UButton
             variant="ghost"
             square
