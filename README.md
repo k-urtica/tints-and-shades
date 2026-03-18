@@ -3,7 +3,7 @@
 <h1 align="center">🎨 Tints and Shades Generator 💚</h1>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/213bc9c5-6bfa-4cfb-9fd3-1af3f5e7e1c4" alt="Tints and Shades Generator"  />
+  <img alt="Tints and Shades Generator" src="https://github.com/user-attachments/assets/bec1a0b0-78d8-4b0e-9407-1bc6fd09c187" />
 </p>
 
 <p align="center">
@@ -21,11 +21,9 @@
 
 ## 📝 Overview
 
-Tints and Shades Generator is a web tool that creates color variations that look truly natural to the human eye, all from a single base color.
+Tints and Shades Generator is a web tool designed to create perceptually uniform color variations from a single base color.
 
-Unlike simple color mixing, this tool uses the latest **oklch color space** technology to generate perceptually smooth and beautiful gradients. Oklch lets you adjust "lightness," "hue," and "chroma" in a way that's much closer to how people actually see color. So, no matter what color you start with, you get gradients that just feel right—no more muddy or awkward transitions.
-
-For example, when you lighten blue towards white, you get a clean, beautiful light blue (not a dull, washed-out color). When you darken a color towards black, you keep the richness and depth, not just a muddy gray. This means designers and developers can instantly create unified, beautiful palettes without tedious manual tweaking.
+Unlike traditional RGB or HSL mixing, this tool leverages the OKLCH color space to ensure smooth, consistent gradients. By aligning with human visual perception, it prevents colors from becoming "muddy" or washed out as they shift. This allows you to instantly generate professional UI palettes—where tints stay vibrant and shades maintain their depth—without the need for manual correction.
 
 ## ✨ Features
 
@@ -52,8 +50,8 @@ For example, when you lighten blue towards white, you get a clean, beautiful lig
 
 ## 💻 Technology Stack
 
-- [Nuxt 3](https://nuxt.com/)
-- [NuxtUI 3](https://ui.nuxt.com/)
+- [Nuxt](https://nuxt.com/)
+- [NuxtUI](https://ui.nuxt.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [culori](https://culorijs.org/) (oklch color space)
 
@@ -76,7 +74,7 @@ pnpm run dev
 ## 📄 License
 
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License.
-Copyright © 2025 K.
+Copyright © 2026 K.
 
 ## 👨‍💻 Developer
 
