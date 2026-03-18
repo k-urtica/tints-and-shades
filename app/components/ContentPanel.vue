@@ -55,7 +55,7 @@ const doCopy = async (color: string) => {
 </script>
 
 <template>
-  <PanelContainer class="flex h-full flex-1 flex-col overflow-hidden">
+  <PanelContainer class="@container flex h-full flex-1 flex-col overflow-hidden">
     <header class="flex flex-wrap items-center gap-2 px-4 pt-4 pb-2">
       <h2 class="font-bold">{{ $t('Preview') }}</h2>
       <UBadge variant="subtle" color="primary" size="sm">{{ $t('Click to Copy') }}</UBadge>
@@ -75,7 +75,7 @@ const doCopy = async (color: string) => {
           appearance.isPadded ? 'gap-2' : 'gap-0',
           appearance.isOneLine
             ? 'grid-cols-1 overflow-hidden rounded-lg'
-            : 'sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5',
+            : '@lg:grid-cols-2 @2xl:grid-cols-3 @5xl:grid-cols-4 @7xl:grid-cols-5',
         ]"
       >
         <ClientOnly>
