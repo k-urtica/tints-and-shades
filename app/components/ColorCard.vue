@@ -52,9 +52,9 @@ const cardClasses = computed(() =>
           <span class="font-mono text-xs font-medium tracking-tight uppercase">{{ colorItem.color }}</span>
           <UIcon
             v-if="colorItem.indicator"
-            name="i-lucide-badge-alert"
+            name="i-lucide-badge-check"
             aria-label="Base color indicator"
-            class="size-5 animate-pulse"
+            class="size-4 animate-pulse"
           />
         </div>
       </template>
